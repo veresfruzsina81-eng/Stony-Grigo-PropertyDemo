@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stony & Grigo Property – Kollégáink</title>
+<meta name="theme-color" content="#11384f">
+<style>
+:root{--brand:#d7b461;--bg:#11384f;--bg2:#0d2c40;--text:#eaf3f9;--mut:#cfe0ea;--line:rgba(255,255,255,.16)}
+*{box-sizing:border-box} html,body{margin:0;color:var(--text);background:linear-gradient(180deg,var(--bg),var(--bg2));font:16px/1.5 system-ui,Segoe UI,Inter,Arial}
+.header{position:sticky;top:0;z-index:50;background:rgba(12,31,46,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:18px;padding:10px 16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}
+.brand img{width:34px;height:34px;object-fit:contain}
+.spacer{flex:1}
+.menu{display:flex;gap:20px;align-items:center}
+.menu a{color:var(--text);text-decoration:none;opacity:.9}
+.menu a:hover,.menu a.active{opacity:1;border-bottom:2px solid var(--brand)}
+.lang{position:relative}
+.langBtn{display:flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.06);cursor:pointer}
+.flag{width:18px;height:12px;display:inline-block;background-size:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.3)}
+.flag.hu{background-image:url('flag_hu.svg')}
+.flag.en{background-image:url('flag_gb.svg')}
+.flag.de{background-image:url('flag_de.svg')}
+.langMenu{position:absolute;right:0;top:40px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;display:none}
+.lang:hover .langMenu{display:block}
+
+.main{max-width:1200px;margin:28px auto;padding:0 16px}
+h1{margin:12px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.portrait{width:100%;aspect-ratio:1/1;object-fit:cover}
+.info{padding:14px}
+.name{font-weight:800;margin:2px 0 6px}
+.role{color:var(--mut);margin:0 0 8px}
+.phone{color:var(--text);opacity:.9;text-decoration:none}
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="header">
+  <nav class="nav">
+    <a class="brand" href="index.html"><img src="sg_logo.png" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
+    <div class="spacer"></div>
+    <div class="menu">
+      <a href="index.html">Kezdőlap</a>
+      <a href="ingatlanok.html">Ingatlanok</a>
+      <a class="active" href="csapat.html">Kollégáink</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+      <div class="lang">
+        <button class="langBtn"><i class="flag hu"></i> HU ▾</button>
+        <div class="langMenu">
+          <button><i class="flag hu"></i> Magyar</button>
+          <button><i class="flag en"></i> English</button>
+          <button><i class="flag de"></i> Deutsch</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="main">
+  <h1>Kollégáink</h1>
+  <div class="grid">
+    <article class="card">
+      <img class="portrait" src="team_inotai.jpg" alt="Inotai István">
+      <div class="info">
+        <div class="name">Inotai István</div>
+        <div class="role">Tulajdonos / Ügyvezető</div>
+        <a class="phone" href="tel:+36309323024">+36 30 932 3024</a>
+      </div>
+    </article>
+    <article class="card">
+      <img class="portrait" src="team_stony.jpg" alt="Stony Gábor">
+      <div class="info">
+        <div class="name">Stony Gábor</div>
+        <div class="role">Tulajdonos / Irodavezető</div>
+        <a class="phone" href="tel:+36308965858">+36 30 896 5858</a>
+      </div>
+    </article>
+    <article class="card">
+      <img class="portrait" src="team_grigo.jpg" alt="Grigolopoulos Péter">
+      <div class="info">
+        <div class="name">Grigolopoulos Péter</div>
+        <div class="role">Tulajdonos / Értékesítési vezető</div>
+        <a class="phone" href="tel:+36202782490">+36 20 278 2490</a>
+      </div>
+    </article>
+    <article class="card">
+      <img class="portrait" src="sg_logo.png" alt="Elek Tímea (logó)">
+      <div class="info">
+        <div class="name">Elek Tímea</div>
+        <div class="role">Értékesítési asszisztens</div>
+        <a class="phone" href="tel:+36707089250">+36 70 708 9250</a>
+      </div>
+    </article>
+  </div>
+</main>
+</body>
+</html>
