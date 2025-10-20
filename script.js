@@ -1,20 +1,35 @@
-// Zászlós nyelvváltó (vizuális) – index.html-hez
-function switchLang(code){
-  const btn = document.querySelector('#lang .langbtn strong');
-  const flag = document.querySelector('#lang .langbtn .flag');
-  if(!btn || !flag) return;
-  if(code==='hu'){ btn.textContent='HU'; flag.src='https://flagcdn.com/w20/hu.png'; }
-  if(code==='en'){ btn.textContent='EN'; flag.src='https://flagcdn.com/w20/gb.png'; }
-  if(code==='de'){ btn.textContent='DE'; flag.src='https://flagcdn.com/w20/de.png'; }
-  document.getElementById('lang').classList.remove('open');
-}
-document.addEventListener('click', e=>{
-  const box=document.getElementById('lang');
+// Zászlós, üveges nyelvválasztó
+(function(){
+  const box = document.getElementById('lang');
   if(!box) return;
-  if(!box.contains(e.target)) box.classList.remove('open');
-});
+  const btn = box.querySelector('.langbtn');
+  const menu = box.querySelector('.langmenu');
+  const flag = btn ? btn.querySelector('.flag') : null;
+  const codeEl = btn ? btn.querySelector('strong') : null;
 
-// Ingatlanok tabok (Eladó/Kiadó/Mediterrán)
+  const setBtn = (code) => {
+    if(!flag || !codeEl) return;
+    if(code==='en'){ flag.src='https://flagcdn.com/w20/gb.png'; codeEl.textContent='EN'; }
+    else if(code==='de'){ flag.src='https://flagcdn.com/w20/de.png'; codeEl.textContent='DE'; }
+    else { flag.src='https://flagcdn.com/w20/hu.png'; codeEl.textContent='HU'; }
+  };
+
+  const current = localStorage.getItem('lang') || 'hu';
+  setBtn(current);
+
+  btn && btn.addEventListener('click', (e)=>{ e.stopPropagation(); box.classList.toggle('open'); });
+  document.addEventListener('click', ()=> box.classList.remove('open'));
+  menu && menu.querySelectorAll('button[data-code]').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      const code = b.getAttribute('data-code');
+      localStorage.setItem('lang', code);
+      setBtn(code);
+      box.classList.remove('open');
+    });
+  });
+})();
+
+// Ingatlanok tabok (Eladó / Kiadó / Mediterrán – demo vizuál)
 document.querySelectorAll('.tab').forEach(t=>{
   t.addEventListener('click',()=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
