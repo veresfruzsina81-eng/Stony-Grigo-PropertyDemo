@@ -1,59 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ingatlanok – SG Property</title>
+  <title>Ingatlanok – Stony & Grigo Property</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""> <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
-    <nav class="menu">
-      <a href="index.html">Kezdőlap</a>
-      <a class="active" href="ingatlanok.html">Ingatlanok</a>
-      <a href="csapat.html">Kollégáink</a>
-      <a href="kapcsolat.html">Kapcsolat</a>
-    </nav>
-  </div>
-</header>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img src="logo_sg.jpg" alt="SG Property" />
+        <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Kezdőlap</a>
+        <a class="active" href="ingatlanok.html">Ingatlanok</a>
+        <a href="csapat.html">Kollégáink</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </nav>
+    </div>
+  </header>
 
-<section class="search-hero" style="background-image:url('bg_rug.jpg')">
-  <div class="container">
-    <div class="search-panel">
-      <div class="search-row">
-        <select class="select">
-          <option>Eladó</option>
-          <option>Kiadó</option>
-          <option>Mediterrán ingatlanok</option>
-        </select>
-        <input class="input" placeholder="Kulcsszó – Mit keres?" />
-        <select class="select"><option>Válassz kategóriát</option></select>
-        <button class="btn">🔎 Keresés</button>
-      </div>
+  <!-- Szőnyeges háttér + üveges kereső -->
+  <section class="hero" style="background-image:url('bg_rug.jpg')">
+    <div class="overlay"></div>
+    <div class="content container">
+      <div class="hero__glass hero__glass--thin">
+        <div class="tabs">
+          <button class="tab active" data-tab="sale">Eladó</button>
+          <button class="tab" data-tab="rent">Kiadó</button>
+          <button class="tab" data-tab="med">Mediterrán ingatlanok</button>
+        </div>
 
-      <div class="filter-row">
-        <select class="select"><option>Lokáció</option></select>
-        <input class="input" placeholder="Alapterület (m² – tól-ig)" />
-        <input class="input" placeholder="Ár (M Ft – tól-ig)" />
-        <label class="select" style="display:flex;align-items:center;gap:10px;justify-content:center;cursor:pointer">
-          <input type="checkbox" style="accent-color:#e7c267"> Részletes szűrés
-        </label>
-      </div>
+        <div class="search-row">
+          <label> Kulcsszó <input type="text" placeholder="Mit keres?"></label>
+          <label> Kategória
+            <select>
+              <option>Válassz kategóriát</option>
+              <option>Lakás</option><option>Ház</option><option>Telek</option>
+              <option>Iroda</option><option>Üzlethelyiség</option><option>Fejlesztési terület</option>
+            </select>
+          </label>
+          <label> Lokáció
+            <select><option>Lokáció</option></select>
+          </label>
+          <button class="btn">🔎 Keresés</button>
+        </div>
 
-      <div class="filter-row">
-        <select class="select"><option>Ingatlan típusa</option></select>
-        <select class="select"><option>Emelet</option></select>
-        <select class="select"><option>Energetikai besorolás</option></select>
-        <select class="select"><option>Fűtés típusa</option></select>
+        <div class="filter-row">
+          <label> Ingatlan típusa
+            <select>
+              <option>Lakás</option><option>Ház</option><option>Nyaraló</option><option>Garázs</option>
+              <option>Iroda</option><option>Üzlethelyiség</option><option>Fejlesztési terület</option><option>Telek</option>
+            </select>
+          </label>
+          <label> Hol keres?
+            <select><option>Budapest</option></select>
+          </label>
+          <label> Alapterület (m² – tól-ig) <input type="text" placeholder="pl. 45 – 90"></label>
+          <label> Ár (M Ft – tól-ig) <input type="text" placeholder="pl. 45 – 120"></label>
+        </div>
+
+        <div class="quick">
+          <a class="btn ghost" href="#">Eladó ingatlanok →</a>
+          <a class="btn ghost" href="#">Kiadó ingatlanok →</a>
+          <a class="btn ghost" href="#">Mediterrán ingatlanok →</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <div class="container">&copy; 2025 Stony &amp; Grigo Property</div>
-</footer>
+  <!-- Partner vetítés alul -->
+  <section class="partners">
+    <div class="partners__track">
+      <img src="p_dosza.jpg" alt="DOSZA" />
+      <img src="p_infinite.jpg" alt="Infinite Catering" />
+      <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
+      <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
+      <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
+      <img src="p_boszporusz.jpg" alt="Boszporusz" />
+      <img src="p_botripsz.jpg" alt="BoTrips" />
+      <!-- ismétlés a folyamatos futáshoz -->
+      <img src="p_dosza.jpg" alt="DOSZA" />
+      <img src="p_infinite.jpg" alt="Infinite Catering" />
+      <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
+      <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
+      <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
+      <img src="p_boszporusz.jpg" alt="Boszporusz" />
+      <img src="p_botripsz.jpg" alt="BoTrips" />
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">&copy; 2025 Stony &amp; Grigo Property</div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
