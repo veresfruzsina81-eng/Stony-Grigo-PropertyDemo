@@ -1,70 +1,84 @@
-<!doctype html><html lang="hu">
+<!DOCTYPE html>
+<html lang="hu">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kollégáink</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kollégáink – Stony & Grigo Property</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="nav">
-  <div class="container navbar nav">
-    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony & Grigo Property & Real Estate Investment</span></a>
-    <nav class="navlinks">
-      <a data-i18n="nav_home" href="index.html">Kezdőlap</a>
-      <a data-i18n="nav_props" href="ingatlanok.html">Ingatlanok</a>
-      <a class="active" data-i18n="nav_team" href="csapat.html">Kollégáink</a>
-      <a data-i18n="nav_partners" href="partnerek.html">Partnereink</a>
-      <a data-i18n="nav_contact" href="kapcsolat.html">Kapcsolat</a>
-      <div class="lang" id="langBox"><button class="langbtn" id="langBtn">🇭🇺 HU ▾</button>
-        <div class="langmenu"><button data-lang="hu"><span class="flag">🇭🇺</span>Magyar</button><button data-lang="en"><span class="flag">🇬🇧</span>English</button><button data-lang="de"><span class="flag">🇩🇪</span>Deutsch</button></div>
-      </div>
-    </nav>
-    <button class="hamb" id="hamb"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<section class="section">
-  <div class="container">
-    <h1 class="center" data-i18n="team_title">Kollégáink</h1>
-    <p class="center" data-i18n="team_sub">Többéves tapasztalatokkal, szakértői csapatunk szívesen áll ügyfeleink rendelkezésére</p>
-
-    <div class="team mt">
-      <div class="card person">
-        <div class="avatar"><img src="t_inotai.jpg" alt=""></div>
-        <div><h3>Inotai István</h3><div>Tulajdonos / Ügyvezető</div><div>+36 30 932 3024</div></div>
-      </div>
-      <div class="card person">
-        <div class="avatar"><img src="t_stony.jpg" alt=""></div>
-        <div><h3>Stony Gábor</h3><div>Tulajdonos / Irodavezető</div><div>+36 30 896 5858</div></div>
-      </div>
-      <div class="card person">
-        <div class="avatar"><img src="t_peter.jpg" alt=""></div>
-        <div><h3>Grigolopoulos Péter</h3><div>Tulajdonos / Értékesítési vezető</div><div>+36 20 278 2490</div></div>
-      </div>
-      <div class="card person">
-        <div class="avatar"><img src="logo_sg.jpg" alt=""></div>
-        <div><h3>Elek Tímea</h3><div>Értékesítési asszisztens</div><div>+36 70 708 9250</div></div>
-      </div>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img src="logo_sg.jpg" alt="SG Property" />
+        <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Kezdőlap</a>
+        <a href="ingatlanok.html">Ingatlanok</a>
+        <a class="active" href="csapat.html">Kollégáink</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<footer><div class="container">© 2025 Stony & Grigo Property</div></footer>
+  <!-- Hero -->
+  <section class="hero" style="background-image:url('hero_lanchid.jpg')">
+    <div class="overlay"></div>
+    <div class="content container">
+      <h1 class="title">Kollégáink</h1>
+      <p class="muted">Többéves tapasztalattal, szakértő csapatunk segít.</p>
+    </div>
+  </section>
 
-<script>
-document.getElementById('hamb').onclick=()=>document.querySelector('header').classList.toggle('open');
-const box=document.getElementById('langBox');document.getElementById('langBtn').onclick=()=>box.classList.toggle('open');
-box.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
-const dict={
- hu:{nav_home:"Kezdőlap",nav_props:"Ingatlanok",nav_team:"Kollégáink",nav_partners:"Partnereink",nav_contact:"Kapcsolat",
-     team_title:"Kollégáink",team_sub:"Többéves tapasztalatokkal, szakértői csapatunk szívesen áll ügyfeleink rendelkezésére"},
- en:{nav_home:"Home",nav_props:"Properties",nav_team:"Our Team",nav_partners:"Partners",nav_contact:"Contact",
-     team_title:"Our Team",team_sub:"Our experienced team is happy to help you."},
- de:{nav_home:"Startseite",nav_props:"Immobilien",nav_team:"Team",nav_partners:"Partner",nav_contact:"Kontakt",
-     team_title:"Unser Team",team_sub:"Unser erfahrenes Team steht Ihnen gerne zur Verfügung."}
-};
-function applyLang(l){document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.dataset.i18n;if(dict[l][k]) e.textContent=dict[l][k]});
-document.getElementById('langBtn').textContent=(l==='en'?'🇬🇧 EN ▾':l==='de'?'🇩🇪 DE ▾':'🇭🇺 HU ▾');localStorage.setItem('lang',l)}
-function setLang(l){applyLang(l);box.classList.remove('open')}
-applyLang(localStorage.getItem('lang')||'hu');
-</script>
-</body></html>
+  <!-- Team grid -->
+  <section class="why" style="padding-top:24px">
+    <div class="container" style="display:grid;gap:16px;grid-template-columns:repeat(2,1fr)">
+      <article class="card" style="display:flex;gap:14px;align-items:center">
+        <img src="t_inotai.jpg" alt="Inotai István" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
+        <div>
+          <h3 style="margin:.2rem 0 .2rem 0">Inotai István</h3>
+          <p class="muted" style="margin:0">Tulajdonos / Ügyvezető</p>
+          <p class="muted" style="margin:.2rem 0 0 0">+36 30 932 3024</p>
+        </div>
+      </article>
+
+      <article class="card" style="display:flex;gap:14px;align-items:center">
+        <img src="t_stony.jpg" alt="Stony Gábor" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
+        <div>
+          <h3 style="margin:.2rem 0 .2rem 0">Stony Gábor</h3>
+          <p class="muted" style="margin:0">Tulajdonos / Irodavezető</p>
+          <p class="muted" style="margin:.2rem 0 0 0">+36 30 896 5858</p>
+        </div>
+      </article>
+
+      <article class="card" style="display:flex;gap:14px;align-items:center">
+        <img src="t_peter.jpg" alt="Grigolopoulos Péter" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
+        <div>
+          <h3 style="margin:.2rem 0 .2rem 0">Grigolopoulos Péter</h3>
+          <p class="muted" style="margin:0">Tulajdonos / Értékesítési vezető</p>
+          <p class="muted" style="margin:.2rem 0 0 0">+36 20 278 2490</p>
+        </div>
+      </article>
+
+      <article class="card" style="display:flex;gap:14px;align-items:center">
+        <img src="logo_sg.jpg" alt="Elek Tímea" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
+        <div>
+          <h3 style="margin:.2rem 0 .2rem 0">Elek Tímea</h3>
+          <p class="muted" style="margin:0">Értékesítési asszisztens</p>
+          <p class="muted" style="margin:.2rem 0 0 0">+36 70 708 9250</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="container" style="display:flex;justify-content:center;margin-top:22px">
+      <img src="logo_sg.jpg" alt="SG Property" style="height:72px;opacity:.9">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">&copy; 2025 Stony &amp; Grigo Property</div>
+  </footer>
+</body>
+</html>
