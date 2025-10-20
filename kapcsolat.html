@@ -1,77 +1,57 @@
-<!doctype html><html lang="hu">
+<!DOCTYPE html>
+<html lang="hu">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kapcsolat</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kapcsolat – Stony & Grigo Property</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="nav">
-  <div class="container navbar nav">
-    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony & Grigo Property & Real Estate Investment</span></a>
-    <nav class="navlinks">
-      <a data-i18n="nav_home" href="index.html">Kezdőlap</a>
-      <a data-i18n="nav_props" href="ingatlanok.html">Ingatlanok</a>
-      <a data-i18n="nav_team" href="csapat.html">Kollégáink</a>
-      <a data-i18n="nav_partners" href="partnerek.html">Partnereink</a>
-      <a class="active" data-i18n="nav_contact" href="kapcsolat.html">Kapcsolat</a>
-      <div class="lang" id="langBox"><button class="langbtn" id="langBtn">🇭🇺 HU ▾</button>
-        <div class="langmenu"><button data-lang="hu"><span class="flag">🇭🇺</span>Magyar</button><button data-lang="en"><span class="flag">🇬🇧</span>English</button><button data-lang="de"><span class="flag">🇩🇪</span>Deutsch</button></div>
-      </div>
-    </nav>
-    <button class="hamb" id="hamb"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<section class="section">
-  <div class="container">
-    <h1 class="center" data-i18n="contact_title">Lépjen velünk kapcsolatba</h1>
-
-    <div class="contact-grid mt">
-      <div class="glass">
-        <iframe class="map" src="https://www.google.com/maps?q=Budapest%2C%20Cimer%20utca%2019/A%201188&output=embed" loading="lazy"></iframe>
-      </div>
-
-      <div class="card">
-        <h3>Stony & Grigo Property</h3>
-        <p>1188 Budapest, Címer utca 19/A</p>
-        <p>📞 +36 30 896 5858</p>
-        <p>✉️ stonyproperty@gmail.com</p>
-        <p>📱 Facebook</p>
-        <hr style="border-color:rgba(255,255,255,.15)">
-        <form class="form">
-          <div class="row">
-            <input class="input" placeholder="Név">
-            <input class="input" placeholder="E-mail">
-          </div>
-          <div class="row">
-            <input class="input" placeholder="Telefon">
-            <div></div>
-          </div>
-          <textarea class="input" placeholder="Üzenet"></textarea>
-          <div class="mt"><button class="btn" type="button" onclick="alert(msgSent)"><span data-i18n="send_btn">Üzenet küldése</span></button></div>
-        </form>
-      </div>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img src="logo_sg.jpg" alt="SG Property" />
+        <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Kezdőlap</a>
+        <a href="ingatlanok.html">Ingatlanok</a>
+        <a href="csapat.html">Kollégáink</a>
+        <a class="active" href="kapcsolat.html">Kapcsolat</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<footer><div class="container">© 2025 Stony & Grigo Property</div></footer>
+  <!-- Hero -->
+  <section class="hero" style="background-image:url('hero_lanchid.jpg')">
+    <div class="overlay"></div>
+    <div class="content container">
+      <h1 class="title">Lépjen velünk kapcsolatba</h1>
+    </div>
+  </section>
 
-<script>
-document.getElementById('hamb').onclick=()=>document.querySelector('header').classList.toggle('open');
-const box=document.getElementById('langBox');document.getElementById('langBtn').onclick=()=>box.classList.toggle('open');
-box.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
-let msgSent="Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.";
-const dict={hu:{nav_home:"Kezdőlap",nav_props:"Ingatlanok",nav_team:"Kollégáink",nav_partners:"Partnereink",nav_contact:"Kapcsolat",contact_title:"Lépjen velünk kapcsolatba",send_btn:"Üzenet küldése"},
-en:{nav_home:"Home",nav_props:"Properties",nav_team:"Our Team",nav_partners:"Partners",nav_contact:"Contact",contact_title:"Get in touch",send_btn:"Send message"},
-de:{nav_home:"Startseite",nav_props:"Immobilien",nav_team:"Team",nav_partners:"Partner",nav_contact:"Kontakt",contact_title:"Kontakt aufnehmen",send_btn:"Nachricht senden"}};
-function applyLang(l){
-  document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.dataset.i18n;if(dict[l][k]) e.textContent=dict[l][k]});
-  document.getElementById('langBtn').textContent=(l==='en'?'🇬🇧 EN ▾':l==='de'?'🇩🇪 DE ▾':'🇭🇺 HU ▾');
-  localStorage.setItem('lang',l);
-  msgSent = (l==='en')?"Thanks! We’ll get back to you soon.":(l==='de')?"Danke! Wir melden uns bald.":"Köszönjük! Hamarosan felvesszük Önnel a kapcsolatot.";
-}
-function setLang(l){applyLang(l);box.classList.remove('open')}
-applyLang(localStorage.getItem('lang')||'hu');
-</script>
-</body></html>
+  <!-- Térkép + adatok (űrlap nélkül) -->
+  <section class="why" style="padding-top:24px">
+    <div class="container" style="display:grid;gap:16px;grid-template-columns:1.2fr .8fr">
+      <article class="card" style="padding:0;overflow:hidden">
+        <iframe
+          src="https://www.google.com/maps?q=Budapest%2C%20C%C3%ADmer%20utca%2019%2FA&output=embed"
+          style="width:100%;height:420px;border:0;display:block"></iframe>
+      </article>
+
+      <article class="card">
+        <h3 style="margin:.2rem 0 .6rem 0">Stony &amp; Grigo Property</h3>
+        <p class="muted" style="margin:0 0 .5rem 0">1188 Budapest, Címer utca 19/A</p>
+        <p style="margin:.2rem 0">📞 +36 30 896 5858</p>
+        <p style="margin:.2rem 0">✉️ stonyproperty@gmail.com</p>
+        <p style="margin:.2rem 0">🌐 Facebook</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">&copy; 2025 Stony &amp; Grigo Property</div>
+  </footer>
+</body>
+</html>
