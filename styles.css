@@ -1,107 +1,178 @@
 :root{
-  --bg1:#0f2430; --bg2:#133b52;
-  --nav:#163448e6; --footer:#163448e6;
-  --txt:#eaf6ff; --muted:#d7e7f2;
-  --ring:rgba(255,255,255,.16);
-  --card:rgba(255,255,255,.08);
-  --glass:rgba(255,255,255,.14);      /* VILÁGOS üveg */
-  --glass-weak:rgba(255,255,255,.10); /* halvány üveg */
-  --gold:#f0c56b;
+  /* Barátságosabb, világosabb kékek */
+  --bg1:#1e5b7a;         /* háttér teteje */
+  --bg2:#2f7ea6;         /* háttér alja */
+  --nav:#2b7096ee;       /* fejléc */
+  --footer:#2b7096ee;    /* lábléc */
+  --txt:#0e2533;         /* alap sötétkék szöveg világos üvegen */
+  --txt-on-dark:#eef7fc; /* sötét hátteren */
+  --muted:#34596d;
+  --ring:rgba(0,0,0,.12);
+
+  /* Üveg/fehér felületek a jobb olvashatósághoz */
+  --glass:#ffffffa6;       /* fehéres üveg, jó kontraszt */
+  --glass-weak:#ffffff8c;  /* enyhébb üveg */
+  --card:#ffffffc2;        /* kártyák háttér */
+  --brand:#f0c56b;         /* gomb arany */
 }
+
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--txt);
-  font:400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+html,body{
+  margin:0;padding:0;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--txt-on-dark);
+  font:400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial
+}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .container{width:min(1100px,92%);margin:0 auto}
 
-/* NAV – világosabb kék, mint a lábléc */
-.nav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:saturate(140%) blur(10px);
-  border-bottom:1px solid var(--ring)}
+/* ===== NAV – világos, fehérebb nyelvválasztóval ===== */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:var(--nav);backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--ring); color:var(--txt-on-dark)
+}
 .nav-inner{display:flex;align-items:center;gap:16px;padding:10px 0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .brand img{width:34px;height:34px;border-radius:8px;object-fit:cover}
 .menu{margin-left:auto;display:flex;gap:16px;align-items:center}
 .menu a{padding:8px 10px;border-radius:10px;opacity:.95}
-.menu a:hover,.menu a.active{background:rgba(255,255,255,.10);opacity:1}
+.menu a:hover,.menu a.active{background:rgba(255,255,255,.15);opacity:1}
 
-/* Nyelvválasztó (üveg) */
+/* Nyelvválasztó – FEHÉR háttér + sötét betű */
 .lang{position:relative}
-.langbtn{display:flex;align-items:center;gap:8px;background:var(--glass-weak);
-  border:1px solid var(--ring);padding:8px 12px;border-radius:12px;cursor:pointer}
+.langbtn{
+  display:flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--ring);
+  padding:8px 12px;border-radius:12px;cursor:pointer;color:#123040
+}
 .flag{width:20px;height:14px;border-radius:2px}
-.langmenu{position:absolute;right:0;top:calc(100% + 8px);background:#0f2736f2;border:1px solid var(--ring);
-  border-radius:12px;overflow:hidden;min-width:200px;display:none}
+.langmenu{
+  position:absolute;right:0;top:calc(100% + 8px);
+  background:#fff;border:1px solid var(--ring);
+  border-radius:12px;overflow:hidden;min-width:200px;display:none;color:#123040
+}
 .lang.open .langmenu{display:block}
-.langmenu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;background:transparent;border:0;color:var(--txt);cursor:pointer}
-.langmenu button:hover{background:rgba(255,255,255,.10)}
+.langmenu button{
+  display:flex;align-items:center;gap:10px;width:100%;
+  padding:10px 12px;background:transparent;border:0;cursor:pointer;color:#123040
+}
+.langmenu button:hover{background:#f3f6f8}
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{min-height:68vh;position:relative;display:grid;place-items:center;background-size:cover;background-position:center}
-.hero .overlay{position:absolute;inset:0;
-  /* erősebb olvashatóság a kezdőlapon: */
-  background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.46))}
+.hero .overlay{
+  position:absolute;inset:0;
+  /* erősebb olvashatóság a kezdőlapon */
+  background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.38))
+}
 .hero .content{position:relative;text-align:center}
-.title{font-size:clamp(32px,6vw,56px);line-height:1.05;margin:0 0 10px;text-shadow:0 10px 30px rgba(0,0,0,.5)}
-.muted{color:#f1f7fb;opacity:.92;text-shadow:0 8px 22px rgba(0,0,0,.45)}
-.smallnote{color:#e9f3fa;opacity:.96}
+.title{font-size:clamp(32px,6vw,56px);line-height:1.05;margin:0 0 10px;text-shadow:0 12px 28px rgba(0,0,0,.35)}
+.muted{color:#e9f4fb;text-shadow:0 10px 24px rgba(0,0,0,.32)}
+.smallnote{color:#f2f9ff}
 
-/* „Miért minket” */
+/* ===== Profi „Miért minket” – változatos, nem egyforma kockák ===== */
 .why{padding:48px 0}
-.why h2{margin:0 0 6px}
-.logos{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
-.logo-item{background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px}
-.logo-item img{width:48px;height:48px;border-radius:10px;object-fit:cover;opacity:.95}
-.logo-item p{margin:0;font-weight:600}
-@media(max-width:900px){.logos{grid-template-columns:repeat(2,1fr)}}
+.why h2{margin:0 0 8px}
+.why .lead{color:#ecf6fc;margin:0 0 18px}
+.why-pro{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:14px
+}
+.feature{
+  background:var(--card); color:var(--txt);
+  border:1px solid var(--ring); border-radius:18px; padding:16px;
+  display:flex; gap:12px; align-items:flex-start;
+  box-shadow:0 10px 28px rgba(0,0,0,.08)
+}
+.feature .fx{
+  width:38px;height:38px;border-radius:12px;
+  display:grid;place-items:center;
+  background:#fff;border:1px solid var(--ring)
+}
+.feature h3{margin:.1rem 0 .15rem 0;font-size:1rem}
+.feature p{margin:0;color:#35586a}
+.feature.span2{grid-column:span 2}
+.feature.span3{grid-column:span 3}
+.feature.span6{grid-column:span 6}
+@media(max-width:940px){
+  .why-pro{grid-template-columns:repeat(2,1fr)}
+  .feature.span3,.feature.span6{grid-column:span 2}
+}
 
-/* Alsó Lánchíd */
-.bottom-hero{min-height:48vh;background:url("hero_lanchid.jpg") center/cover no-repeat;position:relative;display:grid;place-items:center}
-.bottom-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.40))}
+/* ===== Alsó Lánchíd ===== */
+.bottom-hero{
+  min-height:48vh;background:url("hero_lanchid.jpg") center/cover no-repeat;
+  position:relative;display:grid;place-items:center;color:var(--txt-on-dark)
+}
+.bottom-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.38))}
 .bottom-hero .content{position:relative;text-align:center;padding:18px}
 .bottom-hero h2{margin:0 0 8px;font-size:clamp(28px,4.5vw,44px)}
-.bottom-hero p{margin:0;color:var(--muted)}
+.bottom-hero p{margin:0;color:#e8f4fb}
 
-/* Lábléc */
-.footer{border-top:1px solid var(--ring);background:var(--footer);color:var(--muted);padding:22px 0;text-align:center}
+/* ===== Lábléc ===== */
+.footer{
+  border-top:1px solid var(--ring);background:var(--footer);
+  color:#eef6fb;padding:22px 0;text-align:center
+}
 
-/* Ingatlanok kereső – VILÁGOS üveg + egységes rács */
-.hero__glass{position:relative;z-index:2;max-width:1100px;width:92%;margin:auto;background:var(--glass);
-  border:1px solid var(--ring);border-radius:20px;backdrop-filter:blur(14px);padding:18px}
+/* ===== Ingatlanok: világos ÜVEG + sötétebb betűk ===== */
+.hero__glass{
+  position:relative;z-index:2;max-width:1100px;width:92%;margin:auto;
+  background:var(--glass); color:var(--txt);
+  border:1px solid var(--ring); border-radius:20px;
+  backdrop-filter:blur(14px); padding:18px
+}
 .hero__glass--thin{max-width:980px}
 .tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.tab{padding:8px 14px;border-radius:14px;border:1px solid var(--ring);background:var(--glass-weak);color:var(--txt);cursor:pointer}
-.tab.active,.tab:hover{background:var(--gold);color:#1d232a;border-color:transparent}
+.tab{
+  padding:8px 14px;border-radius:14px;border:1px solid var(--ring);
+  background:#ffffffd9;color:#113146;cursor:pointer
+}
+.tab.active,.tab:hover{background:var(--brand);color:#1e1e1e;border-color:transparent}
 .search-row,.filter-row{display:grid;gap:12px;align-items:end}
 .search-row{grid-template-columns:1.2fr 1fr 1fr auto}
 .filter-row{grid-template-columns:repeat(4,1fr)}
 @media(max-width:900px){.search-row,.filter-row{grid-template-columns:1fr}}
-.hero__glass input,.hero__glass select,.btn{height:46px;border-radius:12px;border:1px solid var(--ring);background:var(--glass-weak);color:var(--txt);padding:0 12px}
-.btn{background:var(--gold);color:#2b240e;border:0;font-weight:700;cursor:pointer}
-.btn.ghost{background:transparent;border:1px solid var(--ring);color:var(--txt)}
+
+.hero__glass input,
+.hero__glass select,
+.btn{
+  height:46px;border-radius:12px;border:1px solid var(--ring);
+  background:#ffffffee;color:#0e2533;padding:0 12px
+}
+.hero__glass input::placeholder{color:#5c7a8b}
+.btn{background:var(--brand);color:#2b240e;border:0;font-weight:700;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid var(--ring);color:#0e2533}
 .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 
-/* Marketing blokk (ingatlanok alján vetítés helyett) */
-.marketing{padding:34px 0;background:rgba(255,255,255,.04);border-top:1px solid var(--ring)}
-.marketing .box{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap}
-.marketing img{height:54px;border-radius:10px}
-.marketing h3{margin:0;font-size:clamp(20px,3.4vw,28px)}
-.marketing p{margin:6px 0 0;color:var(--muted)}
-
-/* Partnerek vetítés – CSAK a „Partnereink” lapon marad */
-.marquee{position:relative;width:100%;overflow:hidden;background:rgba(255,255,255,.04);border-top:1px solid var(--ring)}
-.marquee .track{display:flex;gap:22px;align-items:center;padding:12px 0;animation:scroll 28s linear infinite}
-.marquee img{height:56px;width:auto;border-radius:10px;filter:saturate(105%)}
-.marquee .track:hover{animation-play-state:paused}
+/* ===== Marketing SZÖVEG vetítve (scroll) logóval – ingatlanok alja ===== */
+.marketing{padding:0;background:#ffffff20;border-top:1px solid var(--ring)}
+.marquee-text{position:relative;overflow:hidden}
+.marquee-text .track{
+  display:flex;gap:24px;align-items:center;padding:14px 0;
+  animation:scroll 28s linear infinite; white-space:nowrap
+}
+.marquee-text .chip{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#ffffffd1;border:1px solid var(--ring);border-radius:999px;
+  padding:8px 14px;color:#0e2533
+}
+.marquee-text img{height:26px;width:auto;border-radius:6px}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* Kártya */
-.card{background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:16px}
+/* ===== Kártyák ===== */
+.card{
+  background:var(--card); color:var(--txt);
+  border:1px solid var(--ring); border-radius:16px; padding:16px
+}
 
-/* Kontakt ikon sor */
+/* ===== Kapcsolat – ikon sor ===== */
 .kontakt ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.kontakt li{display:flex;align-items:center;gap:10px}
-.icon{width:22px;height:22px;display:inline-grid;place-items:center;border-radius:8px;background:var(--glass-weak);border:1px solid var(--ring)}
+.kontakt li{display:flex;align-items:center;gap:10px;color:var(--txt)}
+.icon{
+  width:26px;height:26px;display:inline-grid;place-items:center;
+  border-radius:8px;background:#fff;border:1px solid var(--ring);color:#0e2533
+}
 
-/* Responsív */
 @media(max-width:760px){.brand span{display:none}}
