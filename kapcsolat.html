@@ -1,83 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stony & Grigo Property – Kapcsolat</title>
-<meta name="theme-color" content="#11384f">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kapcsolat – Stony & Grigo Property</title>
+<link rel="stylesheet" href="styles.css">
 <style>
-:root{--brand:#d7b461;--bg:#11384f;--bg2:#0d2c40;--text:#eaf3f9;--mut:#cfe0ea;--line:rgba(255,255,255,.16);--glass:rgba(10,27,42,.45)}
-*{box-sizing:border-box} html,body{margin:0;color:var(--text);background:linear-gradient(180deg,var(--bg),var(--bg2));font:16px/1.5 system-ui,Segoe UI,Inter,Arial}
-.header{position:sticky;top:0;z-index:50;background:rgba(12,31,46,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:18px;padding:10px 16px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700}
-.brand img{width:34px;height:34px;object-fit:contain}
-.spacer{flex:1}
-.menu{display:flex;gap:20px;align-items:center}
-.menu a{color:var(--text);text-decoration:none;opacity:.9}
-.menu a:hover,.menu a.active{opacity:1;border-bottom:2px solid var(--brand)}
-.lang{position:relative}
-.langBtn{display:flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.06);cursor:pointer}
-.flag{width:18px;height:12px;display:inline-block;background-size:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.3)}
-.flag.hu{background-image:url('flag_hu.svg')}
-.flag.en{background-image:url('flag_gb.svg')}
-.flag.de{background-image:url('flag_de.svg')}
-.langMenu{position:absolute;right:0;top:40px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;display:none}
-.lang:hover .langMenu{display:block}
-.main{max-width:1200px;margin:28px auto;padding:0 16px}
-.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
-.card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;padding:14px}
-.map{aspect-ratio:16/9;width:100%;border:0;border-radius:12px}
-label{display:block;margin:.5rem 0 .25rem;color:var(--mut)}
-input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text)}
-button{margin-top:10px;padding:12px 16px;border-radius:14px;border:0;background:var(--brand);color:#1b1b1b;font-weight:700}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.contact{max-width:1200px; margin:36px auto; padding:0 16px; display:grid; grid-template-columns:1.2fr 1fr; gap:18px}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+.map{border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.25)}
 </style>
 </head>
 <body>
 <header class="header">
-  <nav class="nav">
-    <a class="brand" href="index.html"><img src="sg_logo.png" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
-    <div class="spacer"></div>
-    <div class="menu">
-      <a href="index.html">Kezdőlap</a>
-      <a href="ingatlanok.html">Ingatlanok</a>
-      <a href="csapat.html">Kollégáink</a>
-      <a class="active" href="kapcsolat.html">Kapcsolat</a>
-      <div class="lang">
-        <button class="langBtn"><i class="flag hu"></i> HU ▾</button>
-        <div class="langMenu">
-          <button><i class="flag hu"></i> Magyar</button>
-          <button><i class="flag en"></i> English</button>
-          <button><i class="flag de"></i> Deutsch</button>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="logo_sg.png" alt="SG logó"><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
+    <nav class="nav">
+      <a href="index.html" data-i18n="nav.home">Kezdőlap</a>
+      <a href="ingatlanok.html" data-i18n="nav.props">Ingatlanok</a>
+      <a href="csapat.html" data-i18n="nav.team">Kollégáink</a>
+      <a class="active" href="kapcsolat.html" data-i18n="nav.contact">Kapcsolat</a>
+      <div class="lang" id="lang"><button class="lang-btn" type="button"><span id="flagNow">🇭🇺</span><b id="langNow">HU</b></button><div class="flags"><button data-lang="hu">🇭🇺 Magyar</button><button data-lang="en">🇬🇧 English</button><button data-lang="de">🇩🇪 Deutsch</button></div></div>
+    </nav>
+  </div>
 </header>
 
-<main class="main">
-  <div class="grid">
-    <section class="card">
-      <h1>Lépjen velünk kapcsolatba</h1>
-      <p><strong>Stony &amp; Grigo Property</strong><br>1188 Budapest, Címer utca 19/A</p>
-      <p>📞 <a href="tel:+36308965858" style="color:inherit">+36 30 896 5858</a><br>
-         ✉️ <a href="mailto:stonyproperty@gmail.com" style="color:inherit">stonyproperty@gmail.com</a></p>
-      <iframe class="map" loading="lazy"
-        src="https://www.google.com/maps?q=Budapest%2C%20C%C3%ADmer%20utca%2019%2FA&output=embed"
-        allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-    <section class="card">
-      <h2>Írjon üzenetet</h2>
-      <form onsubmit="event.preventDefault(); alert('Köszönjük! (Demó űrlap)');">
-        <label>Név</label><input required placeholder="Teljes név">
-        <label>E-mail</label><input type="email" required placeholder="nev@example.com">
-        <label>Telefon</label><input placeholder="+36 ...">
-        <label>Üzenet</label><textarea rows="5" required placeholder="Miben segíthetünk?"></textarea>
-        <button type="submit">Üzenet küldése</button>
-      </form>
-    </section>
+<section class="hero" aria-label="Lánchíd">
+  <img src="hero_lanchid.jpg" alt="Lánchíd">
+  <div class="hero-inner">
+    <h1 data-i18n="c.title">Lépjen velünk kapcsolatba</h1>
   </div>
-</main>
+</section>
+
+<section class="contact">
+  <div class="map">
+    <iframe title="Térkép" src="https://www.google.com/maps?q=Budapest,+C%C3%ADmer+utca+19/A&output=embed" width="100%" height="420" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <form class="glass" onsubmit="event.preventDefault(); alert('Köszönjük!');">
+    <h2 style="margin-top:0" data-i18n="c.form">Írjon üzenetet</h2>
+    <label data-i18n="c.name">Név</label>
+    <input class="input" placeholder="Teljes név" data-i18n-ph="c.name_ph" required>
+    <label>E-mail</label>
+    <input class="input" type="email" placeholder="nev@example.com" required>
+    <label data-i18n="c.phone">Telefon</label>
+    <input class="input" placeholder="+36..." required>
+    <label data-i18n="c.msg">Üzenet</label>
+    <textarea class="input" rows="5" placeholder="Írja meg az üzenetét..." data-i18n-ph="c.msg_ph"></textarea>
+    <div class="row" style="margin-top:12px; align-items:center; justify-content:space-between">
+      <div class="row" style="gap:8px; color:var(--muted)">
+        <span>🇭🇺</span><span>🇬🇧</span><span>🇩🇪</span>
+      </div>
+      <button class="btn" data-i18n="c.send">Üzenet küldése</button>
+    </div>
+    <hr style="border-color:rgba(255,255,255,.06)">
+    <p style="margin:0; color:var(--muted)">
+      <strong>Stony &amp; Grigo Property</strong><br>
+      1188 Budapest, Címer utca 19/A • +36 30 896 5858 • stonyproperty@gmail.com
+    </p>
+  </form>
+</section>
+
+<footer>© 2025 Stony &amp; Grigo Property • 1188 Budapest, Címer utca 19/A</footer>
+
+<script>
+const dict={
+  hu:{'nav.home':'Kezdőlap','nav.props':'Ingatlanok','nav.team':'Kollégáink','nav.contact':'Kapcsolat',
+      'c.title':'Lépjen velünk kapcsolatba','c.form':'Írjon üzenetet','c.name':'Név','c.name_ph':'Teljes név','c.phone':'Telefon','c.msg':'Üzenet','c.msg_ph':'Üzenet szövege','c.send':'Üzenet küldése'},
+  en:{'nav.home':'Home','nav.props':'Properties','nav.team':'Our Team','nav.contact':'Contact',
+      'c.title':'Get in touch','c.form':'Send a message','c.name':'Name','c.name_ph':'Full name','c.phone':'Phone','c.msg':'Message','c.msg_ph':'Type your message','c.send':'Send message'},
+  de:{'nav.home':'Startseite','nav.props':'Immobilien','nav.team':'Team','nav.contact':'Kontakt',
+      'c.title':'Kontakt aufnehmen','c.form':'Nachricht senden','c.name':'Name','c.name_ph':'Vollständiger Name','c.phone':'Telefon','c.msg':'Nachricht','c.msg_ph':'Ihre Nachricht','c.send':'Nachricht senden'}
+};
+function applyLang(l){
+  localStorage.setItem('lang', l);
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n; if(dict[l][k]) el.textContent=dict[l][k];});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.dataset.i18nPh; if(dict[l][k]) el.placeholder=dict[l][k];});
+  const map={hu:'🇭🇺',en:'🇬🇧',de:'🇩🇪'}; flagNow.textContent=map[l]; langNow.textContent=l.toUpperCase();
+}
+(function(){
+  const lang = document.getElementById('lang');
+  lang.querySelector('.lang-btn').onclick=()=>lang.classList.toggle('open');
+  lang.querySelectorAll('.flags button').forEach(b=>b.onclick=()=>{applyLang(b.dataset.lang); lang.classList.remove('open');});
+  window.flagNow=document.getElementById('flagNow'); window.langNow=document.getElementById('langNow');
+  applyLang(localStorage.getItem('lang')||'hu');
+})();
+</script>
 </body>
 </html>
