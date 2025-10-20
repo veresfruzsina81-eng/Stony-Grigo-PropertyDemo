@@ -1,101 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stony & Grigo Property – Kollégáink</title>
-<meta name="theme-color" content="#11384f">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kollégáink – Stony & Grigo Property</title>
+<link rel="stylesheet" href="styles.css">
 <style>
-:root{--brand:#d7b461;--bg:#11384f;--bg2:#0d2c40;--text:#eaf3f9;--mut:#cfe0ea;--line:rgba(255,255,255,.16)}
-*{box-sizing:border-box} html,body{margin:0;color:var(--text);background:linear-gradient(180deg,var(--bg),var(--bg2));font:16px/1.5 system-ui,Segoe UI,Inter,Arial}
-.header{position:sticky;top:0;z-index:50;background:rgba(12,31,46,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:18px;padding:10px 16px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700}
-.brand img{width:34px;height:34px;object-fit:contain}
-.spacer{flex:1}
-.menu{display:flex;gap:20px;align-items:center}
-.menu a{color:var(--text);text-decoration:none;opacity:.9}
-.menu a:hover,.menu a.active{opacity:1;border-bottom:2px solid var(--brand)}
-.lang{position:relative}
-.langBtn{display:flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.06);cursor:pointer}
-.flag{width:18px;height:12px;display:inline-block;background-size:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.3)}
-.flag.hu{background-image:url('flag_hu.svg')}
-.flag.en{background-image:url('flag_gb.svg')}
-.flag.de{background-image:url('flag_de.svg')}
-.langMenu{position:absolute;right:0;top:40px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:12px;display:none}
-.lang:hover .langMenu{display:block}
-
-.main{max-width:1200px;margin:28px auto;padding:0 16px}
-h1{margin:12px 0 18px}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.card{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.portrait{width:100%;aspect-ratio:1/1;object-fit:cover}
-.info{padding:14px}
-.name{font-weight:800;margin:2px 0 6px}
-.role{color:var(--mut);margin:0 0 8px}
-.phone{color:var(--text);opacity:.9;text-decoration:none}
-@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.grid{grid-template-columns:1fr}}
+.cards{max-width:1200px;margin:36px auto;padding:0 16px;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:900px){.cards{grid-template-columns:1fr}}
+.card{background:var(--glass); border:1px solid var(--ring); border-radius:16px; padding:16px; display:flex; gap:16px; align-items:center}
+.card img{width:84px;height:84px;object-fit:cover;border-radius:999px;border:2px solid rgba(255,255,255,.3)}
+.card h3{margin:0 0 4px}
+.card p{margin:0; color:var(--muted)}
 </style>
 </head>
 <body>
 <header class="header">
-  <nav class="nav">
-    <a class="brand" href="index.html"><img src="sg_logo.png" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
-    <div class="spacer"></div>
-    <div class="menu">
-      <a href="index.html">Kezdőlap</a>
-      <a href="ingatlanok.html">Ingatlanok</a>
-      <a class="active" href="csapat.html">Kollégáink</a>
-      <a href="kapcsolat.html">Kapcsolat</a>
-      <div class="lang">
-        <button class="langBtn"><i class="flag hu"></i> HU ▾</button>
-        <div class="langMenu">
-          <button><i class="flag hu"></i> Magyar</button>
-          <button><i class="flag en"></i> English</button>
-          <button><i class="flag de"></i> Deutsch</button>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="logo_sg.png" alt="SG logó"><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
+    <nav class="nav">
+      <a href="index.html" data-i18n="nav.home">Kezdőlap</a>
+      <a href="ingatlanok.html" data-i18n="nav.props">Ingatlanok</a>
+      <a class="active" href="csapat.html" data-i18n="nav.team">Kollégáink</a>
+      <a href="kapcsolat.html" data-i18n="nav.contact">Kapcsolat</a>
+      <div class="lang" id="lang"><button class="lang-btn" type="button"><span id="flagNow">🇭🇺</span><b id="langNow">HU</b></button><div class="flags"><button data-lang="hu">🇭🇺 Magyar</button><button data-lang="en">🇬🇧 English</button><button data-lang="de">🇩🇪 Deutsch</button></div></div>
+    </nav>
+  </div>
 </header>
 
-<main class="main">
-  <h1>Kollégáink</h1>
-  <div class="grid">
-    <article class="card">
-      <img class="portrait" src="team_inotai.jpg" alt="Inotai István">
-      <div class="info">
-        <div class="name">Inotai István</div>
-        <div class="role">Tulajdonos / Ügyvezető</div>
-        <a class="phone" href="tel:+36309323024">+36 30 932 3024</a>
-      </div>
-    </article>
-    <article class="card">
-      <img class="portrait" src="team_stony.jpg" alt="Stony Gábor">
-      <div class="info">
-        <div class="name">Stony Gábor</div>
-        <div class="role">Tulajdonos / Irodavezető</div>
-        <a class="phone" href="tel:+36308965858">+36 30 896 5858</a>
-      </div>
-    </article>
-    <article class="card">
-      <img class="portrait" src="team_grigo.jpg" alt="Grigolopoulos Péter">
-      <div class="info">
-        <div class="name">Grigolopoulos Péter</div>
-        <div class="role">Tulajdonos / Értékesítési vezető</div>
-        <a class="phone" href="tel:+36202782490">+36 20 278 2490</a>
-      </div>
-    </article>
-    <article class="card">
-      <img class="portrait" src="sg_logo.png" alt="Elek Tímea (logó)">
-      <div class="info">
-        <div class="name">Elek Tímea</div>
-        <div class="role">Értékesítési asszisztens</div>
-        <a class="phone" href="tel:+36707089250">+36 70 708 9250</a>
-      </div>
-    </article>
+<section class="section">
+  <h2 data-i18n="team.title">Kollégáink</h2>
+  <p style="color:var(--muted); margin-top:8px" data-i18n="team.lead">Többéves tapasztalattal, szakértői csapatunk szívesen áll rendelkezésére.</p>
+</section>
+
+<div class="cards">
+  <div class="card">
+    <img src="t_inotai.jpg" alt="Inotai István" onerror="this.src='p_sg.jpg'">
+    <div><h3>Inotai István</h3><p data-i18n="team.role1">Tulajdonos / Ügyvezető</p><p>+36 30 932 3024</p></div>
   </div>
-</main>
+  <div class="card">
+    <img src="t_stony.jpg" alt="Stony Gábor" onerror="this.src='p_sg.jpg'">
+    <div><h3>Stony Gábor</h3><p data-i18n="team.role2">Tulajdonos / Irodavezető</p><p>+36 30 896 5858</p></div>
+  </div>
+  <div class="card">
+    <img src="t_peter.jpg" alt="Grigolopoulos Péter" onerror="this.src='p_sg.jpg'">
+    <div><h3>Grigolopoulos Péter</h3><p data-i18n="team.role3">Tulajdonos / Értékesítési vezető</p><p>+36 20 278 2490</p></div>
+  </div>
+  <div class="card">
+    <img src="t_timea.jpg" alt="Elek Tímea" onerror="this.src='p_sg.jpg'">
+    <div><h3>Elek Tímea</h3><p data-i18n="team.role4">Értékesítési asszisztens</p><p>+36 70 708 9250</p></div>
+  </div>
+</div>
+
+<footer>© 2025 Stony &amp; Grigo Property • 1188 Budapest, Címer utca 19/A</footer>
+
+<script>
+const dict={
+  hu:{'nav.home':'Kezdőlap','nav.props':'Ingatlanok','nav.team':'Kollégáink','nav.contact':'Kapcsolat',
+      'team.title':'Kollégáink','team.lead':'Többéves tapasztalattal, szakértői csapatunk szívesen áll rendelkezésére.',
+      'team.role1':'Tulajdonos / Ügyvezető','team.role2':'Tulajdonos / Irodavezető','team.role3':'Tulajdonos / Értékesítési vezető','team.role4':'Értékesítési asszisztens'},
+  en:{'nav.home':'Home','nav.props':'Properties','nav.team':'Our Team','nav.contact':'Contact',
+      'team.title':'Our Team','team.lead':'With years of experience, our experts are here to help.',
+      'team.role1':'Owner / Managing Director','team.role2':'Owner / Office Manager','team.role3':'Owner / Head of Sales','team.role4':'Sales Assistant'},
+  de:{'nav.home':'Startseite','nav.props':'Immobilien','nav.team':'Team','nav.contact':'Kontakt',
+      'team.title':'Unser Team','team.lead':'Mit langjähriger Erfahrung stehen wir Ihnen gerne zur Verfügung.',
+      'team.role1':'Eigentümer / Geschäftsführer','team.role2':'Eigentümer / Büroleiter','team.role3':'Eigentümer / Vertriebsleiter','team.role4':'Verkaufsassistentin'}
+};
+function applyLang(l){
+  localStorage.setItem('lang', l);
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n; if(dict[l][k]) el.textContent=dict[l][k];});
+  const map={hu:'🇭🇺',en:'🇬🇧',de:'🇩🇪'}; flagNow.textContent=map[l]; langNow.textContent=l.toUpperCase();
+}
+(function(){
+  const lang = document.getElementById('lang');
+  lang.querySelector('.lang-btn').onclick=()=>lang.classList.toggle('open');
+  lang.querySelectorAll('.flags button').forEach(b=>b.onclick=()=>{applyLang(b.dataset.lang); lang.classList.remove('open');});
+  window.flagNow=document.getElementById('flagNow'); window.langNow=document.getElementById('langNow');
+  applyLang(localStorage.getItem('lang')||'hu');
+})();
+</script>
 </body>
 </html>
