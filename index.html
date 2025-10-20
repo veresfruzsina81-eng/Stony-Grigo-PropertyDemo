@@ -1,146 +1,140 @@
-<!DOCTYPE html>
-<html lang="hu">
+<!doctype html><html lang="hu">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Stony & Grigo Property & Real Estate Investment</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stony & Grigo Property – Kezdőlap</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+.hero{background-image:url('hero_lanchid.jpg')}
+.bullets{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:26px}
+.bullets .item{display:flex;gap:14px;align-items:center}
+.bullets .icon{width:54px;height:54px;border-radius:999px;overflow:hidden;border:1px solid var(--glass-line);background:rgba(255,255,255,.08);display:grid;place-items:center}
+@media(max-width:900px){.bullets{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-<header class="header">
-  <div class="wrap">
+<header class="nav">
+  <div class="container navbar nav">
     <a class="brand" href="index.html">
-      <img src="logo_sg.jpg" alt="SG logó">
-      <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
+      <img src="logo_sg.jpg" alt="SG logo">
+      <span>Stony & Grigo Property & Real Estate Investment</span>
     </a>
-    <nav class="nav">
-      <a class="active" data-i18n="nav.home" href="index.html">Kezdőlap</a>
-      <a data-i18n="nav.props" href="ingatlanok.html">Ingatlanok</a>
-      <a data-i18n="nav.team" href="csapat.html">Kollégáink</a>
-      <a data-i18n="nav.contact" href="kapcsolat.html">Kapcsolat</a>
-      <div class="lang" id="lang">
-        <button class="lang-btn" type="button"><span id="flagNow">🇭🇺</span><b id="langNow">HU</b></button>
-        <div class="flags">
-          <button data-lang="hu">🇭🇺 Magyar</button>
-          <button data-lang="en">🇬🇧 English</button>
-          <button data-lang="de">🇩🇪 Deutsch</button>
+
+    <nav class="navlinks">
+      <a class="active" data-i18n="nav_home" href="index.html">Kezdőlap</a>
+      <a data-i18n="nav_props" href="ingatlanok.html">Ingatlanok</a>
+      <a data-i18n="nav_team" href="csapat.html">Kollégáink</a>
+      <a data-i18n="nav_partners" href="partnerek.html">Partnereink</a>
+      <a data-i18n="nav_contact" href="kapcsolat.html">Kapcsolat</a>
+
+      <div class="lang" id="langBox">
+        <button class="langbtn" id="langBtn">🇭🇺 HU ▾</button>
+        <div class="langmenu">
+          <button data-lang="hu"><span class="flag">🇭🇺</span>Magyar</button>
+          <button data-lang="en"><span class="flag">🇬🇧</span>English</button>
+          <button data-lang="de"><span class="flag">🇩🇪</span>Deutsch</button>
         </div>
       </div>
     </nav>
+
+    <button class="hamb" id="hamb"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<section class="hero" aria-label="Budapesti Lánchíd">
-  <img src="hero_lanchid.jpg" alt="Lánchíd naplementében">
-  <div class="hero-inner">
-    <h1 data-i18n="hero.title">Találj új otthonra</h1>
-    <p data-i18n="hero.lead">Együtt megálmodjuk a következő lépést.</p>
-    <a class="btn" href="csapat.html" data-i18n="hero.cta">Kollégáink →</a>
-  </div>
-</section>
-
-<section class="section" aria-labelledby="partnerek">
-  <h2 id="partnerek" data-i18n="partners.title">Partnereink</h2>
-
-  <!-- Mobil: 2×2 rács / auto vetítés -->
-  <div class="grid" id="partnerGrid" aria-hidden="true">
-    <div class="logo"><img src="p_botrips.jpg" alt="BoTrips"></div>
-    <div class="logo"><img src="p_infinite.jpg" alt="Infinite Catering"></div>
-    <div class="logo"><img src="p_fenyvesy.jpg" alt="Fenyvesy Rudolf"></div>
-    <div class="logo"><img src="p_dosza.jpg" alt="DOSZA"></div>
-  </div>
-
-  <!-- Asztali: futószalag -->
-  <div class="partners" id="partnerStrip" aria-hidden="false">
-    <div class="track">
-      <div class="logo"><img src="p_botrips.jpg" alt="BoTrips"></div>
-      <div class="logo"><img src="p_infinite.jpg" alt="Infinite Catering"></div>
-      <div class="logo"><img src="p_fenyvesy.jpg" alt="Fenyvesy Rudolf"></div>
-      <div class="logo"><img src="p_dosza.jpg" alt="DOSZA"></div>
-      <div class="logo"><img src="p_jan_mara.jpg" alt="Jan-Mára BT"></div>
-      <div class="logo"><img src="p_boszporusz.jpg" alt="Boszporusz Gyros"></div>
-      <div class="logo"><img src="p_kkbazis.jpg" alt="K.K. Bázis Kft."></div>
-      <div class="logo"><img src="p_sg.jpg" alt="SG Property"></div>
-      <!-- duplázás a végtelenítéshez -->
-      <div class="logo"><img src="p_botrips.jpg" alt="BoTrips"></div>
-      <div class="logo"><img src="p_infinite.jpg" alt="Infinite Catering"></div>
-      <div class="logo"><img src="p_fenyvesy.jpg" alt="Fenyvesy Rudolf"></div>
-      <div class="logo"><img src="p_dosza.jpg" alt="DOSZA"></div>
-      <div class="logo"><img src="p_jan_mara.jpg" alt="Jan-Mára BT"></div>
-      <div class="logo"><img src="p_boszporusz.jpg" alt="Boszporusz Gyros"></div>
-      <div class="logo"><img src="p_kkbazis.jpg" alt="K.K. Bázis Kft."></div>
-      <div class="logo"><img src="p_sg.jpg" alt="SG Property"></div>
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="badge" data-i18n="hero_badge">Együtt megálmodjuk a következő lépést.</div>
+    <h1 data-i18n="hero_title">Találj új otthonra</h1>
+    <div class="mt">
+      <a class="btn" href="csapat.html" data-i18n="cta_team">Kollégáink →</a>
+      <a class="btn ghost" href="ingatlanok.html" data-i18n="cta_search">Keresés az ingatlanok között</a>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2 data-i18n="why.title">Miért jó, ha minket választ?</h2>
-  <div class="tiles">
-    <div class="tile"><h3 data-i18n="why.a">20+ év tapasztalat</h3><p data-i18n="why.a_t">Díjmentes tanácsadás – új otthon itthon &amp; külföldön.</p></div>
-    <div class="tile"><h3 data-i18n="why.b">Teljes körű képviselet</h3><p data-i18n="why.b_t">Ügyvédi–közjegyzői támogatás, kezelés &amp; üzemeltetés.</p></div>
-    <div class="tile"><h3 data-i18n="why.c">Generál kivitelezés</h3><p data-i18n="why.c_t">Felújítás–átépítés, lakberendezés, 100% elégedettség.</p></div>
+  <div class="container">
+    <h2 class="center" data-i18n="partners_title">Partnereink</h2>
+    <div class="marquee mt">
+      <div class="track">
+        <img src="p_botripsz.jpg" alt="BoTrips">
+        <img src="p_infinite.jpg" alt="Infinite Catering">
+        <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf">
+        <img src="p_dosza.jpg" alt="Dosza">
+        <img src="p_boszporusz.jpg" alt="Boszporusz">
+        <img src="p_kkbazis.jpg" alt="KK Bázis">
+        <img src="p_jan_mara.jpg" alt="Jan-Mára">
+        <!-- ismétlés a folyamatos futáshoz -->
+        <img src="p_botripsz.jpg" alt="">
+        <img src="p_infinite.jpg" alt="">
+        <img src="p_fenyvesi.jpg" alt="">
+        <img src="p_dosza.jpg" alt="">
+        <img src="p_boszporusz.jpg" alt="">
+        <img src="p_kkbazis.jpg" alt="">
+        <img src="p_jan_mara.jpg" alt="">
+      </div>
+    </div>
   </div>
 </section>
 
-<footer>© 2025 Stony &amp; Grigo Property • 1188 Budapest, Címer utca 19/A</footer>
+<section class="section">
+  <div class="container">
+    <h2 class="center" data-i18n="why_title">Miért jó, ha minket választ?</h2>
+    <div class="bullets">
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b1">20 év tapasztalat</strong><div class="muted"></div></div></div>
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b2">Díjmentes tanácsadás</strong></div></div>
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b3">Új otthon itthon és külföldön</strong></div></div>
+
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b4">Ingatlanközvetítés</strong></div></div>
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b5">Vevőképviselet</strong></div></div>
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b6">Ügyvédi / közjegyzői támogatás</strong></div></div>
+
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b7">Ingatlankezelés</strong></div></div>
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b8">Ingatlan üzemeltetés</strong></div></div>
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b9">Generál kivitelezés</strong></div></div>
+
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b10">Felújítás, átépítés</strong></div></div>
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b11">Lakberendezési tanácsadás</strong></div></div>
+      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b12">100% elégedettség</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">© 2025 Stony & Grigo Property & Real Estate Investment</div></footer>
 
 <script>
-/*** partner grid mobil vetítés ***/
-(function(){
-  const grid = document.getElementById('partnerGrid');
-  const strip = document.getElementById('partnerStrip');
-  const isMobile = () => matchMedia('(max-width:720px)').matches;
-  const groups = [
-    ['p_botrips.jpg','p_infinite.jpg','p_fenyvesy.jpg','p_dosza.jpg'],
-    ['p_jan_mara.jpg','p_boszporusz.jpg','p_kkbazis.jpg','p_sg.jpg']
-  ];
-  let idx=0, timer;
-  function render(){
-    if(!isMobile()){ grid.setAttribute('aria-hidden','true'); strip.setAttribute('aria-hidden','false'); clearInterval(timer); return; }
-    grid.setAttribute('aria-hidden','false'); strip.setAttribute('aria-hidden','true');
-    const imgs = grid.querySelectorAll('img'); groups[idx].forEach((src,i)=> imgs[i].src=src); idx=(idx+1)%groups.length;
-  }
-  function start(){ render(); if(isMobile()) timer=setInterval(render,3000); }
-  addEventListener('resize', start,{passive:true}); start();
-})();
+/*** NAV + LANG ***/
+const nav = document.querySelector('header .nav');
+document.getElementById('hamb').onclick=()=>document.querySelector('header').classList.toggle('open');
+const box=document.getElementById('langBox');document.getElementById('langBtn').onclick=()=>box.classList.toggle('open');
+box.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
 
-/*** nyelvváltó – HU/EN/DE ***/
 const dict={
-  hu:{'nav.home':'Kezdőlap','nav.props':'Ingatlanok','nav.team':'Kollégáink','nav.contact':'Kapcsolat',
-      'hero.title':'Találj új otthonra','hero.lead':'Együtt megálmodjuk a következő lépést.','hero.cta':'Kollégáink →',
-      'partners.title':'Partnereink','why.title':'Miért jó, ha minket választ?','why.a':'20+ év tapasztalat','why.a_t':'Díjmentes tanácsadás – új otthon itthon & külföldön.',
-      'why.b':'Teljes körű képviselet','why.b_t':'Ügyvédi–közjegyzői támogatás, kezelés & üzemeltetés.',
-      'why.c':'Generál kivitelezés','why.c_t':'Felújítás–átépítés, lakberendezés, 100% elégedettség.'
-  },
-  en:{'nav.home':'Home','nav.props':'Properties','nav.team':'Our Team','nav.contact':'Contact',
-      'hero.title':'Find your new home','hero.lead':'Let’s plan the next step together.','hero.cta':'Meet the team →',
-      'partners.title':'Our Partners','why.title':'Why choose us?','why.a':'20+ years of experience','why.a_t':'Free consultation – new homes locally & abroad.',
-      'why.b':'Full representation','why.b_t':'Legal & notary support, management & operation.',
-      'why.c':'General contracting','why.c_t':'Renovation, interior design, 100% satisfaction.'
-  },
-  de:{'nav.home':'Startseite','nav.props':'Immobilien','nav.team':'Team','nav.contact':'Kontakt',
-      'hero.title':'Finde dein neues Zuhause','hero.lead':'Gemeinsam planen wir den nächsten Schritt.','hero.cta':'Unser Team →',
-      'partners.title':'Unsere Partner','why.title':'Warum wir?','why.a':'20+ Jahre Erfahrung','why.a_t':'Kostenlose Beratung – neue Wohnungen im In- und Ausland.',
-      'why.b':'Komplettvertretung','why.b_t':'Anwalt- & Notarunterstützung, Verwaltung & Betrieb.',
-      'why.c':'Generalunternehmer','why.c_t':'Sanierung, Innenarchitektur, 100% Zufriedenheit.'
-  }
+ hu:{nav_home:"Kezdőlap",nav_props:"Ingatlanok",nav_team:"Kollégáink",nav_partners:"Partnereink",nav_contact:"Kapcsolat",
+     hero_badge:"Együtt megálmodjuk a következő lépést.",hero_title:"Találj új otthonra",cta_team:"Kollégáink →",cta_search:"Keresés az ingatlanok között",
+     partners_title:"Partnereink",why_title:"Miért jó, ha minket választ?",
+     b1:"20 év tapasztalat",b2:"Díjmentes tanácsadás",b3:"Új otthon itthon és külföldön",b4:"Ingatlanközvetítés",b5:"Vevőképviselet",b6:"Ügyvédi / közjegyzői támogatás",
+     b7:"Ingatlankezelés",b8:"Ingatlan üzemeltetés",b9:"Generál kivitelezés",b10:"Felújítás, átépítés",b11:"Lakberendezési tanácsadás",b12:"100% elégedettség"},
+ en:{nav_home:"Home",nav_props:"Properties",nav_team:"Our Team",nav_partners:"Partners",nav_contact:"Contact",
+     hero_badge:"Let’s take the next step together.",hero_title:"Find your new home",cta_team:"Meet the team →",cta_search:"Search properties",
+     partners_title:"Our Partners",why_title:"Why choose us?",
+     b1:"20 years of experience",b2:"Free consulting",b3:"New home in Hungary & abroad",b4:"Real-estate brokerage",b5:"Buyer representation",b6:"Legal / notary support",
+     b7:"Property management",b8:"Facility management",b9:"General contracting",b10:"Renovation & remodelling",b11:"Interior design consulting",b12:"100% satisfaction"},
+ de:{nav_home:"Startseite",nav_props:"Immobilien",nav_team:"Team",nav_partners:"Partner",nav_contact:"Kontakt",
+     hero_badge:"Den nächsten Schritt gemeinsam.",hero_title:"Finden Sie Ihr neues Zuhause",cta_team:"Unser Team →",cta_search:"Immobiliensuche",
+     partners_title:"Unsere Partner",why_title:"Warum wir?",
+     b1:"20 Jahre Erfahrung",b2:"Kostenlose Beratung",b3:"Neues Zuhause im In- und Ausland",b4:"Maklerdienstleistungen",b5:"Käufervertretung",b6:"Juristische Unterstützung",
+     b7:"Hausverwaltung",b8:"Objekt­betrieb",b9:"Generalunternehmer",b10:"Sanierung & Umbau",b11:"Einrichtungs­beratung",b12:"100% Zufriedenheit"}
 };
-function applyLang(l){
-  localStorage.setItem('lang', l);
+function applyLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.getAttribute('data-i18n'); if(dict[l][k]) el.textContent=dict[l][k];
+    const k=el.getAttribute('data-i18n');
+    if(dict[lang] && dict[lang][k]) el.textContent=dict[lang][k];
   });
-  const map={hu:'🇭🇺',en:'🇬🇧',de:'🇩🇪'};
-  document.getElementById('flagNow').textContent=map[l];
-  document.getElementById('langNow').textContent=l.toUpperCase();
+  document.getElementById('langBtn').textContent=(lang==='en'?'🇬🇧 EN ▾':lang==='de'?'🇩🇪 DE ▾':'🇭🇺 HU ▾');
+  localStorage.setItem('lang',lang);
 }
-(function(){
-  const lang = document.getElementById('lang');
-  lang.querySelector('.lang-btn').onclick=()=>lang.classList.toggle('open');
-  lang.querySelectorAll('.flags button').forEach(b=>b.onclick=()=>{applyLang(b.dataset.lang); lang.classList.remove('open');});
-  applyLang(localStorage.getItem('lang')||'hu');
-})();
+function setLang(l){applyLang(l);box.classList.remove('open')}
+applyLang(localStorage.getItem('lang')||'hu');
 </script>
-</body>
-</html>
+</body></html>
