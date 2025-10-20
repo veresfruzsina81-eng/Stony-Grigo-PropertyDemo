@@ -1,0 +1,58 @@
+<!doctype html><html lang="hu">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Partnereink</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="container navbar nav">
+    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony & Grigo Property & Real Estate Investment</span></a>
+    <nav class="navlinks">
+      <a data-i18n="nav_home" href="index.html">Kezdőlap</a>
+      <a data-i18n="nav_props" href="ingatlanok.html">Ingatlanok</a>
+      <a data-i18n="nav_team" href="csapat.html">Kollégáink</a>
+      <a class="active" data-i18n="nav_partners" href="partnerek.html">Partnereink</a>
+      <a data-i18n="nav_contact" href="kapcsolat.html">Kapcsolat</a>
+      <div class="lang" id="langBox"><button class="langbtn" id="langBtn">🇭🇺 HU ▾</button>
+        <div class="langmenu"><button data-lang="hu"><span class="flag">🇭🇺</span>Magyar</button><button data-lang="en"><span class="flag">🇬🇧</span>English</button><button data-lang="de"><span class="flag">🇩🇪</span>Deutsch</button></div>
+      </div>
+    </nav>
+    <button class="hamb" id="hamb"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1 class="center" data-i18n="partners_title">Partnereink</h1>
+    <div class="slider mt glass">
+      <div class="slides">
+        <img src="p_botripsz.jpg" alt="BoTrips">
+        <img src="p_infinite.jpg" alt="Infinite">
+        <img src="p_fenyvesi.jpg" alt="Fenyvesy">
+        <img src="p_dosza.jpg" alt="Dosza">
+        <img src="p_boszporusz.jpg" alt="Boszporusz">
+        <img src="p_kkbazis.jpg" alt="KK Bázis">
+        <img src="p_jan_mara.jpg" alt="Jan-Mára">
+        <img src="p_botripsz.jpg" alt=""><img src="p_infinite.jpg" alt="">
+        <img src="p_fenyvesi.jpg" alt=""><img src="p_dosza.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container">© 2025 Stony & Grigo Property</div></footer>
+
+<script>
+document.getElementById('hamb').onclick=()=>document.querySelector('header').classList.toggle('open');
+const box=document.getElementById('langBox');document.getElementById('langBtn').onclick=()=>box.classList.toggle('open');
+box.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
+const dict={hu:{nav_home:"Kezdőlap",nav_props:"Ingatlanok",nav_team:"Kollégáink",nav_partners:"Partnereink",nav_contact:"Kapcsolat",partners_title:"Partnereink"},
+en:{nav_home:"Home",nav_props:"Properties",nav_team:"Our Team",nav_partners:"Partners",nav_contact:"Contact",partners_title:"Our Partners"},
+de:{nav_home:"Startseite",nav_props:"Immobilien",nav_team:"Team",nav_partners:"Partner",nav_contact:"Kontakt",partners_title:"Unsere Partner"}};
+function applyLang(l){document.querySelectorAll('[data-i18n]').forEach(e=>{const k=e.dataset.i18n;if(dict[l][k]) e.textContent=dict[l][k]});
+document.getElementById('langBtn').textContent=(l==='en'?'🇬🇧 EN ▾':l==='de'?'🇩🇪 DE ▾':'🇭🇺 HU ▾');localStorage.setItem('lang',l)}
+function setLang(l){applyLang(l);box.classList.remove('open')}
+applyLang(localStorage.getItem('lang')||'hu');
+</script>
+</body></html>
