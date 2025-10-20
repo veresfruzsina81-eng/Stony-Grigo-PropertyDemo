@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html">
@@ -18,12 +17,25 @@
         <a href="index.html">Kezdőlap</a>
         <a href="ingatlanok.html">Ingatlanok</a>
         <a href="csapat.html">Kollégáink</a>
+        <a href="partnerek.html">Partnereink</a>
+        <a href="befektetok.html">Befektetőknek</a>
         <a class="active" href="kapcsolat.html">Kapcsolat</a>
       </nav>
+      <div class="lang" id="lang">
+        <button class="langbtn" type="button">
+          <img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" />
+          <strong>HU</strong>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="langmenu">
+          <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
+          <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
+          <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
   <section class="hero" style="background-image:url('hero_lanchid.jpg')">
     <div class="overlay"></div>
     <div class="content container">
@@ -31,15 +43,12 @@
     </div>
   </section>
 
-  <!-- Térkép + adatok (űrlap nélkül) -->
   <section class="why" style="padding-top:24px">
     <div class="container" style="display:grid;gap:16px;grid-template-columns:1.2fr .8fr">
       <article class="card" style="padding:0;overflow:hidden">
-        <iframe
-          src="https://www.google.com/maps?q=Budapest%2C%20C%C3%ADmer%20utca%2019%2FA&output=embed"
-          style="width:100%;height:420px;border:0;display:block"></iframe>
+        <iframe src="https://www.google.com/maps?q=Budapest%2C%20C%C3%ADmer%20utca%2019%2FA&output=embed"
+                style="width:100%;height:420px;border:0;display:block"></iframe>
       </article>
-
       <article class="card">
         <h3 style="margin:.2rem 0 .6rem 0">Stony &amp; Grigo Property</h3>
         <p class="muted" style="margin:0 0 .5rem 0">1188 Budapest, Címer utca 19/A</p>
@@ -53,5 +62,7 @@
   <footer class="footer">
     <div class="container">&copy; 2025 Stony &amp; Grigo Property</div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
