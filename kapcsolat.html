@@ -14,12 +14,12 @@
         <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
       </a>
       <nav class="menu">
-        <a href="index.html">Kezdőlap</a>
-        <a href="ingatlanok.html">Ingatlanok</a>
-        <a href="csapat.html">Kollégáink</a>
-        <a href="partnerek.html">Partnereink</a>
-        <a href="befektetok.html">Befektetőknek</a>
-        <a class="active" href="kapcsolat.html">Kapcsolat</a>
+        <a href="index.html" data-i18n="nav_home">Kezdőlap</a>
+        <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
+        <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
+        <a href="partnerek.html" data-i18n="nav_partners">Partnereink</a>
+        <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
+        <a class="active" href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
       </nav>
       <div class="lang" id="lang">
         <button class="langbtn" type="button">
@@ -39,7 +39,7 @@
   <section class="hero" style="background-image:url('hero_lanchid.jpg')">
     <div class="overlay"></div>
     <div class="content container">
-      <h1 class="title">Lépjen velünk kapcsolatba</h1>
+      <h1 class="title" data-i18n="nav_contact">Kapcsolat</h1>
     </div>
   </section>
 
@@ -49,18 +49,22 @@
         <iframe src="https://www.google.com/maps?q=Budapest%2C%20C%C3%ADmer%20utca%2019%2FA&output=embed"
                 style="width:100%;height:420px;border:0;display:block"></iframe>
       </article>
-      <article class="card">
+
+      <article class="card kontakt">
         <h3 style="margin:.2rem 0 .6rem 0">Stony &amp; Grigo Property</h3>
         <p class="muted" style="margin:0 0 .5rem 0">1188 Budapest, Címer utca 19/A</p>
-        <p style="margin:.2rem 0">📞 +36 30 896 5858</p>
-        <p style="margin:.2rem 0">✉️ stonyproperty@gmail.com</p>
-        <p style="margin:.2rem 0">🌐 Facebook</p>
+        <ul>
+          <li><span class="icon">📞</span> <a href="tel:+36308965858">+36 30 896 5858</a></li>
+          <li><span class="icon">✉️</span> <a href="mailto:stonyproperty@gmail.com">stonyproperty@gmail.com</a></li>
+          <li><span class="icon">📍</span> <span>Budapest</span></li>
+          <li><span class="icon">f</span> <a href="#" rel="noopener">Facebook</a></li>
+        </ul>
       </article>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">&copy; 2025 Stony &amp; Grigo Property</div>
+    <div class="container">&copy; 2025 Stony & Grigo Property</div>
   </footer>
 
   <script src="script.js"></script>
