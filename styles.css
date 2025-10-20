@@ -1,115 +1,188 @@
+/* --- Alapbeállítások --- */
 :root{
-  --brand:#ffd166;             /* gombok */
-  --ink:#eaf6ff;               /* világos szöveg */
-  --muted:#b7d2e6;
-  --bg1:#0f2e41;               /* barátságos mélykék */
-  --bg2:#0a3e5a;
-  --glass:rgba(255,255,255,.1);
-  --glass-line:rgba(255,255,255,.25);
-  --shadow:0 10px 30px rgba(0,0,0,.35);
-  --radius:18px;
+  --bg-1:#0c2d3f;          /* sötétebb kék */
+  --bg-2:#0f4a64;          /* barátságosabb kék */
+  --glass: rgba(255,255,255,.08);
+  --stroke: rgba(255,255,255,.12);
+  --text: #e9f1f5;
+  --muted:#b8c6cf;
+  --brand:#E7C269;         /* arany gombokhoz */
+  --brand-2:#d6b35a;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius:22px;
 }
+
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,var(--bg1),var(--bg2)) fixed;}
-img{max-width:100%;display:block}
-a{color:var(--ink);text-decoration:none}
-.container{width:min(1200px,92%);margin-inline:auto}
-.section{padding:56px 0}
-h1,h2,h3{line-height:1.15;margin:0 0 12px}
-h1{font-size:clamp(36px,6vw,64px)}
-h2{font-size:clamp(28px,4vw,40px)}
-h3{font-size:22px}
+html,body{height:100%}
+body{
+  margin:0;
+  font:400 16px/1.6 ui-sans-serif,system-ui,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif;
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%,#104b66 0%,transparent 60%) ,
+              linear-gradient(180deg,var(--bg-1),var(--bg-2));
+}
 
+/* --- Konténer --- */
+.container{width:min(1200px,92%);margin:auto}
+
+/* --- Navigáció + nyelvváltó --- */
 .nav{
-  position:sticky;top:0;z-index:20;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.05));
-  backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(255,255,255,.06)
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:saturate(140%) blur(12px);
+  background:linear-gradient(180deg,rgba(8,20,28,.85),rgba(8,20,28,.55));
+  border-bottom:1px solid var(--stroke);
 }
-.navbar{display:flex;align-items:center;gap:18px;padding:12px 0}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700}
-.brand img{width:34px;height:34px;border-radius:9px;box-shadow:var(--shadow)}
-.navlinks{margin-left:auto;display:flex;gap:18px;align-items:center}
-.navlinks a{padding:8px 10px;border-radius:10px;opacity:.9}
-.navlinks a.active,.navlinks a:hover{background:rgba(255,255,255,.08);opacity:1}
+.nav-inner{display:flex;align-items:center;gap:18px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none;font-weight:700}
+.brand img{width:36px;height:36px;border-radius:10px;object-fit:cover}
+.menu{margin-left:auto;display:flex;align-items:center;gap:18px}
+.menu a{
+  color:var(--text); text-decoration:none; padding:10px 12px; border-radius:12px;
+  transition:.2s ease; opacity:.9
+}
+.menu a:hover,.menu a.active{background:var(--glass);opacity:1}
+
+/* Nyelvválasztó */
 .lang{position:relative}
-.langbtn{background:rgba(255,255,255,.1);border:1px solid var(--glass-line);padding:6px 10px;border-radius:10px;cursor:pointer}
-.langmenu{position:absolute;right:0;top:110%;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);
-  border:1px solid var(--glass-line);border-radius:12px;display:none;min-width:160px}
-.langmenu button{display:block;width:100%;background:transparent;color:var(--ink);padding:8px 12px;border:0;text-align:left}
-.langmenu button:hover{background:rgba(255,255,255,.08)}
+.langbtn{
+  display:flex;align-items:center;gap:8px;
+  background:var(--glass); border:1px solid var(--stroke);
+  color:var(--text); padding:8px 12px; border-radius:12px; cursor:pointer
+}
+.flag{width:22px;height:14px;object-fit:cover;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.langmenu{
+  position:absolute;right:0;top:calc(100% + 8px);
+  background:rgba(12,25,35,.96); border:1px solid var(--stroke);
+  border-radius:14px; padding:6px; display:none; box-shadow:var(--shadow); min-width:160px
+}
 .lang.open .langmenu{display:block}
-.flag{font-size:18px;margin-right:8px}
+.langmenu button{
+  display:flex;align-items:center;gap:10px;width:100%;
+  background:transparent;border:0;color:var(--text);
+  padding:10px 12px;border-radius:10px;cursor:pointer;text-align:left
+}
+.langmenu button:hover{background:var(--glass)}
 
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#1b1b1b;
-  padding:10px 16px;border-radius:999px;font-weight:700;border:0;cursor:pointer;box-shadow:var(--shadow)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--glass-line)}
-.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.35);padding:6px 10px;border-radius:999px;border:1px solid var(--glass-line)}
-
+/* --- Hero --- */
 .hero{
-  position:relative;min-height:64vh;display:grid;place-items:center;color:var(--ink);
-  background: center/cover no-repeat var(--bg1);
+  position:relative; min-height:70vh;
+  background-size:cover; background-position:center;
+  display:grid; place-items:center; text-align:center
 }
-.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,12,20,.55),rgba(2,12,20,.35))}
-.hero .content{position:relative;text-align:left;width:min(1100px,92%)}
-.hero h1{font-weight:800;text-shadow:0 6px 20px rgba(0,0,0,.45)}
-.hero p{color:var(--muted);max-width:60ch}
+.hero .overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(7,18,26,.55),rgba(7,18,26,.65));
+}
+.hero .content{position:relative; z-index:1}
+.hero .title{
+  font-size:clamp(32px,6vw,64px); line-height:1.1; margin:0;
+  text-shadow:0 10px 30px rgba(0,0,0,.6);
+}
 
+/* --- „Miért minket” logók --- */
+.why{padding:60px 0}
+.why h2{font-size:clamp(24px,3.6vw,38px);margin:0 0 6px}
+.muted{color:var(--muted);margin:0 0 26px}
+
+.logos{
+  display:grid; gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+.logo-item{
+  background:var(--glass); border:1px solid var(--stroke); border-radius:16px;
+  padding:16px; display:flex; align-items:center; gap:14px;
+  transition:.25s ease; box-shadow:0 6px 18px rgba(0,0,0,.18)
+}
+.logo-item:hover{transform:translateY(-2px)}
+.logo-item img{width:56px;height:56px;object-fit:cover;border-radius:50%;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.logo-item p{margin:0; font-weight:600}
+
+/* --- Üveg/átlátszó kártyák (ingatlan keresőhöz is) --- */
 .glass{
-  background:var(--glass);backdrop-filter:blur(16px) saturate(130%);
-  border:1px solid var(--glass-line);border-radius:var(--radius);box-shadow:var(--shadow)
+  background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
 }
 
-/* partner futósor */
-.marquee{
-  overflow:hidden;white-space:nowrap;border-radius:var(--radius);border:1px solid var(--glass-line);
-  background:rgba(0,0,0,.18);padding:12px
+/* --- Gombok --- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  background:var(--brand); color:#232014; border:0; cursor:pointer;
+  padding:12px 18px; border-radius:999px; font-weight:700; transition:.2s ease
 }
-.marquee .track{display:inline-flex;gap:28px;align-items:center;animation:scroll 28s linear infinite}
-.marquee img{height:48px;width:auto;filter:drop-shadow(0 6px 18px rgba(0,0,0,.35))}
-@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.btn:hover{background:var(--brand-2)}
 
-/* kártyák */
-.card{border-radius:var(--radius);background:rgba(0,0,0,.22);border:1px solid var(--glass-line);box-shadow:var(--shadow);padding:18px}
+/* --- Lábléc --- */
+.footer{border-top:1px solid var(--stroke);background:rgba(7,18,26,.6);padding:28px 0;margin-top:60px}
 
-/* csapat */
-.team{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.team .person{display:flex;gap:14px}
-.avatar{width:84px;height:84px;border-radius:50%;overflow:hidden;border:2px solid var(--glass-line)}
-@media (max-width:900px){.team{grid-template-columns:repeat(2,1fr)}}
-
-/* kereső – ingatlanok */
-.search-panel{padding:20px;margin-top:16px}
-.search-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.search-grid .full{grid-column:1/-1}
-.tabs{display:flex;gap:8px;margin-bottom:10px}
-.tab{padding:8px 14px;border-radius:999px;border:1px solid var(--glass-line);background:rgba(0,0,0,.25);cursor:pointer}
-.tab.active{background:var(--brand);color:#1b1b1b;border-color:transparent}
-.input, select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--glass-line);
-  background:rgba(255,255,255,.08);color:var(--ink)}
-.check{display:flex;align-items:center;gap:8px}
-
-/* partnerek oldal slider */
-.slider{position:relative;overflow:hidden;border-radius:var(--radius);border:1px solid var(--glass-line)}
-.slides{display:flex;gap:28px;padding:24px;animation:scroll 26s linear infinite}
-.slides img{height:70px}
-
-/* kontakt */
-.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
-.map{min-height:380px;border:0;border-radius:var(--radius);overflow:hidden}
-.form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-.form textarea{min-height:140px}
-@media (max-width:900px){.contact-grid{grid-template-columns:1fr}.form .row{grid-template-columns:1fr}}
-footer{padding:36px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08);margin-top:52px}
-
-/* hamburger */
-.hamb{display:none}
-@media (max-width:820px){
-  .navlinks{display:none;position:absolute;inset:56px 0 auto;flex-direction:column;background:rgba(0,0,0,.7);
-    padding:14px;border-bottom:1px solid var(--glass-line)}
-  .nav.open .navlinks{display:flex}
-  .hamb{display:inline-flex;flex-direction:column;gap:5px;margin-left:auto;cursor:pointer}
-  .hamb span{width:26px;height:2px;background:#fff;border-radius:2px}
+/* --- Reszponzív --- */
+@media (max-width:920px){
+  .menu{gap:10px}
+  .brand span{display:none}
+}
+@media (max-width:640px){
+  .hero{min-height:58vh}
+  .nav-inner{padding:10px 0}
 }
 
-/* util */
-.center{text-align:center}
-.mt{margin-top:18px}
+/* -------------------------------
+   INGYATLÁNOK OLDAL KIEGÉSZÍTÉS
+---------------------------------*/
+.search-wrap{
+  position:relative; padding:26px;
+}
+.search-panel{
+  display:grid; gap:14px;
+  grid-template-columns:repeat(12,1fr);
+}
+.search-panel .col-12{grid-column:span 12}
+.search-panel .col-6{grid-column:span 6}
+.search-panel .col-4{grid-column:span 4}
+.search-panel .col-3{grid-column:span 3}
+
+.input, select{
+  width:100%; background:rgba(255,255,255,.06);
+  border:1px solid var(--stroke); color:var(--text);
+  padding:12px 14px; border-radius:12px; outline:none
+}
+label{font-size:.9rem; color:var(--muted); margin-bottom:6px; display:block}
+.row{display:flex; gap:12px; align-items:center}
+
+/* --- CSAPAT oldal --- */
+.team-hero{
+  min-height:46vh; background-size:cover; background-position:center;
+  position:relative; display:grid; place-items:center; text-align:center
+}
+.team-hero::after{
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg,rgba(7,18,26,.5),rgba(7,18,26,.65));
+}
+.team-hero > .container{position:relative; z-index:1}
+.team-grid{
+  display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+.card{
+  background:var(--glass); border:1px solid var(--stroke); border-radius:18px;
+  padding:18px; box-shadow:var(--shadow)
+}
+.card .avatar{
+  width:84px;height:84px;border-radius:50%;object-fit:cover;margin-bottom:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,.25)
+}
+
+/* --- KAPCSOLAT oldal --- */
+.contact-grid{
+  display:grid; gap:18px; grid-template-columns: 1.2fr .8fr;
+}
+.contact-box{padding:18px}
+.map{border:0; width:100%; height:360px; border-radius:16px; filter:saturate(105%) contrast(102%)}
+@media (max-width:900px){ .contact-grid{grid-template-columns:1fr} }
+
+/* --- PARTNEREINK külön fül (ha szükséges) --- */
+.partners-strip{
+  display:flex; gap:22px; overflow:auto; padding:14px 6px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+  border:1px solid var(--stroke); border-radius:14px
+}
+.partners-strip img{height:54px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
