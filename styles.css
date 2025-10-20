@@ -1,101 +1,96 @@
 :root{
-  --bg1:#0f2430;        /* sötétebb, profi kék */
-  --bg2:#133b52;        /* barátságosabb kék */
-  --glass:rgba(255,255,255,.10);
-  --glass2:rgba(255,255,255,.16);
-  --ring:rgba(255,255,255,.14);
+  --bg1:#0f2430;           /* háttér gradiens sötétkék */
+  --bg2:#133b52;           /* háttér gradiens világosabb kék */
+  --nav:#163448e6;         /* világosabb kék fejléc */
+  --footer:#163448e6;      /* világosabb kék lábléc */
   --txt:#eaf6ff;
   --muted:#cfe1ed;
-  --brand:#f0c56b;      /* arany gomb */
+  --ring:rgba(255,255,255,.16);
+  --card:rgba(255,255,255,.08);
+  --glass:rgba(18,28,40,.55); /* üveges dobozok */
+  --gold:#f0c56b;          /* gomb */
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--txt);font:400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--txt);
+  font:400 16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-
-/* Container */
 .container{width:min(1100px,92%);margin:0 auto}
 
-/* NAV */
-.nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(10px);
-     background:linear-gradient(180deg,rgba(8,20,28,.85),rgba(8,20,28,.55));
-     border-bottom:1px solid var(--ring)}
+/* ===== NAV (világosabb kék, mint a lábléc) ===== */
+.nav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--ring)}
 .nav-inner{display:flex;align-items:center;gap:16px;padding:10px 0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .brand img{width:34px;height:34px;border-radius:8px;object-fit:cover}
 .menu{margin-left:auto;display:flex;gap:16px;align-items:center}
-.menu a{padding:8px 10px;border-radius:10px;opacity:.9}
-.menu a:hover,.menu a.active{background:rgba(255,255,255,.08);opacity:1}
+.menu a{padding:8px 10px;border-radius:10px;opacity:.95}
+.menu a:hover,.menu a.active{background:rgba(255,255,255,.10);opacity:1}
 
-/* Language dropdown */
+/* Nyelvválasztó (üveges) */
 .lang{position:relative}
-.langbtn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid var(--ring);padding:8px 12px;border-radius:12px;cursor:pointer}
+.langbtn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.10);
+  border:1px solid var(--ring);padding:8px 12px;border-radius:12px;cursor:pointer}
 .flag{width:20px;height:14px;border-radius:2px}
-.langmenu{position:absolute;right:0;top:calc(100% + 8px);background:rgba(10,27,38,.96);border:1px solid var(--ring);border-radius:12px;overflow:hidden;display:none;min-width:180px}
+.langmenu{position:absolute;right:0;top:calc(100% + 8px);background:#0f2736f2;
+  border:1px solid var(--ring);border-radius:12px;overflow:hidden;min-width:200px;display:none}
 .lang.open .langmenu{display:block}
-.langmenu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;background:transparent;border:0;color:var(--txt);cursor:pointer}
-.langmenu button:hover{background:rgba(255,255,255,.08)}
+.langmenu button{display:flex;align-items:center;gap:10px;width:100%;
+  padding:10px 12px;background:transparent;border:0;color:var(--txt);cursor:pointer}
+.langmenu button:hover{background:rgba(255,255,255,.10)}
 
-/* HERO */
+/* ===== HERO ===== */
 .hero{min-height:68vh;position:relative;display:grid;place-items:center;background-size:cover;background-position:center}
-.hero .overlay{position:absolute;inset:0;background:radial-gradient(90% 70% at 50% 40%, rgba(0,0,0,.0), rgba(0,0,0,.45))}
+.hero .overlay{position:absolute;inset:0;background:radial-gradient(90% 70% at 50% 40%, rgba(0,0,0,.05), rgba(0,0,0,.45))}
 .hero .content{position:relative;text-align:center}
 .title{font-size:clamp(32px,6vw,56px);line-height:1.05;margin:0 0 6px}
 .muted{color:var(--muted)}
 
-/* Why section (ikon/kártya) */
+/* ===== „Miért minket” (ikonkártyák) ===== */
 .why{padding:48px 0}
 .why h2{margin:0 0 6px}
 .logos{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
-.logo-item{background:rgba(255,255,255,.06);border:1px solid var(--ring);border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px}
+.logo-item{background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:14px;display:flex;align-items:center;gap:12px}
 .logo-item img{width:48px;height:48px;border-radius:10px;object-fit:cover;opacity:.95}
 .logo-item p{margin:0;font-weight:600}
 @media(max-width:900px){.logos{grid-template-columns:repeat(2,1fr)}}
 
-/* Bottom hero (alsó Lánchíd) */
+/* ===== Alsó Lánchíd + MOZGÓ partnerek ===== */
 .bottom-hero{min-height:48vh;background:url("hero_lanchid.jpg") center/cover no-repeat;position:relative;display:grid;place-items:center}
-.bottom-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.45))}
+.bottom-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.40))}
 .bottom-hero .content{position:relative;text-align:center;padding:18px}
 .bottom-hero h2{margin:0 0 8px;font-size:clamp(28px,4.5vw,44px)}
 .bottom-hero p{margin:0;color:var(--muted)}
 
-/* Partners strip (alul futás) */
-.partners-wrap{background:rgba(255,255,255,.03);border-top:1px solid var(--ring)}
-.partners-wrap .container{padding:18px 0}
-.partners-strip{display:flex;gap:18px;overflow:auto;padding:10px 2px}
-.partners-strip img{height:56px;width:auto;flex:0 0 auto;border-radius:10px;filter:saturate(105%)}
+/* MOZGÓ vetítés – mind a kezdőlapon, mind az ingatlanok oldalon */
+.marquee{position:relative;width:100%;overflow:hidden;background:rgba(255,255,255,.04);border-top:1px solid var(--ring)}
+.marquee .track{display:flex;gap:22px;align-items:center;padding:12px 0;animation:scroll 28s linear infinite}
+.marquee img{height:56px;width:auto;border-radius:10px;filter:saturate(105%)}
+.marquee .track:hover{animation-play-state:paused}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* Footer */
-.footer{border-top:1px solid var(--ring);background:rgba(255,255,255,.02);color:var(--muted);padding:22px 0}
+/* ===== Lábléc (ugyanaz az árnyalat, mint a fejléc) ===== */
+.footer{border-top:1px solid var(--ring);background:var(--footer);color:var(--muted);padding:22px 0;text-align:center}
 
-/* ---------- Ingatlanok oldal ---------- */
-.hero__glass{position:relative;z-index:2;max-width:1100px;width:92%;margin:auto;background:rgba(15,25,35,.55);
+/* ===== Ingatlanok kereső (egységes rács, kontrasztos, üveges) ===== */
+.hero__glass{position:relative;z-index:2;max-width:1100px;width:92%;margin:auto;background:var(--glass);
   border:1px solid var(--ring);border-radius:20px;backdrop-filter:blur(14px);padding:18px}
-.hero__glass--thin{max-width:920px}
+.hero__glass--thin{max-width:980px}
 .tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.tab{padding:8px 14px;border-radius:14px;border:1px solid var(--ring);background:rgba(255,255,255,.08);color:var(--txt);cursor:pointer}
-.tab.active,.tab:hover{background:var(--brand);color:#1d232a;border-color:transparent}
-.search-row,.filter-row{display:grid;gap:12px}
+.tab{padding:8px 14px;border-radius:14px;border:1px solid var(--ring);background:rgba(255,255,255,.10);color:var(--txt);cursor:pointer}
+.tab.active,.tab:hover{background:var(--gold);color:#1d232a;border-color:transparent}
+.search-row,.filter-row{display:grid;gap:12px;align-items:end}
 .search-row{grid-template-columns:1.2fr 1fr 1fr auto}
 .filter-row{grid-template-columns:repeat(4,1fr)}
 @media(max-width:900px){.search-row,.filter-row{grid-template-columns:1fr}}
-.hero__glass input,.hero__glass select,.btn{height:44px;border-radius:12px;border:1px solid var(--ring);background:rgba(255,255,255,.08);color:var(--txt);padding:0 12px}
-.btn{background:var(--brand);color:#2b240e;border:0;font-weight:700;cursor:pointer}
+.hero__glass input,.hero__glass select,.btn{height:46px;border-radius:12px;border:1px solid var(--ring);background:rgba(255,255,255,.10);color:var(--txt);padding:0 12px}
+.btn{background:var(--gold);color:#2b240e;border:0;font-weight:700;cursor:pointer}
 .btn.ghost{background:transparent;border:1px solid var(--ring);color:var(--txt)}
 .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 
-/* Folyamatos partner-sáv (ingatlanok lap alján) */
-.partners{position:relative;width:100%;overflow:hidden;margin:4px 0 0}
-.partners__track{display:flex;gap:22px;align-items:center;animation:scroll 28s linear infinite}
-.partners__track:hover{animation-play-state:paused}
-.partners img{height:54px;width:auto;flex:0 0 auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.25))}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* ===== Kártya (csapat/kapcsolat) ===== */
+.card{background:var(--card);border:1px solid var(--ring);border-radius:16px;padding:16px}
 
-/* Kártyák (csapat/kapcsolat oldalhoz is) */
-.card{background:rgba(255,255,255,.06);border:1px solid var(--ring);border-radius:16px;padding:16px}
-
-/* Reszponzív apróságok */
-@media(max-width:760px){
-  .brand span{display:none}
-}
+/* Reszponzív */
+@media(max-width:760px){.brand span{display:none}}
