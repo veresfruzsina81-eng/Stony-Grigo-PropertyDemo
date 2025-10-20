@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html">
@@ -18,12 +17,25 @@
         <a href="index.html">Kezdőlap</a>
         <a class="active" href="ingatlanok.html">Ingatlanok</a>
         <a href="csapat.html">Kollégáink</a>
+        <a href="partnerek.html">Partnereink</a>
+        <a href="befektetok.html">Befektetőknek</a>
         <a href="kapcsolat.html">Kapcsolat</a>
       </nav>
+      <div class="lang" id="lang">
+        <button class="langbtn" type="button">
+          <img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" />
+          <strong>HU</strong>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="langmenu">
+          <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
+          <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
+          <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Szőnyeges háttér + üveges kereső -->
   <section class="hero" style="background-image:url('bg_rug.jpg')">
     <div class="overlay"></div>
     <div class="content container">
@@ -72,24 +84,25 @@
     </div>
   </section>
 
-  <!-- Partner vetítés alul -->
-  <section class="partners">
-    <div class="partners__track">
-      <img src="p_dosza.jpg" alt="DOSZA" />
-      <img src="p_infinite.jpg" alt="Infinite Catering" />
-      <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
-      <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
-      <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
-      <img src="p_boszporusz.jpg" alt="Boszporusz" />
-      <img src="p_botripsz.jpg" alt="BoTrips" />
-      <!-- ismétlés a folyamatos futáshoz -->
-      <img src="p_dosza.jpg" alt="DOSZA" />
-      <img src="p_infinite.jpg" alt="Infinite Catering" />
-      <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
-      <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
-      <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
-      <img src="p_boszporusz.jpg" alt="Boszporusz" />
-      <img src="p_botripsz.jpg" alt="BoTrips" />
+  <!-- Mozgó partnerek alul -->
+  <section class="marquee">
+    <div class="container">
+      <div class="track">
+        <img src="p_dosza.jpg" alt="DOSZA" />
+        <img src="p_infinite.jpg" alt="Infinite Catering" />
+        <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
+        <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
+        <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
+        <img src="p_boszporusz.jpg" alt="Boszporusz" />
+        <img src="p_botripsz.jpg" alt="BoTrips" />
+        <img src="p_dosza.jpg" alt="DOSZA" />
+        <img src="p_infinite.jpg" alt="Infinite Catering" />
+        <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
+        <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
+        <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
+        <img src="p_boszporusz.jpg" alt="Boszporusz" />
+        <img src="p_botripsz.jpg" alt="BoTrips" />
+      </div>
     </div>
   </section>
 
