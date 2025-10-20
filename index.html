@@ -20,19 +20,21 @@
         <a class="active" href="index.html">Kezdőlap</a>
         <a href="ingatlanok.html">Ingatlanok</a>
         <a href="csapat.html">Kollégáink</a>
+        <a href="partnerek.html">Partnereink</a>
+        <a href="befektetok.html">Befektetőknek</a>
         <a href="kapcsolat.html">Kapcsolat</a>
 
         <!-- Nyelvválasztó -->
         <div class="lang" id="lang">
-          <button class="langbtn" type="button" onclick="document.getElementById('lang').classList.toggle('open')">
+          <button class="langbtn" type="button">
             <img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" />
             <strong>HU</strong>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
           </button>
-          <div class="langmenu" onclick="event.stopPropagation()">
-            <button onclick="switchLang('hu')"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" /> HU Magyar</button>
-            <button onclick="switchLang('en')"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt="EN" /> EN English</button>
-            <button onclick="switchLang('de')"><img class="flag" src="https://flagcdn.com/w20/de.png" alt="DE" /> DE Deutsch</button>
+          <div class="langmenu">
+            <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
+            <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
+            <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
           </div>
         </div>
       </nav>
@@ -49,22 +51,29 @@
     </div>
   </section>
 
-  <!-- MIÉRT JÓ, HA MINKET VÁLASZT? -->
+  <!-- MIÉRT JÓ, HA MINKET VÁLASZT? (minden tétel) -->
   <section class="why">
     <div class="container">
       <h2>Miért jó, ha minket választ?</h2>
       <p class="muted">Mert segítségedre lehetünk – akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
 
       <div class="logos">
+        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Vevőképviselet</p></div>
+        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Ügyvédi / közjegyzői támogatás</p></div>
         <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>20 év tapasztalat</p></div>
+        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Új otthon itthon &amp; külföldön</p></div>
         <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Díjmentes tanácsadás</p></div>
-        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Új otthon itthon és külföldön</p></div>
+        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Ingatlankezelés &amp; üzemeltetés</p></div>
+        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>100% elégedettség</p></div>
         <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Ingatlanközvetítés</p></div>
+        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Generál kivitelezés</p></div>
+        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Felújítás / átalakítás</p></div>
+        <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Lakberendezési tanácsadás</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ALSÓ LÁNCHÍD BLOKK + PARTNEREK -->
+  <!-- Alsó Lánchíd -->
   <section class="bottom-hero">
     <div class="container content">
       <h2>Találj új otthonra</h2>
@@ -72,36 +81,33 @@
     </div>
   </section>
 
-  <section class="partners-wrap">
+  <!-- MOZGÓ Partnerek (kezdőlapon is!) -->
+  <section class="marquee">
     <div class="container">
-      <div class="partners-strip">
+      <div class="track">
         <img src="p_dosza.jpg" alt="DOSZA" />
         <img src="p_infinite.jpg" alt="Infinite Catering" />
         <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
         <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
-        <img src="p_kkbazis.jpg" alt="KKBázis" />
-        <img src="p_botripsz.jpg" alt="BoTrips" />
+        <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
         <img src="p_boszporusz.jpg" alt="Boszporusz" />
+        <img src="p_botripsz.jpg" alt="BoTrips" />
+        <!-- ismételve a végtelen futáshoz -->
+        <img src="p_dosza.jpg" alt="DOSZA" />
+        <img src="p_infinite.jpg" alt="Infinite Catering" />
+        <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
+        <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
+        <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
+        <img src="p_boszporusz.jpg" alt="Boszporusz" />
+        <img src="p_botripsz.jpg" alt="BoTrips" />
       </div>
     </div>
   </section>
 
-  <!-- LÁBLÉC -->
   <footer class="footer">
     <div class="container">&copy; 2025 Stony &amp; Grigo Property</div>
   </footer>
 
-  <script>
-    function switchLang(code){
-      const btn = document.querySelector('#lang .langbtn strong');
-      const flag = document.querySelector('#lang .langbtn .flag');
-      if(code==='hu'){ btn.textContent='HU'; flag.src='https://flagcdn.com/w20/hu.png'; }
-      if(code==='en'){ btn.textContent='EN'; flag.src='https://flagcdn.com/w20/gb.png'; }
-      if(code==='de'){ btn.textContent='DE'; flag.src='https://flagcdn.com/w20/de.png'; }
-      document.getElementById('lang').classList.remove('open');
-    }
-    document.addEventListener('click',()=>document.getElementById('lang').classList.remove('open'));
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
