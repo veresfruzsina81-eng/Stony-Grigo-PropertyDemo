@@ -1,140 +1,113 @@
-<!doctype html><html lang="hu">
+<!doctype html>
+<html lang="hu">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Stony & Grigo Property – Kezdőlap</title>
-<link rel="stylesheet" href="styles.css">
-<style>
-.hero{background-image:url('hero_lanchid.jpg')}
-.bullets{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:26px}
-.bullets .item{display:flex;gap:14px;align-items:center}
-.bullets .icon{width:54px;height:54px;border-radius:999px;overflow:hidden;border:1px solid var(--glass-line);background:rgba(255,255,255,.08);display:grid;place-items:center}
-@media(max-width:900px){.bullets{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kezdőlap – Stony & Grigo Property</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<header class="nav">
-  <div class="container navbar nav">
-    <a class="brand" href="index.html">
-      <img src="logo_sg.jpg" alt="SG logo">
-      <span>Stony & Grigo Property & Real Estate Investment</span>
-    </a>
+  <!-- NAVIGÁCIÓ -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img src="logo_sg.jpg" alt="Logo" />
+        <span>Stony & Grigo Property & Real Estate Investment</span>
+      </a>
+      <div class="menu">
+        <a class="active" href="index.html">Kezdőlap</a>
+        <a href="ingatlanok.html">Ingatlanok</a>
+        <a href="csapat.html">Kollégáink</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
 
-    <nav class="navlinks">
-      <a class="active" data-i18n="nav_home" href="index.html">Kezdőlap</a>
-      <a data-i18n="nav_props" href="ingatlanok.html">Ingatlanok</a>
-      <a data-i18n="nav_team" href="csapat.html">Kollégáink</a>
-      <a data-i18n="nav_partners" href="partnerek.html">Partnereink</a>
-      <a data-i18n="nav_contact" href="kapcsolat.html">Kapcsolat</a>
-
-      <div class="lang" id="langBox">
-        <button class="langbtn" id="langBtn">🇭🇺 HU ▾</button>
-        <div class="langmenu">
-          <button data-lang="hu"><span class="flag">🇭🇺</span>Magyar</button>
-          <button data-lang="en"><span class="flag">🇬🇧</span>English</button>
-          <button data-lang="de"><span class="flag">🇩🇪</span>Deutsch</button>
+        <!-- Nyelvválasztó -->
+        <div class="lang" id="langBox">
+          <button class="langbtn" id="langBtn">
+            <img class="flag" src="flag_hu.png" alt="HU" /> HU ▾
+          </button>
+          <div class="langmenu">
+            <button data-lang="hu"><img class="flag" src="flag_hu.png" alt=""> HU</button>
+            <button data-lang="en"><img class="flag" src="flag_gb.png" alt=""> EN</button>
+            <button data-lang="de"><img class="flag" src="flag_de.png" alt=""> DE</button>
+          </div>
         </div>
       </div>
-    </nav>
-
-    <button class="hamb" id="hamb"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="overlay"></div>
-  <div class="content">
-    <div class="badge" data-i18n="hero_badge">Együtt megálmodjuk a következő lépést.</div>
-    <h1 data-i18n="hero_title">Találj új otthonra</h1>
-    <div class="mt">
-      <a class="btn" href="csapat.html" data-i18n="cta_team">Kollégáink →</a>
-      <a class="btn ghost" href="ingatlanok.html" data-i18n="cta_search">Keresés az ingatlanok között</a>
     </div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <h2 class="center" data-i18n="partners_title">Partnereink</h2>
-    <div class="marquee mt">
-      <div class="track">
-        <img src="p_botripsz.jpg" alt="BoTrips">
-        <img src="p_infinite.jpg" alt="Infinite Catering">
-        <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf">
-        <img src="p_dosza.jpg" alt="Dosza">
-        <img src="p_boszporusz.jpg" alt="Boszporusz">
-        <img src="p_kkbazis.jpg" alt="KK Bázis">
-        <img src="p_jan_mara.jpg" alt="Jan-Mára">
-        <!-- ismétlés a folyamatos futáshoz -->
-        <img src="p_botripsz.jpg" alt="">
-        <img src="p_infinite.jpg" alt="">
+  <!-- HERO SZEKCIÓ -->
+  <section class="hero" style="background-image:url('hero_lanchid.jpg');">
+    <div class="overlay"></div>
+    <div class="content container">
+      <h1 class="title">Együtt megtaláljuk álmaid otthonát</h1>
+    </div>
+  </section>
+
+  <!-- MIÉRT JÓ, HA MINKET VÁLASZT -->
+  <section class="why container">
+    <h2>Miért jó, ha minket választ?</h2>
+    <p class="muted">Mert segítségedre lehetünk, akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
+
+    <div class="logos">
+      <!-- 12 szolgáltatás -->
+      <div class="logo-item">
         <img src="p_fenyvesi.jpg" alt="">
-        <img src="p_dosza.jpg" alt="">
-        <img src="p_boszporusz.jpg" alt="">
+        <p>20 év tapasztalat</p>
+      </div>
+      <div class="logo-item">
         <img src="p_kkbazis.jpg" alt="">
+        <p>Díjmentes tanácsadás</p>
+      </div>
+      <div class="logo-item">
+        <img src="p_infinite.jpg" alt="">
+        <p>Új otthon itthon és külföldön</p>
+      </div>
+      <div class="logo-item">
+        <img src="p_dosza.jpg" alt="">
+        <p>Ingatlanközvetítés</p>
+      </div>
+
+      <div class="logo-item">
+        <img src="p_botripsz.jpg" alt="">
+        <p>Vevőképviselet</p>
+      </div>
+      <div class="logo-item">
+        <img src="p_boszporusz.jpg" alt="">
+        <p>Ügyvédi és közjegyzői támogatás</p>
+      </div>
+      <div class="logo-item">
         <img src="p_jan_mara.jpg" alt="">
+        <p>Ingatlankezelés</p>
+      </div>
+      <div class="logo-item">
+        <img src="p_infinite.jpg" alt="">
+        <p>Ingatlan üzemeltetés</p>
+      </div>
+
+      <div class="logo-item">
+        <img src="p_fenyvesi.jpg" alt="">
+        <p>Generál kivitelezés</p>
+      </div>
+      <div class="logo-item">
+        <img src="p_dosza.jpg" alt="">
+        <p>Ingatlan felújítás / átalakítás</p>
+      </div>
+      <div class="logo-item">
+        <img src="p_botripsz.jpg" alt="">
+        <p>Lakberendezési tanácsadás</p>
+      </div>
+      <div class="logo-item">
+        <img src="p_kkbazis.jpg" alt="">
+        <p>100% Elégedettség</p>
       </div>
     </div>
+  </section>
+
+  <!-- LÁBLÉC -->
+  <div class="footer">
+    <div class="container">© 2025 Stony & Grigo Property</div>
   </div>
-</section>
 
-<section class="section">
-  <div class="container">
-    <h2 class="center" data-i18n="why_title">Miért jó, ha minket választ?</h2>
-    <div class="bullets">
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b1">20 év tapasztalat</strong><div class="muted"></div></div></div>
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b2">Díjmentes tanácsadás</strong></div></div>
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b3">Új otthon itthon és külföldön</strong></div></div>
-
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b4">Ingatlanközvetítés</strong></div></div>
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b5">Vevőképviselet</strong></div></div>
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b6">Ügyvédi / közjegyzői támogatás</strong></div></div>
-
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b7">Ingatlankezelés</strong></div></div>
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b8">Ingatlan üzemeltetés</strong></div></div>
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b9">Generál kivitelezés</strong></div></div>
-
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b10">Felújítás, átépítés</strong></div></div>
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b11">Lakberendezési tanácsadás</strong></div></div>
-      <div class="item card"><div class="icon"><img src="logo_sg.jpg" alt=""></div><div><strong data-i18n="b12">100% elégedettség</strong></div></div>
-    </div>
-  </div>
-</section>
-
-<footer><div class="container">© 2025 Stony & Grigo Property & Real Estate Investment</div></footer>
-
-<script>
-/*** NAV + LANG ***/
-const nav = document.querySelector('header .nav');
-document.getElementById('hamb').onclick=()=>document.querySelector('header').classList.toggle('open');
-const box=document.getElementById('langBox');document.getElementById('langBtn').onclick=()=>box.classList.toggle('open');
-box.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
-
-const dict={
- hu:{nav_home:"Kezdőlap",nav_props:"Ingatlanok",nav_team:"Kollégáink",nav_partners:"Partnereink",nav_contact:"Kapcsolat",
-     hero_badge:"Együtt megálmodjuk a következő lépést.",hero_title:"Találj új otthonra",cta_team:"Kollégáink →",cta_search:"Keresés az ingatlanok között",
-     partners_title:"Partnereink",why_title:"Miért jó, ha minket választ?",
-     b1:"20 év tapasztalat",b2:"Díjmentes tanácsadás",b3:"Új otthon itthon és külföldön",b4:"Ingatlanközvetítés",b5:"Vevőképviselet",b6:"Ügyvédi / közjegyzői támogatás",
-     b7:"Ingatlankezelés",b8:"Ingatlan üzemeltetés",b9:"Generál kivitelezés",b10:"Felújítás, átépítés",b11:"Lakberendezési tanácsadás",b12:"100% elégedettség"},
- en:{nav_home:"Home",nav_props:"Properties",nav_team:"Our Team",nav_partners:"Partners",nav_contact:"Contact",
-     hero_badge:"Let’s take the next step together.",hero_title:"Find your new home",cta_team:"Meet the team →",cta_search:"Search properties",
-     partners_title:"Our Partners",why_title:"Why choose us?",
-     b1:"20 years of experience",b2:"Free consulting",b3:"New home in Hungary & abroad",b4:"Real-estate brokerage",b5:"Buyer representation",b6:"Legal / notary support",
-     b7:"Property management",b8:"Facility management",b9:"General contracting",b10:"Renovation & remodelling",b11:"Interior design consulting",b12:"100% satisfaction"},
- de:{nav_home:"Startseite",nav_props:"Immobilien",nav_team:"Team",nav_partners:"Partner",nav_contact:"Kontakt",
-     hero_badge:"Den nächsten Schritt gemeinsam.",hero_title:"Finden Sie Ihr neues Zuhause",cta_team:"Unser Team →",cta_search:"Immobiliensuche",
-     partners_title:"Unsere Partner",why_title:"Warum wir?",
-     b1:"20 Jahre Erfahrung",b2:"Kostenlose Beratung",b3:"Neues Zuhause im In- und Ausland",b4:"Maklerdienstleistungen",b5:"Käufervertretung",b6:"Juristische Unterstützung",
-     b7:"Hausverwaltung",b8:"Objekt­betrieb",b9:"Generalunternehmer",b10:"Sanierung & Umbau",b11:"Einrichtungs­beratung",b12:"100% Zufriedenheit"}
-};
-function applyLang(lang){
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.getAttribute('data-i18n');
-    if(dict[lang] && dict[lang][k]) el.textContent=dict[lang][k];
-  });
-  document.getElementById('langBtn').textContent=(lang==='en'?'🇬🇧 EN ▾':lang==='de'?'🇩🇪 DE ▾':'🇭🇺 HU ▾');
-  localStorage.setItem('lang',lang);
-}
-function setLang(l){applyLang(l);box.classList.remove('open')}
-applyLang(localStorage.getItem('lang')||'hu');
-</script>
-</body></html>
+  <script src="script.js"></script>
+</body>
+</html>
