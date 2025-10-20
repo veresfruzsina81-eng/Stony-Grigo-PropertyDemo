@@ -1,77 +1,128 @@
-<!doctype html><html lang="hu">
+<!doctype html>
+<html lang="hu">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ingatlanok</title>
-<link rel="stylesheet" href="styles.css">
-<style>.hero{min-height:52vh;background-image:url('bg_rug.jpg')}</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ingatlanok – Stony & Grigo Property</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="nav">
-  <div class="container navbar nav">
-    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony & Grigo Property & Real Estate Investment</span></a>
-    <nav class="navlinks">
-      <a data-i18n="nav_home" href="index.html">Kezdőlap</a>
-      <a class="active" data-i18n="nav_props" href="ingatlanok.html">Ingatlanok</a>
-      <a data-i18n="nav_team" href="csapat.html">Kollégáink</a>
-      <a data-i18n="nav_partners" href="partnerek.html">Partnereink</a>
-      <a data-i18n="nav_contact" href="kapcsolat.html">Kapcsolat</a>
-      <div class="lang" id="langBox"><button class="langbtn" id="langBtn">🇭🇺 HU ▾</button>
-        <div class="langmenu"><button data-lang="hu"><span class="flag">🇭🇺</span>Magyar</button><button data-lang="en"><span class="flag">🇬🇧</span>English</button><button data-lang="de"><span class="flag">🇩🇪</span>Deutsch</button></div>
-      </div>
-    </nav>
-    <button class="hamb" id="hamb"><span></span><span></span><span></span></button>
-  </div>
-</header>
+  <!-- Navigáció -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img src="logo_sg.jpg" alt="">
+        <span>Stony & Grigo Property & Real Estate Investment</span>
+      </a>
+      <div class="menu">
+        <a href="index.html" data-i18n="m_home">Kezdőlap</a>
+        <a class="active" href="ingatlanok.html" data-i18n="m_props">Ingatlanok</a>
+        <a href="csapat.html" data-i18n="m_team">Kollégáink</a>
+        <a href="kapcsolat.html" data-i18n="m_contact">Kapcsolat</a>
 
-<section class="hero">
-  <div class="overlay"></div>
-  <div class="content">
-    <h1 data-i18n="prop_title">Ingatlanok</h1>
-    <div class="glass search-panel">
-      <div class="tabs">
-        <button class="tab active" data-i18n="t_sell">Eladó</button>
-        <button class="tab" data-i18n="t_rent">Kiadó</button>
-        <button class="tab" data-i18n="t_med">Mediterrán</button>
-      </div>
-
-      <div class="search-grid">
-        <input class="input full" placeholder="🔎 Kulcsszó – Mit keres?" data-i18n-ph="ph_keyword">
-        <select class="input"><option selected data-i18n="sel_type">Ingatlan típusa</option>
-          <option>Lakás</option><option>Ház</option><option>Garázs</option><option>Nyaraló</option><option>Iroda</option><option>Üzlethelyiség</option><option>Fejlesztési terület</option><option>Telek</option>
-        </select>
-        <select class="input"><option selected data-i18n="sel_loc">Lokáció</option></select>
-        <label class="input" style="display:flex;align-items:center;gap:8px"><span data-i18n="lbl_area">Alapterület (m² – tól-ig)</span></label>
-        <label class="input" style="display:flex;align-items:center;gap:8px"><span data-i18n="lbl_price">Ár (M Ft – tól-ig)</span></label>
-        <label class="check full"><input type="checkbox"><span data-i18n="advanced">Részletes szűrés</span></label>
-        <button class="btn full" data-i18n="btn_search">Keresés</button>
+        <!-- Nyelvválasztó -->
+        <div class="lang" id="langBox">
+          <button class="langbtn" id="langBtn">
+            <img class="flag" src="flag_hu.png" alt=""> HU ▾
+          </button>
+          <div class="langmenu">
+            <button data-lang="hu"><img class="flag" src="flag_hu.png" alt=""> HU</button>
+            <button data-lang="en"><img class="flag" src="flag_gb.png" alt=""> EN</button>
+            <button data-lang="de"><img class="flag" src="flag_de.png" alt=""> DE</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<footer><div class="container">© 2025 Stony & Grigo Property</div></footer>
+  <!-- HERO -->
+  <section class="hero" style="min-height:72vh;background-image:url('bg_rug.jpg')">
+    <div class="overlay"></div>
+    <div class="content container">
 
-<script>
-const nav = document.querySelector('header .nav');document.getElementById('hamb').onclick=()=>document.querySelector('header').classList.toggle('open');
-const box=document.getElementById('langBox');document.getElementById('langBtn').onclick=()=>box.classList.toggle('open');
-box.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
-const dict={
- hu:{nav_home:"Kezdőlap",nav_props:"Ingatlanok",nav_team:"Kollégáink",nav_partners:"Partnereink",nav_contact:"Kapcsolat",
-     prop_title:"Ingatlanok",t_sell:"Eladó",t_rent:"Kiadó",t_med:"Mediterrán",
-     ph_keyword:"Kulcsszó – Mit keres?",sel_type:"Ingatlan típusa",sel_loc:"Lokáció",lbl_area:"Alapterület (m² – tól-ig)",lbl_price:"Ár (M Ft – tól-ig)",advanced:"Részletes szűrés",btn_search:"Keresés"},
- en:{nav_home:"Home",nav_props:"Properties",nav_team:"Our Team",nav_partners:"Partners",nav_contact:"Contact",
-     prop_title:"Properties",t_sell:"For sale",t_rent:"For rent",t_med:"Mediterranean",
-     ph_keyword:"Keyword – what are you looking for?",sel_type:"Property type",sel_loc:"Location",lbl_area:"Area (m² – min/max)",lbl_price:"Price (M HUF – min/max)",advanced:"Advanced filters",btn_search:"Search"},
- de:{nav_home:"Startseite",nav_props:"Immobilien",nav_team:"Team",nav_partners:"Partner",nav_contact:"Kontakt",
-     prop_title:"Immobilien",t_sell:"Zu verkaufen",t_rent:"Zu vermieten",t_med:"Mittelmeer",
-     ph_keyword:"Suchwort – was suchen Sie?",sel_type:"Immobilienart",sel_loc:"Ort",lbl_area:"Fläche (m² – von/bis)",lbl_price:"Preis (M HUF – von/bis)",advanced:"Erweiterte Filter",btn_search:"Suchen"}
-};
-function applyLang(lang){
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(dict[lang][k]) el.textContent=dict[lang][k]});
-  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{const k=el.dataset.i18nPh;if(dict[lang][k]) el.placeholder=dict[lang][k]});
-  document.getElementById('langBtn').textContent=(lang==='en'?'🇬🇧 EN ▾':lang==='de'?'🇩🇪 DE ▾':'🇭🇺 HU ▾'); localStorage.setItem('lang',lang);
-}
-function setLang(l){applyLang(l);box.classList.remove('open')}
-applyLang(localStorage.getItem('lang')||'hu');
-</script>
-</body></html>
+      <div class="glass" style="max-width:1100px;margin:auto">
+        <!-- Tabs -->
+        <div class="tabs">
+          <button class="tab active" data-tab="sale" data-i18n="tab_sale">Eladó</button>
+          <button class="tab" data-tab="rent" data-i18n="tab_rent">Kiadó</button>
+          <button class="tab" data-tab="med" data-i18n="tab_med">Mediterrán ingatlanok</button>
+        </div>
+
+        <!-- Kereső -->
+        <div class="search-grid">
+          <input class="input" data-i18n-ph="key_ph" placeholder="Kulcsszó — Mit keres?">
+          <div>
+            <select>
+              <option data-i18n="cat_ph">Válassz kategóriát</option>
+              <option>Lakás</option>
+              <option>Ház</option>
+              <option>Telek</option>
+              <option>Iroda</option>
+              <option>Üzlethelyiség</option>
+              <option>Fejlesztési terület</option>
+            </select>
+          </div>
+          <div>
+            <select>
+              <option data-i18n="loc_ph">Lokáció</option>
+            </select>
+          </div>
+          <div class="check">
+            <input id="adv" type="checkbox">
+            <label for="adv" data-i18n="adv">Részletes Szűrés</label>
+          </div>
+          <div style="display:flex;justify-content:flex-end">
+            <button class="btn" data-i18n="search">🔎 Keresés</button>
+          </div>
+
+          <!-- Részletes szűrés -->
+          <div class="full" id="advBox" style="display:none">
+            <div class="search-grid">
+              <div>
+                <label class="muted" data-i18n="cat_ph">Válassz kategóriát</label>
+                <select>
+                  <option>Lakás</option>
+                  <option>Ház</option>
+                  <option>Garázs</option>
+                  <option>Nyaraló</option>
+                  <option>Iroda</option>
+                  <option>Üzlethelyiség</option>
+                  <option>Fejlesztési terület</option>
+                  <option>Telek</option>
+                </select>
+              </div>
+              <div>
+                <label class="muted" data-i18n="loc_ph">Lokáció</label>
+                <select>
+                  <option>Budapest</option>
+                </select>
+              </div>
+              <div>
+                <label class="muted">Alapterület (m² – tól-ig)</label>
+                <input class="input" placeholder="pl. 45 – 90">
+              </div>
+              <div>
+                <label class="muted">Ár (M Ft – tól-ig)</label>
+                <input class="input" placeholder="pl. 45 – 120">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gombok -->
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:14px">
+          <a class="btn" href="#" data-i18n="cta_sale">Eladó ingatlanok →</a>
+          <a class="btn" href="#" data-i18n="cta_rent">Kiadó ingatlanok →</a>
+          <a class="btn" href="#" data-i18n="cta_med">Mediterrán ingatlanok →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="container">© 2025 Stony & Grigo Property</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
