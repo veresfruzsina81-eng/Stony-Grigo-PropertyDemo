@@ -15,47 +15,44 @@
         <img src="logo_sg.jpg" alt="SG Property" />
         <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
       </a>
-
       <nav class="menu">
-        <a class="active" href="index.html">Kezdőlap</a>
-        <a href="ingatlanok.html">Ingatlanok</a>
-        <a href="csapat.html">Kollégáink</a>
-        <a href="partnerek.html">Partnereink</a>
-        <a href="befektetok.html">Befektetőknek</a>
-        <a href="kapcsolat.html">Kapcsolat</a>
-
-        <!-- Nyelvválasztó -->
-        <div class="lang" id="lang">
-          <button class="langbtn" type="button">
-            <img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" />
-            <strong>HU</strong>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-          </button>
-          <div class="langmenu">
-            <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
-            <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
-            <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
-          </div>
-        </div>
+        <a class="active" href="index.html" data-i18n="nav_home">Kezdőlap</a>
+        <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
+        <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
+        <a href="partnerek.html" data-i18n="nav_partners">Partnereink</a>
+        <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
+        <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
       </nav>
+      <div class="lang" id="lang">
+        <button class="langbtn" type="button">
+          <img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" />
+          <strong>HU</strong>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="langmenu">
+          <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
+          <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
+          <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- HERO (Lánchíd) -->
+  <!-- Felső Lánchíd -->
   <section class="hero" style="background-image:url('hero_lanchid.jpg')">
     <div class="overlay"></div>
     <div class="content container">
-      <h1 class="title">Együtt megtaláljuk álmaid otthonát</h1>
-      <p class="muted">Együtt megálmodjuk a következő lépést.</p>
-      <p><a class="btn" href="csapat.html">Kollégáink →</a></p>
+      <h1 class="title" data-i18n="hero_title">Együtt megtaláljuk álmaid otthonát</h1>
+      <p class="muted smallnote" data-i18n="hero_sub">Együtt megálmodjuk a következő lépést.</p>
+      <p><a class="btn" href="csapat.html" data-i18n="btn_team">Kollégáink →</a></p>
     </div>
   </section>
 
-  <!-- MIÉRT JÓ, HA MINKET VÁLASZT? (minden tétel) -->
+  <!-- Miért minket -->
   <section class="why">
     <div class="container">
-      <h2>Miért jó, ha minket választ?</h2>
-      <p class="muted">Mert segítségedre lehetünk – akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
+      <h2 data-i18n="why_title">Miért jó, ha minket választ?</h2>
+      <p class="muted" data-i18n="why_sub">Mert segítségedre lehetünk – akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
 
       <div class="logos">
         <div class="logo-item"><img src="logo_sg.jpg" alt=""><p>Vevőképviselet</p></div>
@@ -73,34 +70,11 @@
     </div>
   </section>
 
-  <!-- Alsó Lánchíd -->
+  <!-- Alsó Lánchíd (megmarad) -->
   <section class="bottom-hero">
     <div class="container content">
-      <h2>Találj új otthonra</h2>
-      <p>Lépj kapcsolatba kollégáinkkal – segítünk a következő lépésben.</p>
-    </div>
-  </section>
-
-  <!-- MOZGÓ Partnerek (kezdőlapon is!) -->
-  <section class="marquee">
-    <div class="container">
-      <div class="track">
-        <img src="p_dosza.jpg" alt="DOSZA" />
-        <img src="p_infinite.jpg" alt="Infinite Catering" />
-        <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
-        <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
-        <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
-        <img src="p_boszporusz.jpg" alt="Boszporusz" />
-        <img src="p_botripsz.jpg" alt="BoTrips" />
-        <!-- ismételve a végtelen futáshoz -->
-        <img src="p_dosza.jpg" alt="DOSZA" />
-        <img src="p_infinite.jpg" alt="Infinite Catering" />
-        <img src="p_fenyvesi.jpg" alt="Fenyvesy Rudolf" />
-        <img src="p_jan_mara.jpg" alt="Jan–Mara BT" />
-        <img src="p_kkbazis.jpg" alt="K.K. Bázis" />
-        <img src="p_boszporusz.jpg" alt="Boszporusz" />
-        <img src="p_botripsz.jpg" alt="BoTrips" />
-      </div>
+      <h2 data-i18n="bottom_title">Találj új otthonra</h2>
+      <p data-i18n="bottom_sub">Lépj kapcsolatba kollégáinkkal – segítünk a következő lépésben.</p>
     </div>
   </section>
 
