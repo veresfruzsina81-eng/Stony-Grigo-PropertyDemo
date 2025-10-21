@@ -1,17 +1,16 @@
 :root{
-  /* világosabb, barátságos kék */
-  --bg1:#2a7ea8; --bg2:#5aa5c7;
+  /* világosabb, barátságos kék - felülírva sötétebbre a kérés szerint */
+  --bg1:#12324a;  /* sötétebb */
+  --bg2:#1f4f6d;  /* sötétebb */
   --nav:#3b8fb6ee; --footer:#3b8fb6ee;
-  --txt-dark:#0e2533;      /* világos üvegen */
-  --txt-light:#eef7fc;     /* sötét háttéren */
+  --txt-dark:#0e2533;
+  --txt-light:#eef7fc;
   --muted:#e9f4fb;
   --ring:rgba(0,0,0,.12);
-
-  /* üveg/fehér */
-  --glass:#ffffffa6;       /* olvasható, átlátszó */
-  --glass-weak:#ffffff88;  /* gyengébb üveg */
-  --card:#ffffffc2;        /* világos kártya (nem hófehér) */
-  --card-dark:rgba(0,0,0,.18); /* halvány sötétes üveg kártyához */
+  --glass:#ffffffa6;
+  --glass-weak:#ffffff88;
+  --card:#ffffffc2;
+  --card-dark:rgba(0,0,0,.18);
   --brand:#f0c56b;
 }
 
@@ -26,23 +25,18 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .container{width:min(1100px,92%);margin:0 auto}
 
-/* ===== NAV (csak nyelvválasztó fehér) ===== */
+/* ===== NAV ===== */
 .nav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:saturate(140%) blur(10px);
   border-bottom:1px solid var(--ring)}
-.nav-inner{display:flex;align-items:center;gap:16px;padding:10px 0;position:relative}
+.nav-inner{display:flex;align-items:center;gap:16px;padding:10px 0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .brand img{width:34px;height:34px;border-radius:8px;object-fit:cover}
 .menu{margin-left:auto;display:flex;gap:16px;align-items:center}
 .menu a{padding:8px 10px;border-radius:10px;opacity:.95}
 .menu a:hover,.menu a.active{background:rgba(255,255,255,.15);opacity:1}
 
-/* Hamburger (mobil) */
-.hamb{display:none;background:#ffffff; color:#123040; border:1px solid var(--ring);
-  padding:8px 10px;border-radius:12px;cursor:pointer}
-.hamb svg{display:block}
-
 /* Nyelvválasztó – FEHÉR */
-.lang{position:relative}
+.lang{position:relative; z-index:70;}
 .langbtn{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--ring);
   padding:8px 12px;border-radius:12px;cursor:pointer;color:#123040}
 .flag{width:20px;height:14px;border-radius:2px}
@@ -52,6 +46,23 @@ a{color:inherit;text-decoration:none}
 .langmenu button{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;background:transparent;border:0;cursor:pointer;color:#123040}
 .langmenu button:hover{background:#f3f6f8}
 
+/* ===== HAMBURGER (globális) ===== */
+.hamburger{
+  display:none; margin-left:auto; background:transparent; border:1px solid var(--ring);
+  padding:8px 10px; border-radius:12px; cursor:pointer; color:#fff;
+}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;margin:4px 0}
+
+@media (max-width:900px){
+  .hamburger{display:block}
+  /* a menü beljebb nyílik, hogy ne takarja a HU gombot */
+  .menu{
+    position:absolute; right:88px; top:62px; background:var(--nav); border:1px solid var(--ring);
+    border-radius:12px; padding:10px; display:none; flex-direction:column; width:min(260px,92vw); gap:10px; z-index:60;
+  }
+  .nav-open .menu{display:flex}
+}
+
 /* ===== HERO ===== */
 .hero{min-height:68vh;position:relative;display:grid;place-items:center;background-size:cover;background-position:center}
 .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.36))}
@@ -59,7 +70,10 @@ a{color:inherit;text-decoration:none}
 .title{font-size:clamp(32px,6vw,56px);line-height:1.05;margin:0 0 10px;text-shadow:0 12px 28px rgba(0,0,0,.35)}
 .muted{color:var(--muted);text-shadow:0 8px 22px rgba(0,0,0,.26)}
 
-/* ===== Profi „Miért minket” – logóval, változatos elrendezés ===== */
+/* ===== Kártyák ===== */
+.card{background:var(--card);color:var(--txt-dark);border:1px solid var(--ring);border-radius:16px;padding:16px;backdrop-filter:blur(8px)}
+
+/* ===== Why (ikonok kerek) ===== */
 .why{padding:48px 0}
 .why h2{margin:0 0 8px}
 .why .lead{margin:0 0 18px;color:var(--muted)}
@@ -69,80 +83,86 @@ a{color:inherit;text-decoration:none}
   border:1px solid var(--ring); border-radius:18px; padding:16px;
   display:flex; gap:12px; align-items:flex-start; backdrop-filter:blur(10px)
 }
-.fx{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#fff;border:1px solid var(--ring)}
+.fx{width:72px;height:72px;border-radius:9999px;display:grid;place-items:center;background:#fff;border:1px solid var(--ring)}
 .feature h3{margin:.1rem 0 .2rem 0;font-size:1rem;color:#0d2a3a}
 .feature p{margin:0;color:#35586a}
 .span2{grid-column:span 2}.span3{grid-column:span 3}.span6{grid-column:span 6}
 @media(max-width:940px){.why-grid{grid-template-columns:repeat(2,1fr)}.span3,.span6{grid-column:span 2}}
 
-/* ===== Alsó Lánchíd ===== */
-.bottom-hero{min-height:48vh;background:url("hero_lanchid.jpg") center/cover no-repeat;position:relative;display:grid;place-items:center}
-.bottom-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.36))}
-.bottom-hero .content{position:relative;text-align:center;padding:18px}
-.bottom-hero h2{margin:0 0 8px;font-size:clamp(28px,4.5vw,44px)}
-.bottom-hero p{margin:0;color:var(--muted)}
-
 /* ===== Lábléc ===== */
 .footer{border-top:1px solid var(--ring);background:var(--footer);color:#eef6fb;padding:22px 0;text-align:center}
 
-/* ===== Ingatlanok: üveg kereső – az általad kért stílus ===== */
-.hero__glass{position:relative;z-index:2;max-width:1100px;width:92%;margin:auto;background:var(--glass);
-  color:var(--txt-dark);border:1px solid var(--ring);border-radius:20px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:18px}
+/* ===== Ingatlanok: üveg kereső ===== */
+.hero__glass{
+  position:relative;z-index:2;max-width:1100px;width:92%;margin:auto;
+  background:var(--glass);color:var(--txt-dark);
+  border:1px solid var(--ring);border-radius:22px;backdrop-filter:blur(14px);
+  box-shadow:0 12px 36px rgba(0,0,0,.25);
+  padding:18px 18px 14px;
+}
 .hero__glass--thin{max-width:980px}
 .tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
 .tab{padding:8px 14px;border-radius:14px;border:1px solid var(--ring);background:#ffffffe0;color:#113146;cursor:pointer}
 .tab.active,.tab:hover{background:var(--brand);color:#1e1e1e;border-color:transparent}
+
 .search-row,.filter-row{display:grid;gap:12px;align-items:end}
 .search-row{grid-template-columns:1.2fr 1fr 1fr auto}
 .filter-row{grid-template-columns:repeat(4,1fr)}
-@media(max-width:900px){.search-row,.filter-row{grid-template-columns:1fr}}
-.hero__glass input,.hero__glass select,.btn{height:46px;border-radius:12px;border:1px solid var(--ring);background:#ffffffee;color:#0e2533;padding:0 12px}
+@media(max-width:900px){
+  .search-row,.filter-row{grid-template-columns:1fr}
+}
+
+.hero__glass label{display:block;font-size:.92rem;color:#35586a;margin-bottom:6px}
+.hero__glass input,.hero__glass select,.btn{
+  height:46px;border-radius:16px;border:1px solid var(--ring);background:#ffffffee;color:#0e2533;padding:0 12px;
+  box-shadow:0 4px 10px rgba(0,0,0,.06) inset, 0 2px 10px rgba(0,0,0,.07);
+}
 .hero__glass input::placeholder{color:#5c7a8b}
 .btn{background:var(--brand);color:#2b240e;border:0;font-weight:700;cursor:pointer}
 .btn.ghost{background:transparent;border:1px solid var(--ring);color:#0e2533}
 .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 
-/* ===== ÜVEGES DOBOZ a vetítésnek (Ingatlanok + Partnereink) ===== */
+/* ===== Üveges doboz a vetített sávnak ===== */
 .glass-box{
-  background:var(--glass);
-  color:var(--txt-dark);
-  border:1px solid var(--ring);
-  border-radius:20px;
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  width:min(1100px,92%);
-  margin:18px auto;
-  overflow:hidden; /* NE lógjon ki semmi */
+  background: var(--glass);
+  color: var(--txt-dark);
+  border: 1px solid var(--ring);
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+  padding: 6px;
 }
 
-/* Vetített szöveg szalag – most a glass-box belsejében fut */
-.marquee-text{position:relative;overflow:hidden;background:transparent;border-top:none}
-.marquee-text .track{display:flex;gap:16px;align-items:center;padding:12px 14px;animation:scroll 28s linear infinite;white-space:nowrap}
+/* ===== Marketing SZÖVEG vetítve ===== */
+.marquee-text{position:relative;overflow:hidden;background:#ffffff20;border-top:1px solid var(--ring)}
+.marquee-text .track{display:flex;gap:16px;align-items:center;padding:12px 0;animation:scroll 28s linear infinite;white-space:nowrap}
 .marquee-text .chip{display:inline-flex;align-items:center;gap:10px;background:#fffffff0;border:1px solid var(--ring);border-radius:999px;padding:8px 14px;color:#0e2533}
 .marquee-text img{height:24px;width:auto;border-radius:6px}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* ===== Kártyák – NEM fehérek teljesen (olvasható mindenhol) ===== */
-.card{background:var(--card);color:var(--txt-dark);border:1px solid var(--ring);border-radius:16px;padding:16px;backdrop-filter:blur(8px)}
-
-/* Kapcsolat ikon sor */
-.kontakt ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.kontakt li{display:flex;align-items:center;gap:10px;color:#0e2533}
-.icon{width:26px;height:26px;display:inline-grid;place-items:center;border-radius:8px;background:#fff;border:1px solid var(--ring);color:#0e2533}
-
-/* ===== Reszponzív NAV ===== */
-@media(max-width:900px){
-  .hamb{display:block;margin-left:auto}
-  .menu{
-    position:absolute;left:0;right:0;top:calc(100% + 8px);
-    background:var(--nav);backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--ring);
-    display:none;flex-direction:column;gap:6px;padding:10px;
-  }
-  .nav.open .menu{display:flex}
-  .menu a{padding:12px;border-radius:12px}
-  .lang{margin-left:0}
-  .menu + .lang{position:absolute;right:8px;top:10px} /* nyelvváltó marad kéznél */
+/* === Ingatlanok menü gombok === */
+.menu-grid{
+  display:grid; gap:14px; width:min(680px,100%); margin:14px auto 0;
 }
+.menu-grid .menu-btn{
+  padding:14px 18px; border:1px solid var(--ring); border-radius:16px;
+  background:var(--glass); color:var(--txt-dark); font-weight:600;
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  text-align:center;
+}
+.menu-grid .menu-btn:active{transform:scale(.99)}
 
-/* apróság: brand felirat eltüntetése nagyon keskenyen */
-@media(max-width:760px){.brand span{display:none}}
+/* === Üveges kereső lenyíló (collapsible) === */
+.glass-collapsible{display:none; margin-top:14px;}
+.glass-collapsible.open{display:block; animation:drop .18s ease-out}
+@keyframes drop{from{opacity:0; transform:translateY(-6px)} to{opacity:1; transform:translateY(0)}}
+
+/* === Átlátszó VISSZA gomb – minden oldalon egységes === */
+.back-btn{
+  position:fixed; right:14px; bottom:18px; z-index:80;
+  background:rgba(255,255,255,.22); color:#fff; border:1px solid var(--ring);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  border-radius:999px; padding:10px 14px; font-weight:600;
+}
+.back-btn:hover{background:rgba(255,255,255,.28)}
