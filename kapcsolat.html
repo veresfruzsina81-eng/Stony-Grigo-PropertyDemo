@@ -4,11 +4,30 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kapcsolat – Stony & Grigo Property</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Mobil hamburger a kapcsolat oldalhoz is */
+    .hamburger{
+      display:none; margin-left:auto; background:transparent; border:1px solid var(--ring);
+      padding:8px 10px; border-radius:12px; cursor:pointer; color:#fff;
+    }
+    .hamburger span{display:block;width:22px;height:2px;background:#fff;margin:4px 0}
+    @media (max-width:900px){
+      .hamburger{display:block}
+      .menu{
+        position:absolute; right:4%; top:62px; background:var(--nav); border:1px solid var(--ring);
+        border-radius:12px; padding:10px; display:none; flex-direction:column; width:min(260px,92vw); gap:10px;
+      }
+      .nav-open .menu{display:flex}
+    }
+  </style>
 </head>
 <body>
 <header class="nav">
   <div class="container nav-inner">
     <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
+
+    <button class="hamburger" id="hamb"><span></span><span></span><span></span></button>
+
     <nav class="menu">
       <a href="index.html" data-i18n="nav_home">Kezdőlap</a>
       <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
@@ -49,7 +68,7 @@
       <ul>
         <li><span class="icon">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0  1 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.86.31 1.7.57 2.5a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.58-1.09a2 2 0 0 1 2.11-.45c.8.26 1.64.45 2.5.57A2 2 0 0 1 22 16.92z"/>
             </svg></span> <a href="tel:+36308965858">+36 30 896 5858</a></li>
         <li><span class="icon">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
@@ -61,7 +80,7 @@
             </svg></span> Budapest</li>
         <li><span class="icon">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M13 22v-8h3l1-4h-4V7a2 2 0 0 1 2-2h2V1h-3a5 5 0 0 0-5 5v4H6v4h3v8h4z"/>
+              <path d="M13 22v-8h3l1-4h-4V7a2 2 0 0 1 2-2h2V1h-3a5 5 0  0 0-5 5v4H6v4h3v8h4z"/>
             </svg></span> <a href="#" rel="noopener">Facebook</a></li>
       </ul>
     </article>
@@ -69,6 +88,14 @@
 </section>
 
 <footer class="footer"><div class="container">© 2025 Stony &amp; Grigo Property</div></footer>
+
 <script src="script.js"></script>
+<script>
+  (function(){
+    var b=document.getElementById('hamb'); if(!b) return;
+    b.addEventListener('click', function(e){ e.stopPropagation(); document.body.classList.toggle('nav-open'); });
+    document.addEventListener('click', function(){ document.body.classList.remove('nav-open'); });
+  })();
+</script>
 </body>
 </html>
