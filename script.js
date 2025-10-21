@@ -18,9 +18,7 @@ const I18N = {
 };
 
 (function(){
-  const nav = document.querySelector('.nav');
-  const box=document.getElementById('lang'); 
-  if(box){
+  const box=document.getElementById('lang'); if(box){
     const btn=box.querySelector('.langbtn'), flag=btn.querySelector('.flag'), lab=btn.querySelector('strong');
     const menu=box.querySelector('.langmenu');
     const setBtn=c=>{ if(c==='en'){flag.src='https://flagcdn.com/w20/gb.png';lab.textContent='EN';}
@@ -45,19 +43,34 @@ const I18N = {
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active')); t.classList.add('active');
   }));
 
-  // Hamburger toggle (mobil)
-  const hamb = document.querySelector('.hamb');
-  const menu = document.querySelector('.menu');
-  if(hamb && nav && menu){
-    hamb.addEventListener('click', (e)=>{ 
-      e.stopPropagation();
-      nav.classList.toggle('open');
-    });
-    // linkre kattintva záródjon
-    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-    // kívül kattintásra is zár
-    document.addEventListener('click', (e)=>{
-      if(!nav.contains(e.target)) nav.classList.remove('open');
-    });
-  }
+  // hamburger
+  (function(){
+    var b=document.getElementById('hamb'); if(!b) return;
+    b.addEventListener('click', function(e){ e.stopPropagation(); document.body.classList.toggle('nav-open'); });
+    document.addEventListener('click', function(){ document.body.classList.remove('nav-open'); });
+  })();
+
+  // --- Ingatlanok menü: "Díjmentes tanácsadás" -> üveges kereső lenyitása ---
+  (function(){
+    var t = document.querySelector('[data-open="search"]');
+    var box = document.querySelector('.glass-collapsible');
+    if(t && box){
+      t.addEventListener('click', function(e){
+        e.preventDefault();
+        box.classList.toggle('open');
+        if(box.classList.contains('open')){ box.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    }
+  })();
+
+  // --- Vissza gomb működés (minden oldalon) ---
+  (function(){
+    var back = document.querySelector('.back-btn');
+    if(back){
+      back.addEventListener('click', function(e){
+        e.preventDefault();
+        if(history.length > 1) history.back(); else window.location.href = 'index.html';
+      });
+    }
+  })();
 })();
