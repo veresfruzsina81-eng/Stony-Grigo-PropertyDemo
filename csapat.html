@@ -1,97 +1,68 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kollégáink – Stony & Grigo Property</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">
-        <img src="logo_sg.jpg" alt="SG Property" />
-        <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
-      </a>
-      <nav class="menu">
-        <a href="index.html">Kezdőlap</a>
-        <a href="ingatlanok.html">Ingatlanok</a>
-        <a class="active" href="csapat.html">Kollégáink</a>
-        <a href="partnerek.html">Partnereink</a>
-        <a href="befektetok.html">Befektetőknek</a>
-        <a href="kapcsolat.html">Kapcsolat</a>
-      </nav>
-      <div class="lang" id="lang">
-        <button class="langbtn" type="button">
-          <img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" />
-          <strong>HU</strong>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-        </button>
-        <div class="langmenu">
-          <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
-          <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
-          <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
-        </div>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
+    <nav class="menu">
+      <a href="index.html" data-i18n="nav_home">Kezdőlap</a>
+      <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
+      <a class="active" href="csapat.html" data-i18n="nav_team">Kollégáink</a>
+      <a href="partnerek.html" data-i18n="nav_partners">Partnereink</a>
+      <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
+      <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
+    </nav>
+    <div class="lang" id="lang">
+      <button class="langbtn" type="button"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" /><strong>HU</strong>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></button>
+      <div class="langmenu">
+        <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
+        <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
+        <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section class="hero" style="background-image:url('hero_lanchid.jpg')">
-    <div class="overlay"></div>
-    <div class="content container">
-      <h1 class="title">Kollégáink</h1>
-      <p class="muted">Többéves tapasztalattal, szakértő csapatunk segít.</p>
-    </div>
-  </section>
+<section class="hero" style="background-image:url('hero_lanchid.jpg')">
+  <div class="overlay"></div>
+  <div class="content container">
+    <h1 class="title">Kollégáink</h1>
+    <p class="muted">Többéves tapasztalat, elkötelezett csapat.</p>
+  </div>
+</section>
 
-  <section class="why" style="padding-top:24px">
-    <div class="container" style="display:grid;gap:16px;grid-template-columns:repeat(2,1fr)">
-      <article class="card" style="display:flex;gap:14px;align-items:center">
-        <img src="t_inotai.jpg" alt="Inotai István" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
-        <div>
-          <h3 style="margin:.2rem 0 .2rem 0">Inotai István</h3>
-          <p class="muted" style="margin:0">Tulajdonos / Ügyvezető</p>
-          <p class="muted" style="margin:.2rem 0 0 0">+36 30 932 3024</p>
-        </div>
-      </article>
+<section class="why" style="padding-top:24px">
+  <div class="container" style="display:grid;gap:16px;grid-template-columns:repeat(2,1fr)">
+    <article class="card" style="display:flex;gap:14px;align-items:center">
+      <img src="t_inotai.jpg" alt="Inotai István" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
+      <div><h3 style="margin:.2rem 0 .2rem 0;color:#0d2a3a">Inotai István</h3><p style="margin:0;color:#35586a">Tulajdonos / Ügyvezető</p><p style="margin:.2rem 0 0 0;color:#35586a">+36 30 932 3024</p></div>
+    </article>
+    <article class="card" style="display:flex;gap:14px;align-items:center">
+      <img src="t_stony.jpg" alt="Stony Gábor" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
+      <div><h3 style="margin:.2rem 0 .2rem 0;color:#0d2a3a">Stony Gábor</h3><p style="margin:0;color:#35586a">Tulajdonos / Irodavezető</p><p style="margin:.2rem 0 0 0;color:#35586a">+36 30 896 5858</p></div>
+    </article>
+    <article class="card" style="display:flex;gap:14px;align-items:center">
+      <img src="t_peter.jpg" alt="Grigolopoulos Péter" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
+      <div><h3 style="margin:.2rem 0 .2rem 0;color:#0d2a3a">Grigolopoulos Péter</h3><p style="margin:0;color:#35586a">Tulajdonos / Értékesítési vezető</p><p style="margin:.2rem 0 0 0;color:#35586a">+36 20 278 2490</p></div>
+    </article>
+    <article class="card" style="display:flex;gap:14px;align-items:center">
+      <img src="logo_sg.jpg" alt="Elek Tímea" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
+      <div><h3 style="margin:.2rem 0 .2rem 0;color:#0d2a3a">Elek Tímea</h3><p style="margin:0;color:#35586a">Értékesítési asszisztens</p><p style="margin:.2rem 0 0 0;color:#35586a">+36 70 708 9250</p></div>
+    </article>
+  </div>
 
-      <article class="card" style="display:flex;gap:14px;align-items:center">
-        <img src="t_stony.jpg" alt="Stony Gábor" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
-        <div>
-          <h3 style="margin:.2rem 0 .2rem 0">Stony Gábor</h3>
-          <p class="muted" style="margin:0">Tulajdonos / Irodavezető</p>
-          <p class="muted" style="margin:.2rem 0 0 0">+36 30 896 5858</p>
-        </div>
-      </article>
+  <div class="container" style="display:flex;justify-content:center;margin-top:22px">
+    <img src="logo_sg.jpg" alt="SG Property" style="height:72px;border-radius:12px">
+  </div>
+</section>
 
-      <article class="card" style="display:flex;gap:14px;align-items:center">
-        <img src="t_peter.jpg" alt="Grigolopoulos Péter" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
-        <div>
-          <h3 style="margin:.2rem 0 .2rem 0">Grigolopoulos Péter</h3>
-          <p class="muted" style="margin:0">Tulajdonos / Értékesítési vezető</p>
-          <p class="muted" style="margin:.2rem 0 0 0">+36 20 278 2490</p>
-        </div>
-      </article>
-
-      <article class="card" style="display:flex;gap:14px;align-items:center">
-        <img src="logo_sg.jpg" alt="Elek Tímea" style="width:84px;height:84px;border-radius:50%;object-fit:cover">
-        <div>
-          <h3 style="margin:.2rem 0 .2rem 0">Elek Tímea</h3>
-          <p class="muted" style="margin:0">Értékesítési asszisztens</p>
-          <p class="muted" style="margin:.2rem 0 0 0">+36 70 708 9250</p>
-        </div>
-      </article>
-    </div>
-
-    <div class="container" style="display:flex;justify-content:center;margin-top:22px">
-      <img src="logo_sg.jpg" alt="SG Property" style="height:72px;opacity:.9">
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">&copy; 2025 Stony &amp; Grigo Property</div>
-  </footer>
-
-  <script src="script.js"></script>
+<footer class="footer"><div class="container">© 2025 Stony &amp; Grigo Property</div></footer>
+<script src="script.js"></script>
 </body>
 </html>
