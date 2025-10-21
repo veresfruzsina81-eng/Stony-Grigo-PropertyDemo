@@ -18,27 +18,46 @@ const I18N = {
 };
 
 (function(){
-  const box=document.getElementById('lang'); if(!box) return;
-  const btn=box.querySelector('.langbtn'), flag=btn.querySelector('.flag'), lab=btn.querySelector('strong');
-  const menu=box.querySelector('.langmenu');
-  const setBtn=c=>{ if(c==='en'){flag.src='https://flagcdn.com/w20/gb.png';lab.textContent='EN';}
-                    else if(c==='de'){flag.src='https://flagcdn.com/w20/de.png';lab.textContent='DE';}
-                    else {flag.src='https://flagcdn.com/w20/hu.png';lab.textContent='HU';}};
-  const apply=c=>{
-    const d=I18N[c]||I18N.hu;
-    document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(d[k]) el.textContent=d[k]; });
-    const m=document.querySelector('.menu'); if(m){const L=m.querySelectorAll('a');
-      if(L[0])L[0].textContent=d.nav_home; if(L[1])L[1].textContent=d.nav_props; if(L[2])L[2].textContent=d.nav_team;
-      if(L[3])L[3].textContent=d.nav_partners; if(L[4])L[4].textContent=d.nav_invest; if(L[5])L[5].textContent=d.nav_contact;}
-    setBtn(c); localStorage.setItem('lang',c);
-  };
-  btn.addEventListener('click',e=>{e.stopPropagation();box.classList.toggle('open')});
-  document.addEventListener('click',()=>box.classList.remove('open'));
-  menu.querySelectorAll('button[data-code]').forEach(b=>b.addEventListener('click',()=>apply(b.getAttribute('data-code'))));
-  apply(localStorage.getItem('lang')||'hu');
+  const nav = document.querySelector('.nav');
+  const box=document.getElementById('lang'); 
+  if(box){
+    const btn=box.querySelector('.langbtn'), flag=btn.querySelector('.flag'), lab=btn.querySelector('strong');
+    const menu=box.querySelector('.langmenu');
+    const setBtn=c=>{ if(c==='en'){flag.src='https://flagcdn.com/w20/gb.png';lab.textContent='EN';}
+                      else if(c==='de'){flag.src='https://flagcdn.com/w20/de.png';lab.textContent='DE';}
+                      else {flag.src='https://flagcdn.com/w20/hu.png';lab.textContent='HU';}};
+    const apply=c=>{
+      const d=I18N[c]||I18N.hu;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(d[k]) el.textContent=d[k]; });
+      const m=document.querySelector('.menu'); if(m){const L=m.querySelectorAll('a');
+        if(L[0])L[0].textContent=d.nav_home; if(L[1])L[1].textContent=d.nav_props; if(L[2])L[2].textContent=d.nav_team;
+        if(L[3])L[3].textContent=d.nav_partners; if(L[4])L[4].textContent=d.nav_invest; if(L[5])L[5].textContent=d.nav_contact;}
+      setBtn(c); localStorage.setItem('lang',c);
+    };
+    btn.addEventListener('click',e=>{e.stopPropagation();box.classList.toggle('open')});
+    document.addEventListener('click',()=>box.classList.remove('open'));
+    menu.querySelectorAll('button[data-code]').forEach(b=>b.addEventListener('click',()=>apply(b.getAttribute('data-code'))));
+    apply(localStorage.getItem('lang')||'hu');
+  }
 
   // tabs (ingatlanok)
   document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
     document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active')); t.classList.add('active');
   }));
+
+  // Hamburger toggle (mobil)
+  const hamb = document.querySelector('.hamb');
+  const menu = document.querySelector('.menu');
+  if(hamb && nav && menu){
+    hamb.addEventListener('click', (e)=>{ 
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+    // linkre kattintva záródjon
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+    // kívül kattintásra is zár
+    document.addEventListener('click', (e)=>{
+      if(!nav.contains(e.target)) nav.classList.remove('open');
+    });
+  }
 })();
