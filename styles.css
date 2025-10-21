@@ -1,170 +1,156 @@
-/* ===== Alap téma – világosabb kék, barátságos ===== */
+/* ===== Alapszínek – világos, barátságos kék téma ===== */
 :root{
-  --bg:#0e2733;
-  --brand:#2A7EA8;            /* világosabb kék */
-  --brand-2:#1f6f95;
-  --ink:#eaf4f9;
-  --muted:#b7ceda;
-  --glass:rgba(255,255,255,.16);
-  --glass-strong:rgba(255,255,255,.22);
-  --border:rgba(255,255,255,.22);
-  --gold:#CFA34F;             /* gombokhoz */
-  --gold-2:#B88F44;
+  --brand:#2F8FB8;           /* világosabb kék */
+  --brand-2:#3FA6CC;         /* még könnyebb kék */
+  --brand-3:#77C6DF;
+  --ink:#0E2633;             /* sötétkék szöveg */
+  --ink-2:#244A5A;
+  --paper:#ffffff;
+  --muted:#6E8A96;
+  --glass-bg: rgba(255,255,255,.12);
+  --glass-brd: rgba(255,255,255,.35);
+  --gold:#CFA34F;            /* gombokhoz */
 }
-
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body.theme{background:#08202a;color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial}
-img{max-width:100%;height:auto;display:block}
+html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#EAF4F8}
+a{color:inherit;text-decoration:none}
 
-.container{max-width:1120px;margin-inline:auto;padding-inline:20px}
-.pad-y{padding:56px 0}
-.section-title{font-size:28px;margin:0 0 8px}
-.section-sub{color:var(--muted);margin:0 0 24px}
-
-/* ===== Header ===== */
-.site-header{
-  position:sticky;top:0;z-index:50;
-  background:linear-gradient(180deg, rgba(10,38,49,.94), rgba(10,38,49,.86));
-  backdrop-filter:saturate(1.1) blur(8px);
-  border-bottom:1px solid rgba(255,255,255,.08)
+/* ===== Fejléc ===== */
+.header{
+  position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#1d6e8e,#2f8fb8);
+  color:#fff;box-shadow:0 8px 26px rgba(0,0,0,.08)
 }
-.nav-row{display:flex;align-items:center;gap:16px;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:600}
-.brand img{height:34px;width:auto;border-radius:8px}
-.main-nav{display:flex;gap:16px}
-.main-nav a{color:var(--ink);text-decoration:none;padding:8px 12px;border-radius:10px}
-.main-nav a:hover,.main-nav a.active{background:var(--glass)}
+.header .wrap{max-width:1200px;margin:auto;display:flex;align-items:center;gap:18px;padding:12px 18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+.brand img{height:36px;width:auto}
+.nav{margin-left:auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.nav a{
+  padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  color:#fff;font-weight:600
+}
+.nav a.active{background:#fff;color:var(--ink)}
 
-/* Nyelvválasztó – fehér doboz */
+/* ===== Nyelvváltó ===== */
 .lang{position:relative}
 .lang-btn{
-  border:1px solid #e6eef3;background:#fff;color:#0e2533;
-  padding:8px 10px;border-radius:10px;cursor:pointer;font-weight:600;
+  display:flex;align-items:center;gap:8px;background:#fff;color:var(--ink);
+  border:1px solid #DFE8ED;border-radius:12px;padding:8px 10px;cursor:pointer;font-weight:700;
 }
 .lang-menu{
-  position:absolute;right:0;margin-top:8px;
-  background:#fff;border:1px solid #e6eef3;border-radius:12px;
-  display:none;flex-direction:column;min-width:120px;box-shadow:0 10px 30px rgba(0,0,0,.18);overflow:hidden
+  position:absolute;right:0;top:calc(100% + 6px);background:#fff;border:1px solid #DFE8ED;border-radius:12px;
+  box-shadow:0 12px 30px rgba(16,40,50,.12);display:none;min-width:160px;overflow:hidden
 }
-.lang-menu button{appearance:none;border:0;background:#fff;color:#0e2533;text-align:left;padding:10px 12px;cursor:pointer}
-.lang-menu button:hover{background:#f4f7f9}
+.lang.open .lang-menu{display:block}
+.lang-item{display:flex;gap:10px;align-items:center;padding:10px 12px;cursor:pointer}
+.lang-item:hover{background:#F5FAFD}
+.flag{font-size:18px}
 
-/* ===== Hero ===== */
-.hero, .prop-hero{
-  position:relative;isolation:isolate;
-  min-height:54vh;display:grid;place-items:center;text-align:left;
-  background-size:cover;background-position:center;
+/* ===== Hős / hero ===== */
+.hero{
+  position:relative;isolation:isolate;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.35)
 }
-.hero{--bg:none}
-.hero[style]{background-image:linear-gradient(0, rgba(8,32,42,.45), rgba(8,32,42,.25)), var(--bg)}
-.prop-hero[style]{background-image:linear-gradient(0, rgba(8,32,42,.55), rgba(8,32,42,.35)), var(--bg)}
-.hero-inner{width:100%}
-.display{font-size:56px;line-height:1.05;margin:0 0 12px;text-shadow:0 2px 16px rgba(0,0,0,.35)}
-.display-small{font-size:36px;margin:0 0 8px}
-.lead{max-width:640px;margin:0}
-.light{color:#fff}
-.hero-small{min-height:36vh}
+.hero .bg{
+  aspect-ratio: 16/6; width:100%; object-fit:cover; display:block; filter:saturate(1.05) contrast(1.05);
+}
+.hero .shade{
+  position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,38,51,.45),rgba(15,38,51,.30))
+}
+.hero .inner{
+  position:absolute;inset:0;display:grid;place-items:center;padding:20px
+}
+.hero h1{font-size:clamp(36px,5vw,64px);margin:0;text-align:center}
 
-/* ===== Glass / Feature ===== */
-.glass{
-  background:var(--glass);
-  border:1px solid var(--border);
-  backdrop-filter:blur(10px) saturate(1.1);
-  padding:14px 16px;border-radius:14px;display:inline-block
+/* ===== “Miért jó…?” kártyák ===== */
+.features{max-width:1200px;margin:auto;padding:40px 18px 10px}
+.features h2{font-size:clamp(26px,3.2vw,40px);margin:0 0 16px;color:var(--ink-2)}
+.features p.lead{margin:0 0 18px;color:var(--muted)}
+.grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px
 }
-.glass-tile{
-  background:var(--glass);border:1px solid var(--border);
-  border-radius:16px;padding:18px;display:flex;align-items:center;gap:12px
+@media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.card{
+  background:#fff;border:1px solid #E2EEF3;border-radius:16px;padding:16px;display:flex;gap:12px;align-items:center;
+  box-shadow:0 8px 26px rgba(18,46,60,.08)
 }
-.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.feature-icon{font-size:22px}
+.card .ic{
+  height:42px;width:42px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(180deg,#fff,#F4FAFD);border:1px solid #E2EEF3;font-size:22px
+}
+.card b{display:block;margin-bottom:2px}
 
-/* ===== Ingatlan KERESŐ (mintaképes) ===== */
-.search-card{
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.28);
-  backdrop-filter:blur(14px) saturate(1.2);
-  border-radius:20px;
-  padding:18px;
-  color:#fff;
-  box-shadow:0 12px 40px rgba(0,0,0,.25);
+/* ===== Partner vetítés (marquee) – minden oldalon használható ===== */
+.marquee-wrap{max-width:1200px;margin:16px auto 38px;padding:0 18px}
+.marquee{position:relative;overflow:hidden;border-radius:16px;background:#fff;border:1px solid #E2EEF3}
+.marquee .track{display:flex;gap:18px;align-items:center;padding:12px 18px;animation:marquee 28s linear infinite}
+.logo-chip{
+  display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border-radius:999px;
+  background:#fff;border:1px solid #E2EEF3;box-shadow:0 4px 14px rgba(18,46,60,.06);white-space:nowrap;
+  color:var(--ink-2)
 }
-.tab-row{display:flex;gap:12px;margin-bottom:14px}
-.btn-tab{
-  appearance:none;border:0;cursor:pointer;font-weight:700;
-  padding:12px 16px;border-radius:14px;
-  background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.28)
-}
-.btn-tab.active{background:var(--gold);border-color:transparent;color:#221b10}
-.search-grid{
-  display:grid;grid-template-columns:1.2fr 1fr 1fr auto auto;gap:14px;align-items:end
-}
-.field label{display:block;font-size:12px;opacity:.9;margin-bottom:6px}
-.field input{
-  width:100%;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
-  background:rgba(255,255,255,.14);color:#fff;padding:0 12px;outline:none
-}
-.field input::placeholder{color:#eef5f9}
-.select-like{
-  width:100%;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
-  background:rgba(255,255,255,.12);color:#fff;text-align:left;padding:0 12px;cursor:pointer
-}
-.filter-link{
-  color:#fff;text-decoration:none;height:44px;display:inline-flex;align-items:center;
-  padding:0 12px;border-radius:12px;border:1px dashed rgba(255,255,255,.35);
-  background:rgba(255,255,255,.08)
-}
-.btn-search{
-  height:44px;padding:0 18px;border-radius:12px;border:0;cursor:pointer;font-weight:800;
-  background:var(--gold);color:#221b10;box-shadow:0 6px 20px rgba(0,0,0,.2)
-}
-
-/* Alsó pill gombok */
-.cta-pills{display:flex;gap:16px;margin-top:18px;flex-wrap:wrap}
-.pill{
-  display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;
-  background:var(--gold);color:#221b10;text-decoration:none;font-weight:800;border:0
-}
-.pill:hover{background:var(--gold-2)}
-
-/* ===== Marquee – kilógásmentes ===== */
-.marquee{position:relative;overflow:hidden;border-radius:18px;border:1px solid #ffffff45;background:rgba(255,255,255,.06)}
-.marquee.tight{background:rgba(255,255,255,.08)}
-.marquee .track{display:flex;gap:18px;align-items:center;padding:14px 0;animation:marquee 28s linear infinite;will-change:transform}
+.logo-chip img{height:24px;width:24px;object-fit:cover;border-radius:6px}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.logo-chip{display:inline-flex;align-items:center;gap:12px;background:#fffffff2;color:#0e2533;border:1px solid #e8eef3;border-radius:999px;padding:8px 14px;white-space:nowrap}
-.logo-chip img{height:32px;width:auto;border-radius:8px;display:block}
-.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:48px;z-index:2;pointer-events:none}
-.marquee::before{left:0;background:linear-gradient(90deg,#0e2733,rgba(14,39,51,0))}
-.marquee::after{right:0;background:linear-gradient(270deg,#0e2733,rgba(14,39,51,0))}
-@supports (mask-image:linear-gradient(#000,#000)){
-  .marquee{mask-image:linear-gradient(90deg,transparent 0,black 48px,black calc(100% - 48px),transparent 100%)}
-}
 
-/* ===== Footer ===== */
-.site-footer{background:linear-gradient(180deg, var(--brand), var(--brand-2));color:#fff;margin-top:48px}
-.footer-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.footer-links{display:flex;gap:14px}
-.footer-links a{color:#fff;text-decoration:none;opacity:.9}
-.footer-links a:hover{opacity:1}
+/* ===== Üveges kereső (Ingatlanok) ===== */
+.glass{
+  background:var(--glass-bg);border:1px solid var(--glass-brd);backdrop-filter:blur(14px) saturate(1.1);
+  border-radius:20px;color:#fff
+}
+.props-hero{position:relative;isolation:isolate}
+.props-hero .bg{width:100%;aspect-ratio:16/7;object-fit:cover;display:block}
+.props-hero .shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,28,38,.55),rgba(10,28,38,.35))}
+.props-hero .panel{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:min(1100px,92%);padding:18px
+}
+.tabs{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.tab{padding:10px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.18);color:#fff;font-weight:700}
+.tab.active{background:var(--gold);color:#1f160a;border-color:transparent}
+.search-grid{
+  display:grid;grid-template-columns:1.1fr 1fr 1fr auto auto;gap:12px;align-items:end
+}
+.field label{display:block;font-size:12px;color:#fff;opacity:.95;margin-bottom:6px}
+.input, .select, .button{
+  height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.38);padding:0 12px;background:rgba(255,255,255,.16);color:#fff
+}
+.input::placeholder{color:#f1f6f9}
+.link-dashed{
+  height:44px;display:inline-flex;align-items:center;padding:0 12px;border-radius:12px;border:1px dashed rgba(255,255,255,.38);color:#fff
+}
+.button.primary{background:var(--gold);border:0;color:#1f160a;font-weight:800}
+.cta-pills{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap}
+.pill{display:inline-flex;gap:8px;align-items:center;padding:12px 18px;border-radius:999px;background:var(--gold);color:#1f160a;font-weight:800}
 
-/* ===== Reszponzív ===== */
-@media (max-width:1000px){
-  .search-grid{grid-template-columns:1fr 1fr 1fr auto;gap:12px}
-  .filter-link{grid-column:1 / -2}
+/* Ingatlanok alján marketing vetítés (ne lógjon ki) */
+.marketing{max-width:1200px;margin:28px auto;padding:0 18px}
+.marketing .marquee{border-color:#ffffff60;background:rgba(255,255,255,.6)}
+
+/* ===== Kollégáink ===== */
+.team{max-width:1100px;margin:24px auto;padding:0 18px}
+.team .hero-mini{position:relative;margin-bottom:20px}
+.team .hero-mini img{width:100%;aspect-ratio:16/5;object-fit:cover;border-radius:14px;filter:saturate(1.05)}
+.team .hero-mini .shade{position:absolute;inset:0;border-radius:14px;background:linear-gradient(0deg,rgba(15,38,51,.25),rgba(15,38,51,.15))}
+.member{
+  display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding:14px;border:1px solid #E2EEF3;background:#fff;border-radius:14px;margin-bottom:12px
 }
-@media (max-width:720px){
-  .display{font-size:40px}
-  .search-grid{grid-template-columns:1fr;gap:10px}
-  .filter-link{order:5}
-  .btn-search{order:6}
+.member img{width:72px;height:72px;border-radius:999px;object-fit:cover}
+.member small{color:var(--muted)}
+
+/* ===== Kapcsolat ===== */
+.contact{max-width:1200px;margin:20px auto;padding:0 18px;display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+@media (max-width:980px){.contact{grid-template-columns:1fr}}
+.info-card{
+  background:#fff;border:1px solid #E2EEF3;border-radius:16px;padding:16px;box-shadow:0 10px 26px rgba(18,46,60,.08)
 }
-@media (max-width:900px){
-  .feature-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:600px){
-  .feature-grid{grid-template-columns:1fr}
-  .display{font-size:32px}
-  .main-nav{display:none}
-}
+.info-row{display:flex;gap:10px;align-items:flex-start;margin:10px 0}
+.info-ic{width:24px;height:24px;border-radius:8px;background:#F2F8FB;border:1px solid #E2EEF3;display:grid;place-items:center}
+.map{border:0;width:100%;height:360px;border-radius:16px}
+
+/* ===== Lábléc ===== */
+.footer{margin-top:26px;background:linear-gradient(180deg,var(--brand-2),var(--brand));color:#fff}
+.footer .wrap{max-width:1200px;margin:auto;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.footer .brand-mini{display:flex;align-items:center;gap:10px}
+.footer .brand-mini img{height:26px}
+
+/* apróságok */
+h3.section-title{max-width:1200px;margin:20px auto 6px;padding:0 18px;color:var(--ink-2)}
