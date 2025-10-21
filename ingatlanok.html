@@ -1,99 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ingatlanok – Stony & Grigo Property</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <header class="header">
-    <div class="wrap">
-      <div class="brand"><img src="logo_sg.jpg" alt="SG"/><div>Stony & Grigo Property<br/><small>& Real Estate Investment</small></div></div>
-      <nav class="nav">
-        <a href="index.html" data-i18n="nav_home">Kezdőlap</a>
-        <a href="ingatlanok.html" class="active" data-i18n="nav_props">Ingatlanok</a>
-        <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
-        <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
-        <div class="lang">
-          <button class="lang-btn"><span class="flag">🇭🇺</span><span class="code">HU</span></button>
-          <div class="lang-menu">
-            <div class="lang-item" data-code="HU"><span class="flag">🇭🇺</span> HU Magyar</div>
-            <div class="lang-item" data-code="EN"><span class="flag">🇬🇧</span> EN English</div>
-            <div class="lang-item" data-code="DE"><span class="flag">🇩🇪</span> DE Deutsch</div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- SZŐNYEGES HÁTTÉR + ÜVEGES KERESŐ PANEL -->
-  <section class="props-hero">
-    <img class="bg" src="bg_rug.jpg" alt="Könyves szoba"/>
-    <div class="shade"></div>
-
-    <div class="panel glass">
-      <div class="tabs">
-        <button class="tab active" data-i18n="props_tabs_sell">Eladó</button>
-        <button class="tab" data-i18n="props_tabs_rent">Kiadó</button>
-        <button class="tab" data-i18n="props_tabs_med">Mediterrán ingatlanok</button>
-      </div>
-
-      <div class="search-grid">
-        <div class="field">
-          <label data-i18n="key">Kulcsszó</label>
-          <input class="input" type="text" placeholder="Mit keres?" data-i18n="what"/>
-        </div>
-        <div class="field">
-          <label data-i18n="cat">Kategória</label>
-          <div class="select" style="display:flex;align-items:center;justify-content:space-between;padding:0 12px">
-            <span data-i18n="choose_cat">Válassz kategóriát</span> <span>▾</span>
-          </div>
-        </div>
-        <div class="field">
-          <label data-i18n="loc">Lokáció</label>
-          <div class="select" style="display:flex;align-items:center;justify-content:space-between;padding:0 12px">
-            <span>Budapest</span> <span>▾</span>
-          </div>
-        </div>
-        <a class="link-dashed" href="#" data-i18n="adv">Részletes Szűrés</a>
-        <button class="button primary" data-i18n="search">Keresés</button>
-      </div>
-
-      <div class="cta-pills">
-        <a class="pill" href="#" data-i18n="pill_sell">Eladó ingatlanok</a>
-        <a class="pill" href="#" data-i18n="pill_rent">Kiadó ingatlanok</a>
-        <a class="pill" href="#" data-i18n="pill_med">Mediterrán ingatlanok</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marketing “Miért minket” vetítés alul -->
-  <div class="marketing">
-    <div class="marquee">
-      <div class="track">
-        <span class="logo-chip">🏆 <span data-i18n="f1">20 év tapasztalat</span></span>
-        <span class="logo-chip">💬 <span data-i18n="f2">Díjmentes tanácsadás</span></span>
-        <span class="logo-chip">🌍 <span data-i18n="f3">Új otthon itthon és külföldön</span></span>
-        <span class="logo-chip">🏠 <span data-i18n="f4">Ingatlanközvetítés</span></span>
-        <span class="logo-chip">🤝 <span data-i18n="f5">Vevőképviselet</span></span>
-        <span class="logo-chip">⚖️ <span data-i18n="f6">Ügyvédi / Közjegyzői támogatás</span></span>
-        <span class="logo-chip">🛎️ <span data-i18n="f7">Ingatlankezelés & üzemeltetés</span></span>
-        <span class="logo-chip">🧱 <span data-i18n="f8">Generál kivitelezés</span></span>
-        <span class="logo-chip">🛠️ <span data-i18n="f9">Ingatlan felújítás / átépítés</span></span>
-        <span class="logo-chip">🖼️ <span data-i18n="f10">Lakberendezési tanácsadás</span></span>
-        <span class="logo-chip">✅ <span data-i18n="f11">100%-os megelégedettség</span></span>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
+    <nav class="menu">
+      <a href="index.html" data-i18n="nav_home">Kezdőlap</a>
+      <a class="active" href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
+      <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
+      <a href="partnerek.html" data-i18n="nav_partners">Partnereink</a>
+      <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
+      <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
+    </nav>
+    <div class="lang" id="lang">
+      <button class="langbtn" type="button"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" /><strong>HU</strong>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></button>
+      <div class="langmenu">
+        <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
+        <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
+        <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
       </div>
     </div>
   </div>
+</header>
 
-  <footer class="footer">
-    <div class="wrap">
-      <div class="brand-mini"><img src="logo_sg.jpg" alt="SG"/><div>Stony & Grigo Property</div></div>
-      <div data-i18n="footer">© 2025 Stony & Grigo Property</div>
+<section class="hero" style="background-image:url('bg_rug.jpg')">
+  <div class="overlay"></div>
+  <div class="content container">
+    <div class="hero__glass hero__glass--thin">
+      <div class="tabs">
+        <button class="tab active" data-tab="sale">Eladó</button>
+        <button class="tab" data-tab="rent">Kiadó</button>
+        <button class="tab" data-tab="med">Mediterrán ingatlanok</button>
+      </div>
+
+      <div class="search-row">
+        <label> Kulcsszó <input type="text" placeholder="Mit keres?"></label>
+        <label> Kategória
+          <select>
+            <option>Válassz kategóriát</option>
+            <option>Lakás</option><option>Ház</option><option>Telek</option>
+            <option>Iroda</option><option>Üzlethelyiség</option><option>Fejlesztési terület</option>
+          </select>
+        </label>
+        <label> Lokáció
+          <select><option>Lokáció</option></select>
+        </label>
+        <button class="btn">🔎 Keresés</button>
+      </div>
+
+      <div class="filter-row">
+        <label> Ingatlan típusa
+          <select>
+            <option>Lakás</option><option>Ház</option><option>Nyaraló</option><option>Garázs</option>
+            <option>Iroda</option><option>Üzlethelyiség</option><option>Fejlesztési terület</option><option>Telek</option>
+          </select>
+        </label>
+        <label> Hol keres?
+          <select><option>Budapest</option></select>
+        </label>
+        <label> Alapterület (m² – tól-ig) <input type="text" placeholder="pl. 45 – 90"></label>
+        <label> Ár (M Ft – tól-ig) <input type="text" placeholder="pl. 45 – 120"></label>
+      </div>
+
+      <div class="quick">
+        <a class="btn ghost" href="#">Eladó ingatlanok →</a>
+        <a class="btn ghost" href="#">Kiadó ingatlanok →</a>
+        <a class="btn ghost" href="#">Mediterrán ingatlanok →</a>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<!-- „Miért minket” SZÖVEGEK vetítve – kereten belül marad -->
+<section class="marquee-text">
+  <div class="container">
+    <div class="track">
+      <span class="chip"><img src="logo_sg.jpg" alt=""> 20 év tapasztalat</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Díjmentes tanácsadás</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Új otthon itthon és külföldön</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan közvetítés</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Vevői képviselet</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Ügyvéd/közjegyzői támogatás</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan kezelés &amp; üzemeltetés</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Generál kivitelezés</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan felújítás, átépítés</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Lakberendezési tanácsadás</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> 100%os megelégedettség</span>
+      <!-- ismétlés a végtelenhez -->
+      <span class="chip"><img src="logo_sg.jpg" alt=""> 20 év tapasztalat</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Díjmentes tanácsadás</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Új otthon itthon és külföldön</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan közvetítés</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Vevői képviselet</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Ügyvéd/közjegyzői támogatás</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan kezelés &amp; üzemeltetés</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Generál kivitelezés</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan felújítás, átépítés</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> Lakberendezési tanácsadás</span>
+      <span class="chip"><img src="logo_sg.jpg" alt=""> 100%os megelégedettség</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">© 2025 Stony &amp; Grigo Property</div></footer>
+<script src="script.js"></script>
 </body>
 </html>
