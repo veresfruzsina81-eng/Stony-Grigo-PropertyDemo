@@ -1,132 +1,99 @@
 <!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ingatlanok – SG Property</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Ingatlanok – Stony & Grigo Property</title>
+  <link rel="stylesheet" href="styles.css"/>
   <script defer src="script.js"></script>
 </head>
-<body class="theme">
+<body>
 
-  <!-- Fejléc -->
-  <header class="site-header">
-    <div class="container nav-row">
-      <a class="brand" href="index.html">
-        <img src="logo_sg.jpg" alt="SG Property" />
-        <span>Stony & Grigo Property & Real Estate Investment</span>
-      </a>
-
-      <nav class="main-nav">
+  <header class="header">
+    <div class="wrap">
+      <div class="brand"><img src="logo_sg.jpg" alt="SG"/><div>Stony & Grigo Property<br/><small>& Real Estate Investment</small></div></div>
+      <nav class="nav">
         <a href="index.html" data-i18n="nav_home">Kezdőlap</a>
         <a href="ingatlanok.html" class="active" data-i18n="nav_props">Ingatlanok</a>
         <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
         <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
-      </nav>
-
-      <div class="lang">
-        <button class="lang-btn" id="langBtn">🇭🇺 HU ▾</button>
-        <div class="lang-menu" id="langMenu">
-          <button data-lang="hu">🇭🇺 HU</button>
-          <button data-lang="en">🇬🇧 EN</button>
-          <button data-lang="de">🇩🇪 DE</button>
+        <div class="lang">
+          <button class="lang-btn"><span class="flag">🇭🇺</span><span class="code">HU</span></button>
+          <div class="lang-menu">
+            <div class="lang-item" data-code="HU"><span class="flag">🇭🇺</span> HU Magyar</div>
+            <div class="lang-item" data-code="EN"><span class="flag">🇬🇧</span> EN English</div>
+            <div class="lang-item" data-code="DE"><span class="flag">🇩🇪</span> DE Deutsch</div>
+          </div>
         </div>
-      </div>
+      </nav>
     </div>
   </header>
 
-  <!-- HÁTTÉR: szőnyeges kép + enyhe sötétítés -->
-  <section class="prop-hero" style="--bg:url('bg_rug.jpg')">
-    <div class="container">
+  <!-- SZŐNYEGES HÁTTÉR + ÜVEGES KERESŐ PANEL -->
+  <section class="props-hero">
+    <img class="bg" src="bg_rug.jpg" alt="Könyves szoba"/>
+    <div class="shade"></div>
 
-      <!-- ÜVEGES KERESŐ -->
-      <div class="search-card">
+    <div class="panel glass">
+      <div class="tabs">
+        <button class="tab active" data-i18n="props_tabs_sell">Eladó</button>
+        <button class="tab" data-i18n="props_tabs_rent">Kiadó</button>
+        <button class="tab" data-i18n="props_tabs_med">Mediterrán ingatlanok</button>
+      </div>
 
-        <!-- Tabs -->
-        <div class="tab-row">
-          <button class="btn-tab active" data-tab="elado">Eladó</button>
-          <button class="btn-tab" data-tab="kiado">Kiadó</button>
-          <button class="btn-tab" data-tab="med">Mediterrán ingatlanok</button>
+      <div class="search-grid">
+        <div class="field">
+          <label data-i18n="key">Kulcsszó</label>
+          <input class="input" type="text" placeholder="Mit keres?" data-i18n="what"/>
         </div>
-
-        <!-- Felső sáv – üveges, fehér szöveg -->
-        <form class="search-grid" action="#" method="get">
-          <div class="field">
-            <label>Kulcsszó</label>
-            <input type="text" placeholder="Mit keres?" name="q" />
+        <div class="field">
+          <label data-i18n="cat">Kategória</label>
+          <div class="select" style="display:flex;align-items:center;justify-content:space-between;padding:0 12px">
+            <span data-i18n="choose_cat">Válassz kategóriát</span> <span>▾</span>
           </div>
-
-          <div class="field">
-            <label>Kategória</label>
-            <button type="button" class="select-like">
-              Válassz kategóriát ▾
-            </button>
+        </div>
+        <div class="field">
+          <label data-i18n="loc">Lokáció</label>
+          <div class="select" style="display:flex;align-items:center;justify-content:space-between;padding:0 12px">
+            <span>Budapest</span> <span>▾</span>
           </div>
-
-          <div class="field">
-            <label>Lokáció</label>
-            <button type="button" class="select-like">
-              Lokáció ▾
-            </button>
-          </div>
-
-          <a class="filter-link" href="#" title="Részletes Szűrés">⎚ Részletes Szűrés</a>
-
-          <button class="btn-search" type="submit">🔍 Keresés</button>
-        </form>
-
+        </div>
+        <a class="link-dashed" href="#" data-i18n="adv">Részletes Szűrés</a>
+        <button class="button primary" data-i18n="search">Keresés</button>
       </div>
 
-      <!-- Alsó gombsor -->
       <div class="cta-pills">
-        <a class="pill" href="#">Eladó ingatlanok →</a>
-        <a class="pill" href="#">Kiadó ingatlanok →</a>
-        <a class="pill" href="#">Mediterrán ingatlanok →</a>
+        <a class="pill" href="#" data-i18n="pill_sell">Eladó ingatlanok</a>
+        <a class="pill" href="#" data-i18n="pill_rent">Kiadó ingatlanok</a>
+        <a class="pill" href="#" data-i18n="pill_med">Mediterrán ingatlanok</a>
       </div>
-
     </div>
   </section>
 
-  <!-- Alsó “marketing” sáv – vetítve, nem lóg ki -->
-  <section class="container pad-y">
-    <div class="marquee tight">
+  <!-- Marketing “Miért minket” vetítés alul -->
+  <div class="marketing">
+    <div class="marquee">
       <div class="track">
-        <span class="logo-chip">20 év tapasztalat</span>
-        <span class="logo-chip">Díjmentes tanácsadás</span>
-        <span class="logo-chip">Új otthon itthon & külföldön</span>
-        <span class="logo-chip">Ingatlanközvetítés</span>
-        <span class="logo-chip">Vevőképviselet</span>
-        <span class="logo-chip">Ügyvédi/Közjegyzői támogatás</span>
-        <span class="logo-chip">Ingatlankezelés & üzemeltetés</span>
-        <span class="logo-chip">Generál kivitelezés</span>
-        <span class="logo-chip">Felújítás / átépítés</span>
-        <span class="logo-chip">Lakberendezési tanácsadás</span>
-        <span class="logo-chip">100% megelégedettség</span>
+        <span class="logo-chip">🏆 <span data-i18n="f1">20 év tapasztalat</span></span>
+        <span class="logo-chip">💬 <span data-i18n="f2">Díjmentes tanácsadás</span></span>
+        <span class="logo-chip">🌍 <span data-i18n="f3">Új otthon itthon és külföldön</span></span>
+        <span class="logo-chip">🏠 <span data-i18n="f4">Ingatlanközvetítés</span></span>
+        <span class="logo-chip">🤝 <span data-i18n="f5">Vevőképviselet</span></span>
+        <span class="logo-chip">⚖️ <span data-i18n="f6">Ügyvédi / Közjegyzői támogatás</span></span>
+        <span class="logo-chip">🛎️ <span data-i18n="f7">Ingatlankezelés & üzemeltetés</span></span>
+        <span class="logo-chip">🧱 <span data-i18n="f8">Generál kivitelezés</span></span>
+        <span class="logo-chip">🛠️ <span data-i18n="f9">Ingatlan felújítás / átépítés</span></span>
+        <span class="logo-chip">🖼️ <span data-i18n="f10">Lakberendezési tanácsadás</span></span>
+        <span class="logo-chip">✅ <span data-i18n="f11">100%-os megelégedettség</span></span>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Lábléc -->
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <div>© 2025 Stony & Grigo Property</div>
-      <div class="footer-links">
-        <a href="index.html">Kezdőlap</a>
-        <a href="ingatlanok.html">Ingatlanok</a>
-        <a href="csapat.html">Kollégáink</a>
-        <a href="kapcsolat.html">Kapcsolat</a>
-      </div>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="brand-mini"><img src="logo_sg.jpg" alt="SG"/><div>Stony & Grigo Property</div></div>
+      <div data-i18n="footer">© 2025 Stony & Grigo Property</div>
     </div>
   </footer>
-
-  <!-- apró JS a tabokhoz (küllem) -->
-  <script>
-    document.querySelectorAll('.btn-tab').forEach(b=>{
-      b.addEventListener('click', ()=>{
-        document.querySelectorAll('.btn-tab').forEach(x=>x.classList.remove('active'));
-        b.classList.add('active');
-      });
-    });
-  </script>
 </body>
 </html>
