@@ -1,104 +1,79 @@
 <!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Stony & Grigo Property – Kezdőlap</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- FEJLÉC -->
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <img src="logo_sg.jpg" alt="SG Property logo"/>
-        <div>Stony & Grigo Property<br/><small>& Real Estate Investment</small></div>
-      </div>
-
-      <nav class="nav">
-        <a href="index.html" class="active" data-i18n="nav_home">Kezdőlap</a>
-        <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
-        <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
-        <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
-
-        <div class="lang">
-          <button class="lang-btn"><span class="flag">🇭🇺</span><span class="code">HU</span></button>
-          <div class="lang-menu">
-            <div class="lang-item" data-code="HU"><span class="flag">🇭🇺</span> HU Magyar</div>
-            <div class="lang-item" data-code="EN"><span class="flag">🇬🇧</span> EN English</div>
-            <div class="lang-item" data-code="DE"><span class="flag">🇩🇪</span> DE Deutsch</div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO #1 -->
-  <section class="hero">
-    <img class="bg" src="hero_lanchid.jpg" alt="Lánchíd"/>
-    <div class="shade"></div>
-    <div class="inner">
-      <h1 data-i18n="hero_title">Együtt megtaláljuk álmaid otthonát</h1>
-    </div>
-  </section>
-
-  <!-- Miért jó… -->
-  <section class="features">
-    <h2 data-i18n="why_title">Miért jó, ha minket választ?</h2>
-    <p class="lead" data-i18n="why_lead">Mert segítségedre lehetünk, akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
-
-    <div class="grid">
-      <div class="card"><div class="ic">🏆</div><div><b data-i18n="f1">20 év tapasztalat</b></div></div>
-      <div class="card"><div class="ic">💬</div><div><b data-i18n="f2">Díjmentes tanácsadás</b></div></div>
-      <div class="card"><div class="ic">🌍</div><div><b data-i18n="f3">Új otthon itthon és külföldön</b></div></div>
-      <div class="card"><div class="ic">🏠</div><div><b data-i18n="f4">Ingatlanközvetítés</b></div></div>
-      <div class="card"><div class="ic">🤝</div><div><b data-i18n="f5">Vevőképviselet</b></div></div>
-      <div class="card"><div class="ic">⚖️</div><div><b data-i18n="f6">Ügyvédi / Közjegyzői támogatás</b></div></div>
-      <div class="card"><div class="ic">🛎️</div><div><b data-i18n="f7">Ingatlankezelés & üzemeltetés</b></div></div>
-      <div class="card"><div class="ic">🧱</div><div><b data-i18n="f8">Generál kivitelezés</b></div></div>
-      <div class="card"><div class="ic">🛠️</div><div><b data-i18n="f9">Ingatlan felújítás / átépítés</b></div></div>
-      <div class="card"><div class="ic">🖼️</div><div><b data-i18n="f10">Lakberendezési tanácsadás</b></div></div>
-      <div class="card"><div class="ic">✅</div><div><b data-i18n="f11">100%-os megelégedettség</b></div></div>
-    </div>
-  </section>
-
-  <!-- HERO #2 – kis feliratokkal (olvasható) -->
-  <section class="hero" style="margin-top:14px">
-    <img class="bg" src="hero_lanchid.jpg" alt="Lánchíd"/>
-    <div class="shade"></div>
-    <div class="inner">
-      <h1 data-i18n="find_home">Találj új otthonra</h1>
-      <p style="margin-top:10px;font-weight:600" data-i18n="cta_team">Lépj kapcsolatba a kollégákkal!</p>
-    </div>
-  </section>
-
-  <!-- Partnerek vetítés az oldal alján -->
-  <h3 class="section-title" data-i18n="partners">Partnereink</h3>
-  <div class="marquee-wrap">
-    <div class="marquee">
-      <div class="track">
-        <span class="logo-chip"><img src="p_infinite.jpg" alt="Infinite"/>Infinite Catering</span>
-        <span class="logo-chip"><img src="p_fenyvesi.jpg" alt="Fenyvesi"/>Fenyvesi Rudolf</span>
-        <span class="logo-chip"><img src="p_kkbazis.jpg" alt="KKBázis"/>K.K. Bázis</span>
-        <span class="logo-chip"><img src="p_botripsz.jpg" alt="BoTrips"/>BoTrips</span>
-        <span class="logo-chip"><img src="p_boszporusz.jpg" alt="Boszporusz"/>Boszporusz Büfé</span>
-        <span class="logo-chip"><img src="p_dosza.jpg" alt="DOSZA"/>DOSZA</span>
-        <span class="logo-chip"><img src="p_jan_mara.jpg" alt="Jan-Mara"/>Jan-Mara BT</span>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
+    <nav class="menu">
+      <a class="active" href="index.html" data-i18n="nav_home">Kezdőlap</a>
+      <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
+      <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
+      <a href="partnerek.html" data-i18n="nav_partners">Partnereink</a>
+      <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
+      <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
+    </nav>
+    <div class="lang" id="lang">
+      <button class="langbtn" type="button"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" /><strong>HU</strong>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
+      </button>
+      <div class="langmenu">
+        <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
+        <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
+        <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
       </div>
     </div>
   </div>
+</header>
 
-  <!-- LÁBLÉC -->
-  <footer class="footer">
-    <div class="wrap">
-      <div class="brand-mini">
-        <img src="logo_sg.jpg" alt="SG"/>
-        <div>Stony & Grigo Property</div>
-      </div>
-      <div data-i18n="footer">© 2025 Stony & Grigo Property</div>
+<section class="hero" style="background-image:url('hero_lanchid.jpg')">
+  <div class="overlay"></div>
+  <div class="content container">
+    <h1 class="title" data-i18n="hero_title">Együtt megtaláljuk álmaid otthonát</h1>
+    <p class="muted" data-i18n="hero_sub">Együtt megálmodjuk a következő lépést.</p>
+    <p><a class="btn" href="csapat.html" data-i18n="btn_team">Kollégáink →</a></p>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <h2 data-i18n="why_title">Miért jó, ha minket választ?</h2>
+    <p class="lead" data-i18n="why_sub">Mert segítségedre lehetünk – akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
+
+    <div class="why-grid">
+      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>20 év tapasztalat</h3><p>Biztonság és rutin minden ügyletben.</p></div></div>
+      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Díjmentes tanácsadás</h3><p>Az első perctől segítünk.</p></div></div>
+
+      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Új otthon itthon és külföldön</h3><p>Nemzetközi kapcsolatokkal.</p></div></div>
+      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan közvetítés</h3><p>Profi folyamat, gyors értékesítés.</p></div></div>
+      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Vevői képviselet</h3><p>Érdekképviselet a teljes úton.</p></div></div>
+
+      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ügyvéd / közjegyzői támogatás</h3><p>Jogilag rendezett, biztonságos.</p></div></div>
+      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan kezelés &amp; üzemeltetés</h3><p>Teljes körű menedzsment.</p></div></div>
+
+      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Generál kivitelezés</h3><p>Megbízható kivitelezői csapat.</p></div></div>
+      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan felújítás &amp; átépítés</h3><p>Tervezéstől az átadásig.</p></div></div>
+      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Lakberendezési tanácsadás</h3><p>Ízléses, funkcionális terek.</p></div></div>
+
+      <div class="feature span6"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>100%os megelégedettség</h3><p>Ügyfeleink ajánlásai a legjobb referenciáink.</p></div></div>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="bottom-hero">
+  <div class="container content">
+    <h2 data-i18n="bottom_title">Találj új otthonra</h2>
+    <p data-i18n="bottom_sub">Lépj kapcsolatba kollégáinkkal – segítünk a következő lépésben.</p>
+  </div>
+</section>
+
+<footer class="footer"><div class="container">© 2025 Stony &amp; Grigo Property</div></footer>
+<script src="script.js"></script>
 </body>
 </html>
