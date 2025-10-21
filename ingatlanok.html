@@ -1,115 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Ingatlanok – Stony & Grigo Property</title>
-  <link rel="stylesheet" href="styles.css" />
+  <!-- ha nálad van styles.css, ezt hagyd meg: -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Csak ehhez az oldalhoz szükséges felülíró stílusok -->
+  <style>
+    :root{
+      --brand:#E7C266;          /* arany */
+      --ink:#0e2533;            /* sötétkék szöveg ha kell */
+      --ring:#ffffff45;         /* halvány keret */
+      --footerBlue:#3DB0C9;     /* lábléc világos kékedhez igazodva */
+    }
+
+    /* ===== Hero sötétítés, hogy a szöveg olvasható legyen ===== */
+    .hero{position:relative;min-height:70vh;background-size:cover;background-position:center}
+    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.55))}
+    .hero .container{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;min-height:70vh;padding:40px 16px}
+
+    /* ===== PRO üveges kereső a mintaképed szerint ===== */
+    .hero__glass{max-width:1100px;width:100%;border-radius:22px;padding:18px;background:rgba(20,24,28,.18);
+      border:1px solid rgba(255,255,255,.45);backdrop-filter:blur(14px) saturate(120%);
+      color:#fff;box-shadow:0 10px 26px rgba(0,0,0,.25) inset,0 10px 24px rgba(0,0,0,.18);
+    }
+    .tabs{display:flex;gap:10px;margin:2px 2px 14px 2px;flex-wrap:wrap}
+    .tab{padding:10px 18px;border-radius:14px 14px 6px 6px;background:rgba(233,233,233,.16);color:#fff;
+      border:1px solid rgba(255,255,255,.35);cursor:pointer;font-weight:700;user-select:none}
+    .tab.active{background:var(--brand);color:#2a220c;border-color:transparent}
+
+    .search-row,.filter-row{display:grid;gap:12px;align-items:end}
+    .search-row{grid-template-columns:1.2fr 1fr 1fr auto}
+    .filter-row{grid-template-columns:repeat(4,1fr)}
+    @media(max-width:900px){.search-row,.filter-row{grid-template-columns:1fr}}
+
+    .hero__glass label{color:#fff;opacity:.95;font-weight:600}
+    .hero__glass input,.hero__glass select{
+      height:48px;border-radius:12px;border:1px solid rgba(255,255,255,.55);
+      background:rgba(255,255,255,.06);color:#fff;padding:0 12px;outline:none
+    }
+    .hero__glass input::placeholder{color:#e7eef3cc}
+    .btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;height:48px;padding:0 18px;
+      border-radius:14px;border:none;background:var(--brand);color:#2a220c;font-weight:700;cursor:pointer}
+
+    /* ===== Vetítés – kereten belül marad, kifakulás a széleken ===== */
+    .marquee-text{position:relative;overflow:hidden;background:#ffffff1a;border-top:1px solid var(--ring)}
+    .marquee-text .track{display:flex;gap:16px;align-items:center;padding:12px 0;animation:scroll 28s linear infinite;will-change:transform}
+    .chip{display:inline-flex;align-items:center;gap:10px;background:#fffffff2;border:1px solid var(--ring);
+      border-radius:999px;padding:8px 14px;color:#0e2533;white-space:nowrap}
+    .chip img{height:22px;width:auto;border-radius:6px}
+    @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .marquee-text::before,.marquee-text::after{content:"";position:absolute;top:0;bottom:0;width:40px;pointer-events:none;z-index:2}
+    .marquee-text::before{left:0;background:linear-gradient(90deg,rgba(42,126,168,1),rgba(42,126,168,0))}
+    .marquee-text::after{right:0;background:linear-gradient(270deg,rgba(42,126,168,1),rgba(42,126,168,0))}
+    @supports (mask-image: linear-gradient(#000,#000)){
+      .marquee-text{mask-image:linear-gradient(90deg,transparent 0,black 40px,black calc(100% - 40px),transparent 100%)}
+    }
+
+    /* ===== Lábléc egységes világosabb kék sáv ===== */
+    footer{background:var(--footerBlue);color:#fff}
+    footer .wrap{max-width:1200px;margin:auto;padding:18px 16px}
+  </style>
 </head>
 <body>
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
-    <nav class="menu">
-      <a href="index.html" data-i18n="nav_home">Kezdőlap</a>
-      <a class="active" href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
-      <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
-      <a href="partnerek.html" data-i18n="nav_partners">Partnereink</a>
-      <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
-      <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
-    </nav>
-    <div class="lang" id="lang">
-      <button class="langbtn" type="button"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" /><strong>HU</strong>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg></button>
-      <div class="langmenu">
-        <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
-        <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
-        <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
+
+  <!-- HERO – szőnyeges háttér + üveges kereső -->
+  <section class="hero" style="background-image:url('bg_rug.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="hero__glass">
+
+        <!-- Tabs -->
+        <div class="tabs">
+          <div class="tab active">Eladó</div>
+          <div class="tab">Kiadó</div>
+          <div class="tab">Mediterrán ingatlanok</div>
+        </div>
+
+        <!-- Fő keresősor -->
+        <div class="search-row">
+          <div>
+            <label for="q">Kulcsszó</label>
+            <input id="q" type="text" placeholder="Mit keres?">
+          </div>
+          <div>
+            <label for="cat">Kategória</label>
+            <select id="cat">
+              <option>Válassz kategóriát</option>
+              <option>Lakás</option><option>Ház</option><option>Garázs</option>
+              <option>Nyaraló</option><option>Iroda</option><option>Üzlethelyiség</option>
+              <option>Fejlesztési terület</option><option>Telek</option>
+            </select>
+          </div>
+          <div>
+            <label for="loc">Lokáció</label>
+            <select id="loc">
+              <option>Lokáció</option>
+              <option>Budapest</option><option>Pest megye</option><option>Balaton</option>
+            </select>
+          </div>
+          <div>
+            <label>&nbsp;</label>
+            <button class="btn">🔎 Keresés</button>
+          </div>
+        </div>
+
+        <!-- Részletes szűrés -->
+        <div class="filter-row" style="margin-top:12px">
+          <div>
+            <label for="area">Alapterület (m² – tól-ig)</label>
+            <input id="area" type="text" placeholder="pl. 45 – 90">
+          </div>
+          <div>
+            <label for="price">Ár (M Ft – tól-ig)</label>
+            <input id="price" type="text" placeholder="pl. 45 – 120">
+          </div>
+          <div>
+            <label for="heat">Ingatlan típusa</label>
+            <select id="heat">
+              <option>Lakás</option><option>Ház</option><option>Iroda</option>
+            </select>
+          </div>
+          <div>
+            <label for="where">Hol keres?</label>
+            <select id="where">
+              <option>Budapest</option><option>Vidék</option><option>Külföld</option>
+            </select>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-</header>
+  </section>
 
-<section class="hero" style="background-image:url('bg_rug.jpg')">
-  <div class="overlay"></div>
-  <div class="content container">
-    <div class="hero__glass hero__glass--thin">
-      <div class="tabs">
-        <button class="tab active" data-tab="sale">Eladó</button>
-        <button class="tab" data-tab="rent">Kiadó</button>
-        <button class="tab" data-tab="med">Mediterrán ingatlanok</button>
-      </div>
-
-      <div class="search-row">
-        <label> Kulcsszó <input type="text" placeholder="Mit keres?"></label>
-        <label> Kategória
-          <select>
-            <option>Válassz kategóriát</option>
-            <option>Lakás</option><option>Ház</option><option>Telek</option>
-            <option>Iroda</option><option>Üzlethelyiség</option><option>Fejlesztési terület</option>
-          </select>
-        </label>
-        <label> Lokáció
-          <select><option>Lokáció</option></select>
-        </label>
-        <button class="btn">🔎 Keresés</button>
-      </div>
-
-      <div class="filter-row">
-        <label> Ingatlan típusa
-          <select>
-            <option>Lakás</option><option>Ház</option><option>Nyaraló</option><option>Garázs</option>
-            <option>Iroda</option><option>Üzlethelyiség</option><option>Fejlesztési terület</option><option>Telek</option>
-          </select>
-        </label>
-        <label> Hol keres?
-          <select><option>Budapest</option></select>
-        </label>
-        <label> Alapterület (m² – tól-ig) <input type="text" placeholder="pl. 45 – 90"></label>
-        <label> Ár (M Ft – tól-ig) <input type="text" placeholder="pl. 45 – 120"></label>
-      </div>
-
-      <div class="quick">
-        <a class="btn ghost" href="#">Eladó ingatlanok →</a>
-        <a class="btn ghost" href="#">Kiadó ingatlanok →</a>
-        <a class="btn ghost" href="#">Mediterrán ingatlanok →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- „Miért minket” SZÖVEGEK vetítve – kereten belül marad -->
-<section class="marquee-text">
-  <div class="container">
+  <!-- ALUL: „Miért jó, ha minket választ?” – vetítés (szöveg már nem lóg ki) -->
+  <section class="marquee-text" aria-label="Miért jó, ha minket választ?">
     <div class="track">
-      <span class="chip"><img src="logo_sg.jpg" alt=""> 20 év tapasztalat</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Díjmentes tanácsadás</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Új otthon itthon és külföldön</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan közvetítés</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Vevői képviselet</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Ügyvéd/közjegyzői támogatás</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan kezelés &amp; üzemeltetés</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Generál kivitelezés</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan felújítás, átépítés</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Lakberendezési tanácsadás</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> 100%os megelégedettség</span>
-      <!-- ismétlés a végtelenhez -->
-      <span class="chip"><img src="logo_sg.jpg" alt=""> 20 év tapasztalat</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Díjmentes tanácsadás</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Új otthon itthon és külföldön</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan közvetítés</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Vevői képviselet</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Ügyvéd/közjegyzői támogatás</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan kezelés &amp; üzemeltetés</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Generál kivitelezés</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Ingatlan felújítás, átépítés</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> Lakberendezési tanácsadás</span>
-      <span class="chip"><img src="logo_sg.jpg" alt=""> 100%os megelégedettség</span>
-    </div>
-  </div>
-</section>
+      <span class="chip">🏆 20 év tapasztalat</span>
+      <span class="chip">💬 Díjmentes tanácsadás</span>
+      <span class="chip">🌍 Új otthon itthon & külföldön</span>
+      <span class="chip">🤝 Ingatlanközvetítés</span>
+      <span class="chip">🪪 Vevőképviselet</span>
+      <span class="chip">⚖️ Ügyvédi/Közjegyzői támogatás</span>
+      <span class="chip">🏢 Ingatlankezelés & üzemeltetés</span>
+      <span class="chip">🏗️ Generál kivitelezés</span>
+      <span class="chip">🧱 Felújítás/Átépítés</span>
+      <span class="chip">🛋️ Lakberendezési tanácsadás</span>
+      <span class="chip">✅ 100% megelégedettség</span>
 
-<footer class="footer"><div class="container">© 2025 Stony &amp; Grigo Property</div></footer>
-<script src="script.js"></script>
+      <!-- duplázás a folyamatos görgetéshez -->
+      <span class="chip">🏆 20 év tapasztalat</span>
+      <span class="chip">💬 Díjmentes tanácsadás</span>
+      <span class="chip">🌍 Új otthon itthon & külföldön</span>
+      <span class="chip">🤝 Ingatlanközvetítés</span>
+      <span class="chip">🪪 Vevőképviselet</span>
+      <span class="chip">⚖️ Ügyvédi/Közjegyzői támogatás</span>
+      <span class="chip">🏢 Ingatlankezelés & üzemeltetés</span>
+      <span class="chip">🏗️ Generál kivitelezés</span>
+      <span class="chip">🧱 Felújítás/Átépítés</span>
+      <span class="chip">🛋️ Lakberendezési tanácsadás</span>
+      <span class="chip">✅ 100% megelégedettség</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">© 2025 Stony & Grigo Property</div>
+  </footer>
+
+  <!-- (Opcionális) nagyon apró JS a tab vizuálhoz -->
+  <script>
+    document.querySelectorAll('.tab').forEach(t=>{
+      t.addEventListener('click',()=>{
+        document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+        t.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
