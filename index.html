@@ -1,23 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stony & Grigo Property – Kezdőlap</title>
+  <title>Kezdőlap – Stony & Grigo Property</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
 <header class="nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
+    <a class="brand" href="index.html">
+      <img src="logo_sg.jpg" alt="">
+      <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
+    </a>
 
-    <!-- HAMBURGER (mobil) -->
-    <button class="hamb" aria-label="Menü">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M3 6h18M3 12h18M3 18h18"/>
-      </svg>
-    </button>
+    <button class="hamburger" id="hamb"><span></span><span></span><span></span></button>
 
     <nav class="menu">
       <a class="active" href="index.html" data-i18n="nav_home">Kezdőlap</a>
@@ -27,8 +24,11 @@
       <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
       <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
     </nav>
+
     <div class="lang" id="lang">
-      <button class="langbtn" type="button"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" /><strong>HU</strong>
+      <button class="langbtn" type="button">
+        <img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" />
+        <strong>HU</strong>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
       </button>
       <div class="langmenu">
@@ -40,48 +40,105 @@
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero" style="background-image:url('hero_lanchid.jpg')">
   <div class="overlay"></div>
   <div class="content container">
     <h1 class="title" data-i18n="hero_title">Együtt megtaláljuk álmaid otthonát</h1>
     <p class="muted" data-i18n="hero_sub">Együtt megálmodjuk a következő lépést.</p>
-    <p><a class="btn" href="csapat.html" data-i18n="btn_team">Kollégáink →</a></p>
+    <p style="margin-top:14px">
+      <a class="btn" href="ingatlanok.html" style="text-decoration:none">Böngéssz ingatlanok közt →</a>
+      <a class="btn ghost" href="kapcsolat.html" style="text-decoration:none">Kapcsolatfelvétel →</a>
+    </p>
   </div>
 </section>
 
+<!-- MIÉRT MINKET – kerek ikonok -->
 <section class="why">
   <div class="container">
     <h2 data-i18n="why_title">Miért jó, ha minket választ?</h2>
     <p class="lead" data-i18n="why_sub">Mert segítségedre lehetünk – akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
 
     <div class="why-grid">
-      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>20 év tapasztalat</h3><p>Biztonság és rutin minden ügyletben.</p></div></div>
-      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Díjmentes tanácsadás</h3><p>Az első perctől segítünk.</p></div></div>
+      <article class="feature span2">
+        <div class="fx">🏠</div>
+        <div>
+          <h3>Teljes körű közvetítés</h3>
+          <p>Eladástól a birtokbaadásig, végigkísérünk.</p>
+        </div>
+      </article>
 
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Új otthon itthon és külföldön</h3><p>Nemzetközi kapcsolatokkal.</p></div></div>
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan közvetítés</h3><p>Profi folyamat, gyors értékesítés.</p></div></div>
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Vevői képviselet</h3><p>Érdekképviselet a teljes úton.</p></div></div>
+      <article class="feature span2">
+        <div class="fx">⚖️</div>
+        <div>
+          <h3>Jogi háttér</h3>
+          <p>Megbízható ügyvédi, közjegyzői partnerekkel.</p>
+        </div>
+      </article>
 
-      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ügyvéd / közjegyzői támogatás</h3><p>Jogilag rendezett, biztonságos.</p></div></div>
-      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan kezelés &amp; üzemeltetés</h3><p>Teljes körű menedzsment.</p></div></div>
+      <article class="feature span2">
+        <div class="fx">📈</div>
+        <div>
+          <h3>20+ év tapasztalat</h3>
+          <p>Stabil piaci jelenlét, átlátható folyamatok.</p>
+        </div>
+      </article>
 
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Generál kivitelezés</h3><p>Megbízható kivitelezői csapat.</p></div></div>
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan felújítás &amp; átépítés</h3><p>Tervezéstől az átadásig.</p></div></div>
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Lakberendezési tanácsadás</h3><p>Ízléses, funkcionális terek.</p></div></div>
+      <article class="feature span3">
+        <div class="fx">🌍</div>
+        <div>
+          <h3>Nemzetközi kapcsolatok</h3>
+          <p>Egyiptom, Dubaj, Spanyolország – megbízható helyi partnerekkel.</p>
+        </div>
+      </article>
 
-      <div class="feature span6"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>100%os megelégedettség</h3><p>Ügyfeleink ajánlásai a legjobb referenciáink.</p></div></div>
+      <article class="feature span3">
+        <div class="fx">💡</div>
+        <div>
+          <h3>Díjmentes tanácsadás</h3>
+          <p>Első körben ingyenes konzultációval indulunk.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
+<!-- Alsó hero üzenet -->
 <section class="bottom-hero">
-  <div class="container content">
+  <div class="content">
     <h2 data-i18n="bottom_title">Találj új otthonra</h2>
     <p data-i18n="bottom_sub">Lépj kapcsolatba kollégáinkkal – segítünk a következő lépésben.</p>
+    <p style="margin-top:12px"><a class="btn" href="ingatlanok.html">Irány az ingatlanok →</a></p>
   </div>
 </section>
 
-<footer class="footer"><div class="container">© 2025 Stony &amp; Grigo Property</div></footer>
+<!-- gördülő üzenetek üveges dobozban (ha szeretnéd, törölhető) -->
+<section class="marquee-text">
+  <div class="container">
+    <div class="glass-box">
+      <div class="track">
+        <span class="chip"><img src="logo_sg.jpg" alt=""> 20 év tapasztalat</span>
+        <span class="chip"><img src="logo_sg.jpg" alt=""> Díjmentes tanácsadás</span>
+        <span class="chip"><img src="logo_sg.jpg" alt=""> Ügyvédi háttér</span>
+        <span class="chip"><img src="logo_sg.jpg" alt=""> Nemzetközi partnerek</span>
+        <span class="chip"><img src="logo_sg.jpg" alt=""> Kockázatkezelés</span>
+        <!-- ismétlés a folyamatos futáshoz -->
+        <span class="chip"><img src="logo_sg.jpg" alt=""> 20 év tapasztalat</span>
+        <span class="chip"><img src="logo_sg.jpg" alt=""> Díjmentes tanácsadás</span>
+        <span class="chip"><img src="logo_sg.jpg" alt=""> Ügyvédi háttér</span>
+        <span class="chip"><img src="logo_sg.jpg" alt=""> Nemzetközi partnerek</span>
+        <span class="chip"><img src="logo_sg.jpg" alt=""> Kockázatkezelés</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<a href="#" class="back-btn">← Vissza</a>
+
+<footer class="footer">
+  <div class="container">© 2025 Stony &amp; Grigo Property</div>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
