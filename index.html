@@ -2,78 +2,152 @@
 <html lang="hu">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stony & Grigo Property – Kezdőlap</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stony & Grigo Property & Real Estate Investment</title>
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
-<body>
+<body class="theme">
 
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
-    <nav class="menu">
-      <a class="active" href="index.html" data-i18n="nav_home">Kezdőlap</a>
-      <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
-      <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
-      <a href="partnerek.html" data-i18n="nav_partners">Partnereink</a>
-      <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
-      <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
-    </nav>
-    <div class="lang" id="lang">
-      <button class="langbtn" type="button"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" /><strong>HU</strong>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-      </button>
-      <div class="langmenu">
-        <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
-        <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
-        <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
+  <!-- Fejléc -->
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="index.html">
+        <img src="logo_sg.jpg" alt="SG Property" />
+        <span>Stony & Grigo Property & Real Estate Investment</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="active" data-i18n="nav_home">Kezdőlap</a>
+        <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
+        <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
+        <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
+      </nav>
+
+      <!-- Nyelvválasztó (fehér doboz, zászló-emoji) -->
+      <div class="lang">
+        <button class="lang-btn" id="langBtn">🇭🇺 HU ▾</button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="hu">🇭🇺 HU</button>
+          <button data-lang="en">🇬🇧 EN</button>
+          <button data-lang="de">🇩🇪 DE</button>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<section class="hero" style="background-image:url('hero_lanchid.jpg')">
-  <div class="overlay"></div>
-  <div class="content container">
-    <h1 class="title" data-i18n="hero_title">Együtt megtaláljuk álmaid otthonát</h1>
-    <p class="muted" data-i18n="hero_sub">Együtt megálmodjuk a következő lépést.</p>
-    <p><a class="btn" href="csapat.html" data-i18n="btn_team">Kollégáink →</a></p>
-  </div>
-</section>
-
-<section class="why">
-  <div class="container">
-    <h2 data-i18n="why_title">Miért jó, ha minket választ?</h2>
-    <p class="lead" data-i18n="why_sub">Mert segítségedre lehetünk – akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
-
-    <div class="why-grid">
-      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>20 év tapasztalat</h3><p>Biztonság és rutin minden ügyletben.</p></div></div>
-      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Díjmentes tanácsadás</h3><p>Az első perctől segítünk.</p></div></div>
-
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Új otthon itthon és külföldön</h3><p>Nemzetközi kapcsolatokkal.</p></div></div>
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan közvetítés</h3><p>Profi folyamat, gyors értékesítés.</p></div></div>
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Vevői képviselet</h3><p>Érdekképviselet a teljes úton.</p></div></div>
-
-      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ügyvéd / közjegyzői támogatás</h3><p>Jogilag rendezett, biztonságos.</p></div></div>
-      <div class="feature span3"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan kezelés &amp; üzemeltetés</h3><p>Teljes körű menedzsment.</p></div></div>
-
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Generál kivitelezés</h3><p>Megbízható kivitelezői csapat.</p></div></div>
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Ingatlan felújítás &amp; átépítés</h3><p>Tervezéstől az átadásig.</p></div></div>
-      <div class="feature span2"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>Lakberendezési tanácsadás</h3><p>Ízléses, funkcionális terek.</p></div></div>
-
-      <div class="feature span6"><div class="fx"><img src="logo_sg.jpg" alt="" style="width:28px;height:28px;border-radius:6px"></div><div><h3>100%os megelégedettség</h3><p>Ügyfeleink ajánlásai a legjobb referenciáink.</p></div></div>
+  <!-- HERO – Lánchíd -->
+  <section class="hero" style="--bg:url('hero_lanchid.jpg')">
+    <div class="container hero-inner">
+      <h1 class="display" data-i18n="hero_title">
+        Együtt megtaláljuk álmaid otthonát
+      </h1>
+      <p class="lead glass light" data-i18n="hero_sub">
+        Együtt megálmodjuk a következő lépést.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="bottom-hero">
-  <div class="container content">
-    <h2 data-i18n="bottom_title">Találj új otthonra</h2>
-    <p data-i18n="bottom_sub">Lépj kapcsolatba kollégáinkkal – segítünk a következő lépésben.</p>
-  </div>
-</section>
+  <!-- Miért jó, ha minket választ? – KÁRTYÁK (logikusan rendezve, jól olvasható) -->
+  <section class="container pad-y">
+    <h2 class="section-title" data-i18n="why_title">Miért jó, ha minket választ?</h2>
+    <p class="section-sub" data-i18n="why_sub">
+      Mert segítségedre lehetünk, akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.
+    </p>
 
-<footer class="footer"><div class="container">© 2025 Stony &amp; Grigo Property</div></footer>
-<script src="script.js"></script>
+    <div class="grid-3 feature-grid">
+      <div class="feature glass-tile">
+        <div class="feature-icon">🏆</div>
+        <h3>20 év tapasztalat</h3>
+      </div>
+      <div class="feature glass-tile">
+        <div class="feature-icon">💬</div>
+        <h3>Díjmentes tanácsadás</h3>
+      </div>
+      <div class="feature glass-tile">
+        <div class="feature-icon">🌍</div>
+        <h3>Új otthon itthon & külföldön</h3>
+      </div>
+
+      <div class="feature glass-tile">
+        <div class="feature-icon">🤝</div>
+        <h3>Ingatlanközvetítés</h3>
+      </div>
+      <div class="feature glass-tile">
+        <div class="feature-icon">🧾</div>
+        <h3>Vevőképviselet</h3>
+      </div>
+      <div class="feature glass-tile">
+        <div class="feature-icon">⚖️</div>
+        <h3>Ügyvédi/Közjegyzői támogatás</h3>
+      </div>
+
+      <div class="feature glass-tile">
+        <div class="feature-icon">🏢</div>
+        <h3>Ingatlankezelés</h3>
+      </div>
+      <div class="feature glass-tile">
+        <div class="feature-icon">🔧</div>
+        <h3>Ingatlan üzemeltetés</h3>
+      </div>
+      <div class="feature glass-tile">
+        <div class="feature-icon">🏗️</div>
+        <h3>Generál kivitelezés</h3>
+      </div>
+
+      <div class="feature glass-tile">
+        <div class="feature-icon">🛠️</div>
+        <h3>Ingatlan felújítás / átépítés</h3>
+      </div>
+      <div class="feature glass-tile">
+        <div class="feature-icon">🛋️</div>
+        <h3>Lakberendezési tanácsadás</h3>
+      </div>
+      <div class="feature glass-tile">
+        <div class="feature-icon">✅</div>
+        <h3>100%-os megelégedettség</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alsó hero + SZÖVEG -->
+  <section class="hero hero-small" style="--bg:url('hero_lanchid.jpg')">
+    <div class="container hero-inner">
+      <h2 class="display-small" data-i18n="cta_title">Találj új otthonra</h2>
+      <p class="lead glass light" data-i18n="cta_sub">
+        Lépj kapcsolatba kollégáinkkal!
+      </p>
+    </div>
+  </section>
+
+  <!-- Partnereink VETÍTÉS (marquee) -->
+  <section class="container pad-y">
+    <h2 class="section-title" data-i18n="partners_title">Partnereink</h2>
+
+    <div class="marquee" id="partnersMarquee">
+      <div class="track">
+        <span class="logo-chip"><img src="p_infinite.jpg" alt="">Infinite Catering</span>
+        <span class="logo-chip"><img src="p_fenyvesi.jpg" alt="">Fenyvesy Rudolf</span>
+        <span class="logo-chip"><img src="p_dosza.jpg" alt="">DOSZA</span>
+        <span class="logo-chip"><img src="p_botripsz.jpg" alt="">BoTrips</span>
+        <span class="logo-chip"><img src="p_jan_mara.jpg" alt="">Jan-Mára Bt.</span>
+        <span class="logo-chip"><img src="p_kkbazis.jpg" alt="">K.K. Bázis Kft.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lábléc -->
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <div>© 2025 Stony & Grigo Property</div>
+      <div class="footer-links">
+        <a href="index.html">Kezdőlap</a>
+        <a href="ingatlanok.html">Ingatlanok</a>
+        <a href="csapat.html">Kollégáink</a>
+        <a href="kapcsolat.html">Kapcsolat</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
