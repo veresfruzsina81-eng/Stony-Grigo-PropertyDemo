@@ -5,40 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Befektetőknek – Stony & Grigo Property</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Kiegészítés: üveges doboz és hamburger – egységesen */
-    .glass-box{
-      background: var(--glass);
-      color: var(--txt-dark);
-      border: 1px solid var(--ring);
-      border-radius: 20px;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      overflow: hidden;
-      padding: 16px;
-    }
-    .hamburger{
-      display:none; margin-left:auto; background:transparent; border:1px solid var(--ring);
-      padding:8px 10px; border-radius:12px; cursor:pointer; color:#fff;
-    }
-    .hamburger span{display:block;width:22px;height:2px;background:#fff;margin:4px 0}
-    @media (max-width:900px){
-      .hamburger{display:block}
-      .menu{
-        position:absolute; right:4%; top:62px; background:var(--nav); border:1px solid var(--ring);
-        border-radius:12px; padding:10px; display:none; flex-direction:column; width:min(260px,92vw); gap:10px;
-      }
-      .nav-open .menu{display:flex}
-    }
-  </style>
 </head>
 <body>
 <header class="nav">
   <div class="container nav-inner">
     <a class="brand" href="index.html"><img src="logo_sg.jpg" alt=""><span>Stony &amp; Grigo Property &amp; Real Estate Investment</span></a>
-
     <button class="hamburger" id="hamb"><span></span><span></span><span></span></button>
-
     <nav class="menu">
       <a href="index.html" data-i18n="nav_home">Kezdőlap</a>
       <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
@@ -84,7 +56,6 @@
   </div>
 </section>
 
-<!-- üveges sáv, mint a kereső panel -->
 <section class="marquee-text">
   <div class="container">
     <div class="glass-box">
@@ -107,15 +78,9 @@
   </div>
 </section>
 
-<footer class="footer"><div class="container">© 2025 Stony &amp; Grigo Property</div></footer>
+<a href="#" class="back-btn">← Vissza</a>
 
+<footer class="footer"><div class="container">© 2025 Stony & Grigo Property</div></footer>
 <script src="script.js"></script>
-<script>
-  (function(){
-    var b=document.getElementById('hamb'); if(!b) return;
-    b.addEventListener('click', function(e){ e.stopPropagation(); document.body.classList.toggle('nav-open'); });
-    document.addEventListener('click', function(){ document.body.classList.remove('nav-open'); });
-  })();
-</script>
 </body>
 </html>
