@@ -8,6 +8,8 @@
   --glass:rgba(255,255,255,.16);
   --glass-strong:rgba(255,255,255,.22);
   --border:rgba(255,255,255,.22);
+  --gold:#CFA34F;             /* gombokhoz */
+  --gold-2:#B88F44;
 }
 
 *{box-sizing:border-box}
@@ -15,7 +17,6 @@ html,body{margin:0;padding:0}
 body.theme{background:#08202a;color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial}
 img{max-width:100%;height:auto;display:block}
 
-/* ===== Layout ===== */
 .container{max-width:1120px;margin-inline:auto;padding-inline:20px}
 .pad-y{padding:56px 0}
 .section-title{font-size:28px;margin:0 0 8px}
@@ -35,7 +36,7 @@ img{max-width:100%;height:auto;display:block}
 .main-nav a{color:var(--ink);text-decoration:none;padding:8px 12px;border-radius:10px}
 .main-nav a:hover,.main-nav a.active{background:var(--glass)}
 
-/* Nyelvválasztó – fehér doboz + menü */
+/* Nyelvválasztó – fehér doboz */
 .lang{position:relative}
 .lang-btn{
   border:1px solid #e6eef3;background:#fff;color:#0e2533;
@@ -50,34 +51,22 @@ img{max-width:100%;height:auto;display:block}
 .lang-menu button:hover{background:#f4f7f9}
 
 /* ===== Hero ===== */
-.hero{
+.hero, .prop-hero{
   position:relative;isolation:isolate;
-  background-image:var(--bg);background-image:linear-gradient(0,rgba(0,0,0,.35),rgba(0,0,0,.35)),var(--bg);
-  background:linear-gradient(0, rgba(8,32,42,.45), rgba(8,32,42,.25)), var(--bg);
-  min-height:54vh;display:grid;place-items:center;text-align:left
+  min-height:54vh;display:grid;place-items:center;text-align:left;
+  background-size:cover;background-position:center;
 }
-.hero::before{
-  content:"";position:absolute;inset:0;background:
-    linear-gradient(0, rgba(8,32,42,.55), rgba(8,32,42,.25)),
-    var(--bg);
-  background-image:
-    linear-gradient(0, rgba(8,32,42,.55), rgba(8,32,42,.25)),
-    var(--bg);
-  z-index:-1;
-}
-.hero{background-image:linear-gradient(0, rgba(8,32,42,.55), rgba(8,32,42,.25)), var(--bg)}
-.hero{background-size:cover;background-position:center}
-.hero{--bg: none}
-.hero[style]{background-image:linear-gradient(0, rgba(8,32,42,.55), rgba(8,32,42,.25)), var(--bg)}
+.hero{--bg:none}
+.hero[style]{background-image:linear-gradient(0, rgba(8,32,42,.45), rgba(8,32,42,.25)), var(--bg)}
+.prop-hero[style]{background-image:linear-gradient(0, rgba(8,32,42,.55), rgba(8,32,42,.35)), var(--bg)}
 .hero-inner{width:100%}
 .display{font-size:56px;line-height:1.05;margin:0 0 12px;text-shadow:0 2px 16px rgba(0,0,0,.35)}
 .display-small{font-size:36px;margin:0 0 8px}
 .lead{max-width:640px;margin:0}
 .light{color:#fff}
-
 .hero-small{min-height:36vh}
 
-/* üveg */
+/* ===== Glass / Feature ===== */
 .glass{
   background:var(--glass);
   border:1px solid var(--border);
@@ -91,8 +80,57 @@ img{max-width:100%;height:auto;display:block}
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .feature-icon{font-size:22px}
 
+/* ===== Ingatlan KERESŐ (mintaképes) ===== */
+.search-card{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(14px) saturate(1.2);
+  border-radius:20px;
+  padding:18px;
+  color:#fff;
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+.tab-row{display:flex;gap:12px;margin-bottom:14px}
+.btn-tab{
+  appearance:none;border:0;cursor:pointer;font-weight:700;
+  padding:12px 16px;border-radius:14px;
+  background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.28)
+}
+.btn-tab.active{background:var(--gold);border-color:transparent;color:#221b10}
+.search-grid{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr auto auto;gap:14px;align-items:end
+}
+.field label{display:block;font-size:12px;opacity:.9;margin-bottom:6px}
+.field input{
+  width:100%;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.14);color:#fff;padding:0 12px;outline:none
+}
+.field input::placeholder{color:#eef5f9}
+.select-like{
+  width:100%;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.12);color:#fff;text-align:left;padding:0 12px;cursor:pointer
+}
+.filter-link{
+  color:#fff;text-decoration:none;height:44px;display:inline-flex;align-items:center;
+  padding:0 12px;border-radius:12px;border:1px dashed rgba(255,255,255,.35);
+  background:rgba(255,255,255,.08)
+}
+.btn-search{
+  height:44px;padding:0 18px;border-radius:12px;border:0;cursor:pointer;font-weight:800;
+  background:var(--gold);color:#221b10;box-shadow:0 6px 20px rgba(0,0,0,.2)
+}
+
+/* Alsó pill gombok */
+.cta-pills{display:flex;gap:16px;margin-top:18px;flex-wrap:wrap}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;
+  background:var(--gold);color:#221b10;text-decoration:none;font-weight:800;border:0
+}
+.pill:hover{background:var(--gold-2)}
+
 /* ===== Marquee – kilógásmentes ===== */
-.marquee{position:relative;overflow:hidden;border-radius:18px;border:1px solid #ffffff45;background:rgba(255,255,255,.08)}
+.marquee{position:relative;overflow:hidden;border-radius:18px;border:1px solid #ffffff45;background:rgba(255,255,255,.06)}
+.marquee.tight{background:rgba(255,255,255,.08)}
 .marquee .track{display:flex;gap:18px;align-items:center;padding:14px 0;animation:marquee 28s linear infinite;will-change:transform}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .logo-chip{display:inline-flex;align-items:center;gap:12px;background:#fffffff2;color:#0e2533;border:1px solid #e8eef3;border-radius:999px;padding:8px 14px;white-space:nowrap}
@@ -112,9 +150,18 @@ img{max-width:100%;height:auto;display:block}
 .footer-links a:hover{opacity:1}
 
 /* ===== Reszponzív ===== */
+@media (max-width:1000px){
+  .search-grid{grid-template-columns:1fr 1fr 1fr auto;gap:12px}
+  .filter-link{grid-column:1 / -2}
+}
+@media (max-width:720px){
+  .display{font-size:40px}
+  .search-grid{grid-template-columns:1fr;gap:10px}
+  .filter-link{order:5}
+  .btn-search{order:6}
+}
 @media (max-width:900px){
   .feature-grid{grid-template-columns:repeat(2,1fr)}
-  .display{font-size:40px}
 }
 @media (max-width:600px){
   .feature-grid{grid-template-columns:1fr}
