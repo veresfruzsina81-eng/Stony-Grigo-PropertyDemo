@@ -1,151 +1,44 @@
-// ===== Nyelvváltás (HU/EN/DE) – localStorage + data-i18n =====
-const i18n = {
-  HU: {
-    nav_home: "Kezdőlap",
-    nav_props: "Ingatlanok",
-    nav_team: "Kollégáink",
-    nav_partners: "Partnereink",
-    nav_invest: "Befektetőknek",
-    nav_contact: "Kapcsolat",
-    hero_title: "Együtt megtaláljuk álmaid otthonát",
-    why_title: "Miért jó, ha minket választ?",
-    why_lead: "Mert segítségedre lehetünk, akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.",
-    f1:"20 év tapasztalat", f2:"Díjmentes tanácsadás", f3:"Új otthon itthon és külföldön",
-    f4:"Ingatlanközvetítés", f5:"Vevőképviselet", f6:"Ügyvédi / Közjegyzői támogatás",
-    f7:"Ingatlankezelés & üzemeltetés", f8:"Generál kivitelezés",
-    f9:"Ingatlan felújítás / átépítés", f10:"Lakberendezési tanácsadás", f11:"100%-os megelégedettség",
-    partners: "Partnereink",
-    find_home: "Találj új otthonra",
-    cta_team: "Lépj kapcsolatba a kollégákkal!",
-    props_tabs_sell:"Eladó", props_tabs_rent:"Kiadó", props_tabs_med:"Mediterrán ingatlanok",
-    key:"Kulcsszó", what:"Mit keres?",
-    cat:"Kategória", choose_cat:"Válassz kategóriát",
-    loc:"Lokáció",
-    adv:"Részletes Szűrés",
-    search:"Keresés",
-    pill_sell:"Eladó ingatlanok",
-    pill_rent:"Kiadó ingatlanok",
-    pill_med:"Mediterrán ingatlanok",
-    marketing:"Miért jó, ha minket választ?",
-    team_title:"Kollégáink",
-    contact_title:"Lépjen velünk kapcsolatba",
-    address:"1188 Budapest, Címer utca 19/A",
-    phone:"+36 30 896 5858",
-    email:"stonyproperty@gmail.com",
-    city:"Budapest",
-    facebook:"Facebook",
-    footer:"© 2025 Stony & Grigo Property"
-  },
-  EN: {
-    nav_home: "Home",
-    nav_props: "Properties",
-    nav_team: "Our Team",
-    nav_partners: "Partners",
-    nav_invest: "For Investors",
-    nav_contact: "Contact",
-    hero_title: "Together we’ll find your dream home",
-    why_title: "Why choose us?",
-    why_lead: "We can help with a brand-new purchase or your existing property.",
-    f1:"20 years of experience", f2:"Free consulting", f3:"New home at home and abroad",
-    f4:"Real-estate brokerage", f5:"Buyer representation", f6:"Attorney / Notary support",
-    f7:"Property mgmt & operation", f8:"General contracting",
-    f9:"Renovation / Remodeling", f10:"Interior consulting", f11:"100% satisfaction",
-    partners:"Our Partners",
-    find_home:"Find a new home",
-    cta_team:"Get in touch with our team!",
-    props_tabs_sell:"For Sale", props_tabs_rent:"For Rent", props_tabs_med:"Mediterranean",
-    key:"Keyword", what:"What are you looking for?",
-    cat:"Category", choose_cat:"Choose a category",
-    loc:"Location",
-    adv:"Advanced Filter",
-    search:"Search",
-    pill_sell:"For-sale listings",
-    pill_rent:"Rental listings",
-    pill_med:"Mediterranean listings",
-    marketing:"Why choose us?",
-    team_title:"Our Team",
-    contact_title:"Contact us",
-    address:"1188 Budapest, Címer utca 19/A",
-    phone:"+36 30 896 5858",
-    email:"stonyproperty@gmail.com",
-    city:"Budapest",
-    facebook:"Facebook",
-    footer:"© 2025 Stony & Grigo Property"
-  },
-  DE: {
-    nav_home: "Startseite",
-    nav_props: "Immobilien",
-    nav_team: "Team",
-    nav_partners: "Partner",
-    nav_invest: "Für Investoren",
-    nav_contact: "Kontakt",
-    hero_title: "Gemeinsam finden wir Ihr Traumzuhause",
-    why_title: "Warum wir?",
-    why_lead: "Wir helfen – beim Neukauf oder bei Ihrer bestehenden Immobilie.",
-    f1:"20 Jahre Erfahrung", f2:"Kostenlose Beratung", f3:"Neues Zuhause im In- & Ausland",
-    f4:"Maklerdienstleistungen", f5:"Käufervertretung", f6:"Anwalt / Notar Unterstützung",
-    f7:"Objektverwaltung & Betrieb", f8:"Generalunternehmer",
-    f9:"Sanierung / Umbau", f10:"Interior-Beratung", f11:"100% Zufriedenheit",
-    partners:"Unsere Partner",
-    find_home:"Finde ein neues Zuhause",
-    cta_team:"Kontaktieren Sie unser Team!",
-    props_tabs_sell:"Zum Verkauf", props_tabs_rent:"Zur Miete", props_tabs_med:"Mittelmeer",
-    key:"Schlüsselwort", what:"Wonach suchen Sie?",
-    cat:"Kategorie", choose_cat:"Kategorie wählen",
-    loc:"Ort",
-    adv:"Erweiterter Filter",
-    search:"Suchen",
-    pill_sell:"Verkaufsangebote",
-    pill_rent:"Mietangebote",
-    pill_med:"Mittelmeer-Angebote",
-    marketing:"Warum wir?",
-    team_title:"Unser Team",
-    contact_title:"Kontakt aufnehmen",
-    address:"1188 Budapest, Címer utca 19/A",
-    phone:"+36 30 896 5858",
-    email:"stonyproperty@gmail.com",
-    city:"Budapest",
-    facebook:"Facebook",
-    footer:"© 2025 Stony & Grigo Property"
-  }
+/* i18n – fő elemek */
+const I18N = {
+  hu:{nav_home:"Kezdőlap",nav_props:"Ingatlanok",nav_team:"Kollégáink",nav_partners:"Partnereink",nav_invest:"Befektetőknek",nav_contact:"Kapcsolat",
+      hero_title:"Együtt megtaláljuk álmaid otthonát",hero_sub:"Együtt megálmodjuk a következő lépést.",
+      btn_team:"Kollégáink →",why_title:"Miért jó, ha minket választ?",why_sub:"Mert segítségedre lehetünk – akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.",
+      bottom_title:"Találj új otthonra",bottom_sub:"Lépj kapcsolatba kollégáinkkal – segítünk a következő lépésben.",
+      mk_title:"Velünk gyorsabb az út az otthonodhoz",mk_sub:"Személyre szabott keresés, jogi háttér, 20+ év tapasztalat."},
+  en:{nav_home:"Home",nav_props:"Properties",nav_team:"Our Team",nav_partners:"Partners",nav_invest:"For Investors",nav_contact:"Contact",
+      hero_title:"Together we’ll find your dream home",hero_sub:"We’ll take the next step together.",
+      btn_team:"Our Team →",why_title:"Why choose us?",why_sub:"We can help with new or existing properties.",
+      bottom_title:"Find your new home",bottom_sub:"Get in touch with our team – we’ll help you move forward.",
+      mk_title:"A faster path to your home",mk_sub:"Tailored search, legal support, 20+ years of experience."},
+  de:{nav_home:"Startseite",nav_props:"Immobilien",nav_team:"Team",nav_partners:"Partner",nav_invest:"Für Investoren",nav_contact:"Kontakt",
+      hero_title:"Gemeinsam finden wir Ihr Traumhaus",hero_sub:"Gemeinsam machen wir den nächsten Schritt.",
+      btn_team:"Unser Team →",why_title:"Warum wir?",why_sub:"Wir unterstützen bei neuen und bestehenden Immobilien.",
+      bottom_title:"Finden Sie Ihr neues Zuhause",bottom_sub:"Kontaktieren Sie unser Team – wir helfen weiter.",
+      mk_title:"Schneller zum Zuhause",mk_sub:"Individuelle Suche, Rechtsbeistand, 20+ Jahre Erfahrung."}
 };
 
-function setLang(lang){
-  localStorage.setItem("lang", lang);
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const key = el.getAttribute("data-i18n");
-    const val = i18n[lang][key] ?? "";
-    if(el.tagName === "INPUT" || el.tagName==="TEXTAREA"){
-      el.placeholder = val;
-    }else{
-      el.innerText = val;
-    }
-  });
-  // lang button label
-  const btn = document.querySelector(".lang-btn .code");
-  if(btn) btn.textContent = lang;
-}
-function initLang(){
-  let lang = localStorage.getItem("lang") || "HU";
-  setLang(lang);
-  const langWrap = document.querySelector(".lang");
-  if(langWrap){
-    langWrap.querySelector(".lang-btn").addEventListener("click",()=>langWrap.classList.toggle("open"));
-    langWrap.querySelectorAll(".lang-item").forEach(it=>{
-      it.addEventListener("click", ()=>{
-        langWrap.classList.remove("open");
-        setLang(it.getAttribute("data-code"));
-      })
-    })
-    document.addEventListener("click",(e)=>{ if(!langWrap.contains(e.target)) langWrap.classList.remove("open"); })
-  }
-}
-document.addEventListener("DOMContentLoaded", initLang);
+(function(){
+  const box=document.getElementById('lang'); if(!box) return;
+  const btn=box.querySelector('.langbtn'), flag=btn.querySelector('.flag'), lab=btn.querySelector('strong');
+  const menu=box.querySelector('.langmenu');
+  const setBtn=c=>{ if(c==='en'){flag.src='https://flagcdn.com/w20/gb.png';lab.textContent='EN';}
+                    else if(c==='de'){flag.src='https://flagcdn.com/w20/de.png';lab.textContent='DE';}
+                    else {flag.src='https://flagcdn.com/w20/hu.png';lab.textContent='HU';}};
+  const apply=c=>{
+    const d=I18N[c]||I18N.hu;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(d[k]) el.textContent=d[k]; });
+    const m=document.querySelector('.menu'); if(m){const L=m.querySelectorAll('a');
+      if(L[0])L[0].textContent=d.nav_home; if(L[1])L[1].textContent=d.nav_props; if(L[2])L[2].textContent=d.nav_team;
+      if(L[3])L[3].textContent=d.nav_partners; if(L[4])L[4].textContent=d.nav_invest; if(L[5])L[5].textContent=d.nav_contact;}
+    setBtn(c); localStorage.setItem('lang',c);
+  };
+  btn.addEventListener('click',e=>{e.stopPropagation();box.classList.toggle('open')});
+  document.addEventListener('click',()=>box.classList.remove('open'));
+  menu.querySelectorAll('button[data-code]').forEach(b=>b.addEventListener('click',()=>apply(b.getAttribute('data-code'))));
+  apply(localStorage.getItem('lang')||'hu');
 
-// ===== végtelen partner/marketing “vetítés” – duplázás, hogy folyamatos legyen
-function initMarquees(){
-  document.querySelectorAll(".marquee .track").forEach(track=>{
-    track.innerHTML += track.innerHTML; // duplázás
-  });
-}
-document.addEventListener("DOMContentLoaded", initMarquees);
+  // tabs (ingatlanok)
+  document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active')); t.classList.add('active');
+  }));
+})();
