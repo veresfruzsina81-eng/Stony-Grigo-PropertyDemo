@@ -1,144 +1,71 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kezdőlap – Stony & Grigo Property</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>...</title>
 </head>
+
 <body>
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="index.html">
-      <img src="logo_sg.jpg" alt="">
-      <span>Stony &amp; Grigo Property &amp; Real Estate Investment</span>
-    </a>
+  <div id="main">
 
-    <button class="hamburger" id="hamb"><span></span><span></span><span></span></button>
-
-    <nav class="menu">
-      <a class="active" href="index.html" data-i18n="nav_home">Kezdőlap</a>
-      <a href="ingatlanok.html" data-i18n="nav_props">Ingatlanok</a>
-      <a href="csapat.html" data-i18n="nav_team">Kollégáink</a>
-      <a href="partnerek.html" data-i18n="nav_partners">Partnereink</a>
-      <a href="befektetok.html" data-i18n="nav_invest">Befektetőknek</a>
-      <a href="kapcsolat.html" data-i18n="nav_contact">Kapcsolat</a>
+    <nav>
+      <a href="#">shanali</a>
+      <div class="cntr-nav">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Shop</a>
+        <a href="#">Contact</a>
+      </div>
+      <i class="ri-search-line"></i>
     </nav>
 
-    <div class="lang" id="lang">
-      <button class="langbtn" type="button">
-        <img class="flag" src="https://flagcdn.com/w20/hu.png" alt="HU" />
-        <strong>HU</strong>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
-      </button>
-      <div class="langmenu">
-        <button data-code="hu"><img class="flag" src="https://flagcdn.com/w20/hu.png" alt=""> HU Magyar</button>
-        <button data-code="en"><img class="flag" src="https://flagcdn.com/w20/gb.png" alt=""> EN English</button>
-        <button data-code="de"><img class="flag" src="https://flagcdn.com/w20/de.png" alt=""> DE Deutsch</button>
+    <div class="header">
+      <h1>Naturalist</h1>
+
+      <img id="chocolate"  src="Assets/chocolate.png"  alt="" />
+      <img id="can"        src="Assets/can.png"        alt="" />
+      <img id="chocolate2" src="Assets/chocolate2.png" alt="" />
+      <img id="almond"     src="Assets/almond.png"     alt="" />
+      <img id="almond2"    src="Assets/almond2.png"    alt="" />
+    </div>
+
+    <div class="about">
+      <div class="about-left">
+        <img src="Assets/chocolate.png" alt="" />
+      </div>
+      <div class="about-right">
+        <h1>Flavour Updated</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
       </div>
     </div>
-  </div>
-</header>
 
-<!-- HERO -->
-<section class="hero" style="background-image:url('hero_lanchid.jpg')">
-  <div class="overlay"></div>
-  <div class="content container">
-    <h1 class="title" data-i18n="hero_title">Együtt megtaláljuk álmaid otthonát</h1>
-    <p class="muted" data-i18n="hero_sub">Együtt megálmodjuk a következő lépést.</p>
-    <p style="margin-top:14px">
-      <a class="btn" href="ingatlanok.html" style="text-decoration:none">Böngéssz ingatlanok közt →</a>
-      <a class="btn ghost" href="kapcsolat.html" style="text-decoration:none">Kapcsolatfelvétel →</a>
-    </p>
-  </div>
-</section>
-
-<!-- MIÉRT MINKET – kerek ikonok -->
-<section class="why">
-  <div class="container">
-    <h2 data-i18n="why_title">Miért jó, ha minket választ?</h2>
-    <p class="lead" data-i18n="why_sub">Mert segítségedre lehetünk – akár egy új, vagy már meglévő ingatlanoddal kapcsolatban.</p>
-
-    <div class="why-grid">
-      <article class="feature span2">
-        <div class="fx">🏠</div>
-        <div>
-          <h3>Teljes körű közvetítés</h3>
-          <p>Eladástól a birtokbaadásig, végigkísérünk.</p>
-        </div>
-      </article>
-
-      <article class="feature span2">
-        <div class="fx">⚖️</div>
-        <div>
-          <h3>Jogi háttér</h3>
-          <p>Megbízható ügyvédi, közjegyzői partnerekkel.</p>
-        </div>
-      </article>
-
-      <article class="feature span2">
-        <div class="fx">📈</div>
-        <div>
-          <h3>20+ év tapasztalat</h3>
-          <p>Stabil piaci jelenlét, átlátható folyamatok.</p>
-        </div>
-      </article>
-
-      <article class="feature span3">
-        <div class="fx">🌍</div>
-        <div>
-          <h3>Nemzetközi kapcsolatok</h3>
-          <p>Egyiptom, Dubaj, Spanyolország – megbízható helyi partnerekkel.</p>
-        </div>
-      </article>
-
-      <article class="feature span3">
-        <div class="fx">💡</div>
-        <div>
-          <h3>Díjmentes tanácsadás</h3>
-          <p>Első körben ingyenes konzultációval indulunk.</p>
-        </div>
-      </article>
+    <div class="product">
+      <img src="Assets/footer1.jpg" />
     </div>
-  </div>
-</section>
 
-<!-- Alsó hero üzenet -->
-<section class="bottom-hero">
-  <div class="content">
-    <h2 data-i18n="bottom_title">Találj új otthonra</h2>
-    <p data-i18n="bottom_sub">Lépj kapcsolatba kollégáinkkal – segítünk a következő lépésben.</p>
-    <p style="margin-top:12px"><a class="btn" href="ingatlanok.html">Irány az ingatlanok →</a></p>
-  </div>
-</section>
-
-<!-- gördülő üzenetek üveges dobozban (ha szeretnéd, törölhető) -->
-<section class="marquee-text">
-  <div class="container">
-    <div class="glass-box">
-      <div class="track">
-        <span class="chip"><img src="logo_sg.jpg" alt=""> 20 év tapasztalat</span>
-        <span class="chip"><img src="logo_sg.jpg" alt=""> Díjmentes tanácsadás</span>
-        <span class="chip"><img src="logo_sg.jpg" alt=""> Ügyvédi háttér</span>
-        <span class="chip"><img src="logo_sg.jpg" alt=""> Nemzetközi partnerek</span>
-        <span class="chip"><img src="logo_sg.jpg" alt=""> Kockázatkezelés</span>
-        <!-- ismétlés a folyamatos futáshoz -->
-        <span class="chip"><img src="logo_sg.jpg" alt=""> 20 év tapasztalat</span>
-        <span class="chip"><img src="logo_sg.jpg" alt=""> Díjmentes tanácsadás</span>
-        <span class="chip"><img src="logo_sg.jpg" alt=""> Ügyvédi háttér</span>
-        <span class="chip"><img src="logo_sg.jpg" alt=""> Nemzetközi partnerek</span>
-        <span class="chip"><img src="logo_sg.jpg" alt=""> Kockázatkezelés</span>
+    <div class="shop-section">
+      <h1>Our Products</h1>
+      <div class="shop-container">
+        <div class="shop-product">
+          <img src="Assets/chocolate.png" alt="Chocolate Can" />
+        </div>
+        <div class="shop-product">
+          <img src="Assets/chocolate.png" alt="Chocolate Can" />
+        </div>
+        <div class="shop-product">
+          <img src="Assets/chocolate.png" alt="Chocolate Can" />
+        </div>
       </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+
   </div>
-</section>
-
-<a href="#" class="back-btn">← Vissza</a>
-
-<footer class="footer">
-  <div class="container">© 2025 Stony &amp; Grigo Property</div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
